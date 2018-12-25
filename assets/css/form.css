@@ -1,0 +1,3209 @@
+
+.cognito .sys-template,.cognito .c-hidden {
+display: none
+}
+.cognito * {
+box-sizing: border-box
+}
+#c-recaptcha-div {
+clear: both;
+margin: 8px
+}
+.cognito .c-view,.cognito.c-view {
+margin: 0;
+padding: 0;
+width: 100%
+}
+.cognito input,.cognito select {
+vertical-align: middle;
+white-space: nowrap
+}
+.cognito h3 {
+margin-bottom: 10px;
+padding: 5px 0 6px 0
+}
+.cognito h4 {
+clear: both
+}
+.cognito i:before,.cognito i:after {
+font-style: normal
+}
+.cognito .c-editor .c-choice-option,.cognito .c-editor .c-yesno-radio,.cognito .c-editor.c-yesno-checkbox {
+margin: 0
+}
+.cognito legend {
+float: left
+}
+.cognito .c-editor.c-columns-0,.cognito .c-editor.c-columns-1,.cognito .c-editor.c-columns-2,.cognito .c-editor.c-columns-3,.cognito .c-editor.c-columns-4 {
+clear: both
+}
+.cognito fieldset {
+border: 0;
+margin: 0;
+padding: 0
+}
+.cognito .c-field,.cognito .c-section {
+float: left!important;
+width: 100%;
+margin: 0
+}
+.cognito .c-section {
+padding-bottom: 8px;
+margin-top: 4px
+}
+.cognito .c-editor.c-columns-0>div,.cognito .c-editor .c-columns-0>div {
+float: left;
+white-space: normal!important
+}
+.cognito .c-editor.c-columns-1 div,.cognito .c-editor .c-columns-1 div {
+float: left;
+width: 100%;
+padding: 0;
+white-space: normal!important
+}
+.cognito .c-editor.c-columns-2 div,.cognito .c-editor .c-columns-2 div {
+float: left;
+width: 50%;
+padding: 0;
+white-space: normal!important
+}
+.cognito .c-editor.c-columns-3 div,.cognito .c-editor .c-columns-3 div {
+float: left;
+width: 33%;
+padding: 0;
+white-space: normal!important
+}
+.cognito .c-editor.c-columns-4 div,.cognito .c-editor .c-columns-4 div {
+float: left;
+width: 25%;
+padding: 0;
+white-space: normal!important
+}
+.cognito .c-editor.c-columns-1 div.c-choice-fillin label,.cognito .c-editor .c-columns-1 div.c-choice-fillin label {
+width: 100%
+}
+.cognito .c-editor.c-columns-2 div.c-choice-fillin label,.cognito .c-editor .c-columns-2 div.c-choice-fillin label {
+width: 100%
+}
+.cognito .c-editor.c-columns-3 div.c-choice-fillin label,.cognito .c-editor .c-columns-3 div.c-choice-fillin label {
+width: 100%
+}
+.cognito .c-editor.c-columns-4 div.c-choice-fillin label,.cognito .c-editor .c-columns-4 div.c-choice-fillin label {
+width: 100%
+}
+.cognito .c-editor.c-columns-1 div.c-choice-fillin .c-fillin-text,.cognito .c-editor .c-columns-1 div.c-choice-fillin .c-fillin-text {
+width: 100%
+}
+.cognito .c-editor.c-columns-2 div.c-choice-fillin .c-fillin-text,.cognito .c-editor .c-columns-2 div.c-choice-fillin .c-fillin-text {
+width: 100%
+}
+.cognito .c-editor.c-columns-3 div.c-choice-fillin .c-fillin-text,.cognito .c-editor .c-columns-3 div.c-choice-fillin .c-fillin-text {
+width: 100%
+}
+.cognito .c-editor.c-columns-4 div.c-choice-fillin .c-fillin-text,.cognito .c-editor .c-columns-4 div.c-choice-fillin .c-fillin-text {
+width: 100%
+}
+.cognito .c-choice-fillin .c-fillin-text {
+max-width: 150px
+}
+.cognito .c-editor .c-choice-option label,.cognito .c-editor label.c-yesno-radio,.cognito .c-editor.c-yesno-checkbox label {
+display: inline-block;
+padding: 4px 10px 4px 1.6em;
+text-indent: -1.6em
+}
+.cognito .c-yesno-checkbox label {
+padding-top: 0!important
+}
+.cognito.c-sml .c-field.c-name.c-sml-span-1 .c-editor,.cognito.c-sml .c-field.c-name.c-sml-span-2 .c-editor,.cognito.c-sml .c-field.c-name.c-sml-span-3 .c-editor,.cognito.c-sml .c-field.c-name.c-sml-span-4 .c-editor,.cognito.c-sml .c-field.c-name.c-sml-span-5 .c-editor,.cognito.c-sml .c-field.c-name.c-sml-span-6 .c-editor,.cognito.c-sml .c-field.c-name.c-sml-span-7 .c-editor,.cognito.c-sml .c-field.c-name.c-sml-span-8 .c-editor,.cognito.c-sml .c-field.c-name.c-sml-span-9 .c-editor,.cognito.c-sml .c-field.c-name.c-sml-span-10 .c-editor,.cognito.c-sml .c-field.c-name.c-sml-span-11 .c-editor,.cognito.c-sml .c-field.c-name.c-sml-span-12 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-1 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-2 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-3 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-4 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-5 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-6 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-7 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-8 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-9 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-10 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-11 .c-editor,.cognito.c-sml .c-field.c-address.c-sml-span-12 .c-editor,.cognito.c-sml .c-sml-span-1 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-2 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-3 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-4 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-5 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-6 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-7 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-8 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-9 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-10 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-11 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-12 .c-field.c-name .c-editor,.cognito.c-sml .c-sml-span-1 .c-field.c-address .c-editor,.cognito.c-sml .c-sml-span-2 .c-field.c-address .c-editor,.cognito.c-sml .c-sml-span-3 .c-field.c-address .c-editor,.cognito.c-sml .c-sml-span-4 .c-field.c-address .c-editor,.cognito.c-sml .c-sml-span-5 .c-field.c-address .c-editor,.cognito.c-sml .c-sml-span-6 .c-field.c-address .c-editor,.cognito.c-sml .c-sml-span-7 .c-field.c-address .c-editor,.cognito.c-sml .c-sml-span-8 .c-field.c-address .c-editor,.cognito.c-sml .c-sml-span-9 .c-field.c-address .c-editor,.cognito.c-sml .c-sml-span-10 .c-field.c-address .c-editor,.cognito.c-sml .c-sml-span-11 .c-field.c-address .c-editor,.cognito.c-sml .c-sml-span-12 .c-field.c-address .c-editor {
+width: 100%!important;
+padding-bottom: 10px!important
+}
+.c-field.c-name.c-span-1 .c-editor,.c-field.c-name.c-span-2 .c-editor,.c-field.c-name.c-span-3 .c-editor,.c-field.c-name.c-span-4 .c-editor,.c-field.c-name.c-span-5 .c-editor,.c-field.c-name.c-span-6 .c-editor,.c-field.c-name.c-span-7 .c-editor,.c-field.c-name.c-span-8 .c-editor,.c-field.c-name.c-span-9 .c-editor,.c-field.c-name.c-span-10 .c-editor,.c-field.c-name.c-span-11 .c-editor,.c-field.c-name.c-span-12 .c-editor,.c-field.c-address.c-span-1 .c-editor,.c-field.c-address.c-span-2 .c-editor,.c-field.c-address.c-span-3 .c-editor,.c-field.c-address.c-span-4 .c-editor,.c-field.c-address.c-span-5 .c-editor,.c-field.c-address.c-span-6 .c-editor,.c-field.c-address.c-span-7 .c-editor,.c-field.c-address.c-span-8 .c-editor,.c-field.c-address.c-span-9 .c-editor,.c-field.c-address.c-span-10 .c-editor,.c-field.c-address.c-span-11 .c-editor,.c-field.c-address.c-span-12 .c-editor,.c-span-1 .c-field.c-name .c-editor,.c-span-2 .c-field.c-name .c-editor,.c-span-3 .c-field.c-name .c-editor,.c-span-4 .c-field.c-name .c-editor,.c-span-5 .c-field.c-name .c-editor,.c-span-6 .c-field.c-name .c-editor,.c-span-7 .c-field.c-name .c-editor,.c-span-8 .c-field.c-name .c-editor,.c-span-9 .c-field.c-name .c-editor,.c-span-10 .c-field.c-name .c-editor,.c-span-11 .c-field.c-name .c-editor,.c-span-12 .c-field.c-name .c-editor,.c-span-1 .c-field.c-address .c-editor,.c-span-2 .c-field.c-address .c-editor,.c-span-3 .c-field.c-address .c-editor,.c-span-4 .c-field.c-address .c-editor,.c-span-5 .c-field.c-address .c-editor,.c-span-6 .c-field.c-address .c-editor,.c-span-7 .c-field.c-address .c-editor,.c-span-8 .c-field.c-address .c-editor,.c-span-9 .c-field.c-address .c-editor,.c-span-10 .c-field.c-address .c-editor,.c-span-11 .c-field.c-address .c-editor,.c-span-12 .c-field.c-address .c-editor {
+width: 100%!important;
+padding-bottom: 10px!important
+}
+.cognito .c-editor.c-columns-2 div.c-choice-option:nth-of-type(odd),.cognito .c-editor .c-columns-2 div.c-choice-option:nth-of-type(odd) {
+clear: left
+}
+.cognito .c-editor.c-columns-3 div.c-choice-option:nth-of-type(4n),.cognito .c-editor .c-columns-3 div.c-choice-option:nth-of-type(2+3n) {
+clear: left
+}
+.cognito .c-editor.c-columns-4 div.c-choice-option:nth-of-type(5n),.cognito .c-editor .c-columns-4 div.c-choice-option:nth-of-type(2+4n) {
+clear: left
+}
+.cognito .c-editor .c-choice-fillin div:not(.printHelper) {
+float: none!important;
+display: inline-block;
+vertical-align: top
+}
+.cognito .c-editor .c-choice-fillin {
+position: relative;
+padding-top: 0!important;
+padding-bottom: 0!important
+}
+.cognito .c-name.c-span-1 .c-editor {
+padding-bottom: 10px!important
+}
+.cognito .c-name.c-span-1 .c-editor:last-of-type {
+padding-bottom: 0!important
+}
+.cognito .c-name.c-span-2 .c-editor {
+padding-bottom: 0!important
+}
+.cognito .c-editor a.c-details-link {
+font-size: 90%;
+display: block;
+line-height: 100%
+}
+.cognito .c-editor {
+margin: 0;
+-ms-word-wrap: break-word;
+word-wrap: break-word
+}
+.cognito .c-helptext {
+padding: 5px 8px 2px 8px;
+clear: left;
+margin: 0
+}
+.cognito .c-table-section .c-helptext {
+padding-left: 0
+}
+.cognito .c-validation {
+padding: 0 5px;
+margin: 0 8px;
+display: none;
+z-index: 10;
+clear: left
+}
+.cognito .c-field.c-error>.c-validation,.cognito .c-validation-row.c-error>.c-validation,.cognito .c-section.c-error>.c-validation,.cognito .c-forms-error.c-error>.c-validation,.cognito .c-field.c-error>div.toggle-on>.c-validation {
+display: block
+}
+.cognito .c-title {
+margin: 0;
+clear: both
+}
+.cognito .c-section .c-title h3:empty {
+display: none
+}
+.cognito .c-title h3,.cognito .c-title h4,.cognito .c-title h5,.cognito .c-title h6 {
+margin: 5px 0;
+padding: 0
+}
+.cognito .c-title .c-icon-link {
+padding: 5px;
+display: inline-block;
+vertical-align: middle;
+font-size: 14px;
+margin: 0 5px 3px 0;
+border: 1px solid;
+text-decoration: none
+}
+.cognito .c-icon-label {
+margin: 0 2px
+}
+.cognito .c-field.c-submit-error:not(.c-error) {
+padding: 8px 0;
+display: none
+}
+.cognito label {
+display: inline
+}
+.cognito .c-label {
+display: inline-block;
+margin: 0
+}
+.cognito .c-field.c-required .c-label:after,.cognito .c-rating-scale.c-required .c-choice-question:after {
+margin-left: .15em;
+content: "*"
+}
+.cognito .c-address .c-editor:not(:last-child) {
+padding-bottom: 10px
+}
+.cognito .c-address div:not(.c-validation):not(.c-offscreen) {
+width: 100%
+}
+.cognito .c-address .c-offscreen:nth-last-child(4):first-child+.c-partial-line,.cognito .c-address .c-offscreen:nth-last-child(4):first-child+.c-partial-line~.c-partial-line,.cognito .c-address div:not(.c-partial-line)+.c-offscreen:nth-last-child(4)+.c-partial-line,.cognito .c-address div:not(.c-partial-line)+.c-offscreen:nth-last-child(4)+.c-partial-line~.c-partial-line,.cognito .c-address .c-offscreen:nth-last-child(8):first-child+.c-partial-line,.cognito .c-address .c-offscreen:nth-last-child(8):first-child+.c-partial-line~.c-partial-line,.cognito .c-address div:not(.c-partial-line)+.c-offscreen:nth-last-child(8)+.c-partial-line,.cognito .c-address div:not(.c-partial-line)+.c-offscreen:nth-last-child(8)+.c-partial-line~.c-partial-line {
+width: 50%
+}
+.cognito .c-address .c-offscreen:nth-last-child(6):first-child+.c-partial-line,.cognito .c-address .c-offscreen:nth-last-child(6):first-child+.c-partial-line~.c-partial-line,.cognito .c-address div:not(.c-partial-line)+.c-offscreen:nth-last-child(6)+.c-partial-line,.cognito .c-address div:not(.c-partial-line)+.c-offscreen:nth-last-child(6)+.c-partial-line~.c-partial-line {
+width: 33.3%;
+padding-bottom: 0
+}
+.cognito .c-address .c-offscreen:nth-last-child(4):first-child+.c-partial-line,.cognito .c-address .c-offscreen:nth-last-child(4):first-child+.c-partial-line~.c-partial-line,.cognito .c-address div:not(.c-partial-line)+.c-offscreen:nth-last-child(4)+.c-partial-line,.cognito .c-address div:not(.c-partial-line)+.c-offscreen:nth-last-child(4)+.c-partial-line~.c-partial-line {
+padding-bottom: 0
+}
+.cognito .c-address .c-partial-line:last-child {
+padding-bottom: 0!important
+}
+.cognito .c-address,.cognito .c-name {
+padding-bottom: 6px
+}
+.cognito .c-repeating-section-container {
+border-width: 1px;
+overflow: auto;
+clear: both
+}
+.cognito .c-repeating-section-container .c-action-col {
+display: inline-block;
+vertical-align: middle
+}
+.cognito .c-repeating-section-item {
+overflow: auto;
+margin-left: 24px
+}
+.cognito .c-repeating-section-item-title {
+text-align: left;
+position: relative
+}
+.cognito .c-repeating-section-add .c-add-item:hover {
+text-decoration: none
+}
+.cognito .c-repeating-section-add .c-add-item {
+display: inline-block;
+cursor: pointer
+}
+.cognito .c-repeating-section-item-title .c-remove-item {
+width: 2em;
+display: block;
+text-align: center
+}
+.cognito .c-forms-form .c-readonly .c-repeating-section-item {
+margin-left: 0
+}
+.cognito .c-readonly .c-repeating-section-item-title {
+padding-left: 8px
+}
+.cognito .c-repeating-section-item-title h3,.cognito .c-repeating-section-item-title h4,.cognito .c-repeating-section-item-title h5,.cognito .c-repeating-section-item-title h6 {
+margin: 5px 0;
+display: inline-block;
+vertical-align: middle
+}
+.cognito .c-repeating-section-title h3,.cognito .c-repeating-section-title h4,.cognito .c-repeating-section-title h5,.cognito .c-repeating-section-title h6 {
+margin: 5px 0 5px 0;
+padding: 5px 0 6px 0
+}
+.cognito .c-button {
+margin: 8px 8px 8px
+}
+.cognito .c-repeating-section-title .c-helptext {
+padding-left: 0
+}
+.cognito .c-col-1 {
+clear: left
+}
+.cognito INPUT[type=text],.cognito INPUT[type=password],.cognito textarea,.cognito select {
+width: 100%
+}
+.cognito svg.remove-icon {
+width: 20px;
+height: 20px
+}
+.cognito .remove-icon circle {
+fill: #d85427
+}
+.cognito .remove-icon line {
+stroke: white;
+stroke-width: 1.5
+}
+.cognito .c-editor textarea {
+height: 100px;
+resize: vertical
+}
+.cognito .c-action {
+float: left
+}
+.cognito .c-button-section {
+margin-top: 4px;
+clear: both
+}
+.cognito .c-button-section:after {
+content: " ";
+display: block;
+clear: both
+}
+.cognito .c-button-section .c-button-section {
+padding: 0;
+margin-top: 0;
+display: inline-block;
+vertical-align: middle;
+overflow: visible
+}
+.cognito #c-submit-button {
+position: relative;
+float: right;
+cursor: pointer
+}
+.cognito #c-submit-button i {
+position: absolute;
+right: .25em;
+font-size: 1em
+}
+.cognito .c-visible-container {
+display: block
+}
+.cognito .c-readonly .c-rating-scale {
+padding-left: 0
+}
+.cognito .c-rating-scale legend.c-label {
+padding-left: 0
+}
+.cognito .c-readonly .c-rating-scale legend.c-label {
+padding-left: 8px
+}
+.cognito .c-rating-scale .c-rating-scale-questions {
+clear: both;
+overflow: hidden;
+position: relative
+}
+.cognito .c-readonly .c-rating-scale .c-rating-scale-questions {
+margin: 0 8px
+}
+.cognito .c-rating-scale input[type="radio"] {
+margin-right: 0
+}
+.cognito .c-rating-scale th.c-choice-question {
+text-align: left;
+font-weight: normal
+}
+.cognito .c-rating-scale th.c-choice-option-header {
+text-align: center;
+font-weight: normal;
+width: 1%;
+vertical-align: bottom
+}
+.cognito .c-rating-scale table td,.cognito .c-rating-scale th {
+padding: 10px 5px;
+line-height: 100%
+}
+.cognito .c-rating-scale td.c-choice-option {
+text-align: center;
+width: 1%
+}
+.cognito .c-forms-form .c-rating-scale .c-choice-option label {
+padding-left: 0;
+text-indent: 0
+}
+.cognito .c-rating-scale .c-validation {
+margin: 0
+}
+.cognito .c-rating-scale .c-validation-row {
+padding: 0
+}
+.cognito .c-rating-scale .c-validation-row .c-validation {
+margin: 0
+}
+.cognito .c-signature .c-editor {
+min-height: 154px;
+position: relative
+}
+.cognito .c-signature img {
+max-width: 100%
+}
+.cognito .c-signature .c-signature-container {
+background-color: #fff;
+min-height: 154px
+}
+.cognito .c-signature .c-signature-glyph {
+z-index: 9999
+}
+.cognito .c-signature .c-signature-glyph:after {
+position: absolute;
+bottom: 35px;
+left: 14px;
+padding: 4px;
+vertical-align: text-bottom
+}
+.cognito .c-signature .c-jsignature {
+-ms-touch-action: none;
+touch-action: none
+}
+.cognito .c-signature-present img {
+background: #fff
+}
+.cognito .c-signature-present {
+min-height: 153px
+}
+.cognito .c-signature-present .c-signature-glyph {
+cursor: pointer
+}
+.cognito .c-signature .c-editor>div {
+padding: 0 8px;
+background-color: #fff
+}
+.cognito .c-readonly .c-signature-container img[src=""] {
+display: none
+}
+.cognito .c-readonly .c-signature .c-editor {
+min-height: 0
+}
+.cognito .c-readonly .c-signature .c-editor>div {
+border: 0;
+min-height: 0
+}
+.cognito.c-sml .c-rating-scale table {
+display: block
+}
+.cognito.c-sml .c-rating-scale thead {
+display: none
+}
+.cognito.c-sml .c-rating-scale tbody {
+background-color: transparent!important;
+display: block
+}
+.cognito.c-sml .c-rating-scale .c-offscreen {
+display: inline!important;
+position: static!important;
+text-indent: 0!important
+}
+.cognito.c-sml .c-rating-scale tr {
+display: block
+}
+.cognito.c-sml .c-rating-scale td {
+display: block;
+width: 100%!important;
+text-align: left!important;
+padding-left: 0;
+padding-right: 0;
+float: left
+}
+.cognito.c-sml .c-rating-scale th.c-choice-question {
+padding-top: 10px;
+padding-left: 0;
+padding-right: 0;
+float: left
+}
+.cognito.c-sml .c-rating-scale .c-choice-option {
+position: relative;
+padding-right: 5px!important
+}
+.cognito.c-sml .c-rating-scale .c-choice-option input {
+margin: .14em 0 0 0;
+position: absolute
+}
+.cognito.c-sml .c-rating-scale .c-choice-option span {
+display: inline-block;
+vertical-align: middle;
+padding-left: 18px;
+line-height: 100%;
+width: 100%
+}
+.cognito .c-offscreen {
+position: absolute!important;
+clip: rect(1px,1px,1px,1px)!important
+}
+.cognito .c-span-1,.cognito .c-span-2,.cognito .c-span-3 {
+margin-left: 0!important
+}
+.cognito .c-span-24 .c-span-24 {
+width: 100%
+}
+.cognito .c-span-24 .c-span-23 {
+width: 95.8333%
+}
+.cognito .c-span-24 .c-span-22 {
+width: 91.6667%
+}
+.cognito .c-span-24 .c-span-21 {
+width: 87.5%
+}
+.cognito .c-span-24 .c-span-20 {
+width: 83.3333%
+}
+.cognito .c-span-24 .c-span-19 {
+width: 79.1667%
+}
+.cognito .c-span-24 .c-span-18 {
+width: 75%
+}
+.cognito .c-span-24 .c-span-17 {
+width: 70.8333%
+}
+.cognito .c-span-24 .c-span-16 {
+width: 66.6667%
+}
+.cognito .c-span-24 .c-span-15 {
+width: 62.5%
+}
+.cognito .c-span-24 .c-span-14 {
+width: 58.3333%
+}
+.cognito .c-span-24 .c-span-13 {
+width: 54.1667%
+}
+.cognito .c-span-24 .c-span-12 {
+width: 50%
+}
+.cognito .c-span-24 .c-span-11 {
+width: 45.8333%
+}
+.cognito .c-span-24 .c-span-10 {
+width: 41.6667%
+}
+.cognito .c-span-24 .c-span-9 {
+width: 37.5%
+}
+.cognito .c-span-24 .c-span-8 {
+width: 33.3333%
+}
+.cognito .c-span-24 .c-span-7 {
+width: 29.1667%
+}
+.cognito .c-span-24 .c-span-6 {
+width: 25%
+}
+.cognito .c-span-24 .c-span-5 {
+width: 20.8333%
+}
+.cognito .c-span-24 .c-span-4 {
+width: 16.6667%
+}
+.cognito .c-span-24 .c-span-3 {
+width: 12.5%
+}
+.cognito .c-span-24 .c-span-2 {
+width: 8.3333%
+}
+.cognito .c-span-24 .c-span-1 {
+width: 4.1667%
+}
+.cognito .c-span-23 .c-span-23 {
+width: 100%
+}
+.cognito .c-span-23 .c-span-22 {
+width: 95.6521%
+}
+.cognito .c-span-23 .c-span-21 {
+width: 91.3043%
+}
+.cognito .c-span-23 .c-span-20 {
+width: 86.9565%
+}
+.cognito .c-span-23 .c-span-19 {
+width: 82.6087%
+}
+.cognito .c-span-23 .c-span-18 {
+width: 78.2609%
+}
+.cognito .c-span-23 .c-span-17 {
+width: 73.913%
+}
+.cognito .c-span-23 .c-span-16 {
+width: 69.5652%
+}
+.cognito .c-span-23 .c-span-15 {
+width: 65.2174%
+}
+.cognito .c-span-23 .c-span-14 {
+width: 60.8696%
+}
+.cognito .c-span-23 .c-span-13 {
+width: 56.5217%
+}
+.cognito .c-span-23 .c-span-12 {
+width: 52.1739%
+}
+.cognito .c-span-23 .c-span-11 {
+width: 47.8261%
+}
+.cognito .c-span-23 .c-span-10 {
+width: 43.4783%
+}
+.cognito .c-span-23 .c-span-9 {
+width: 39.1304%
+}
+.cognito .c-span-23 .c-span-8 {
+width: 34.7826%
+}
+.cognito .c-span-23 .c-span-7 {
+width: 30.4348%
+}
+.cognito .c-span-23 .c-span-6 {
+width: 26.087%
+}
+.cognito .c-span-23 .c-span-5 {
+width: 21.7391%
+}
+.cognito .c-span-23 .c-span-4 {
+width: 17.3913%
+}
+.cognito .c-span-23 .c-span-3 {
+width: 13.0435%
+}
+.cognito .c-span-23 .c-span-2 {
+width: 8.6957%
+}
+.cognito .c-span-23 .c-span-1 {
+width: 4.3478%
+}
+.cognito .c-span-22 .c-span-22 {
+width: 100%
+}
+.cognito .c-span-22 .c-span-21 {
+width: 95.4545%
+}
+.cognito .c-span-22 .c-span-20 {
+width: 90.909%
+}
+.cognito .c-span-22 .c-span-19 {
+width: 86.3636%
+}
+.cognito .c-span-22 .c-span-18 {
+width: 81.8182%
+}
+.cognito .c-span-22 .c-span-17 {
+width: 77.2727%
+}
+.cognito .c-span-22 .c-span-16 {
+width: 72.7273%
+}
+.cognito .c-span-22 .c-span-15 {
+width: 68.1818%
+}
+.cognito .c-span-22 .c-span-14 {
+width: 63.6364%
+}
+.cognito .c-span-22 .c-span-13 {
+width: 59.0909%
+}
+.cognito .c-span-22 .c-span-12 {
+width: 54.5455%
+}
+.cognito .c-span-22 .c-span-11 {
+width: 50%
+}
+.cognito .c-span-22 .c-span-10 {
+width: 45.4545%
+}
+.cognito .c-span-22 .c-span-9 {
+width: 40.9091%
+}
+.cognito .c-span-22 .c-span-8 {
+width: 36.3636%
+}
+.cognito .c-span-22 .c-span-7 {
+width: 31.8182%
+}
+.cognito .c-span-22 .c-span-6 {
+width: 27.2727%
+}
+.cognito .c-span-22 .c-span-5 {
+width: 22.7273%
+}
+.cognito .c-span-22 .c-span-4 {
+width: 18.1818%
+}
+.cognito .c-span-22 .c-span-3 {
+width: 13.6367%
+}
+.cognito .c-span-22 .c-span-2 {
+width: 9.0909%
+}
+.cognito .c-span-22 .c-span-1 {
+width: 4.5455%
+}
+.cognito .c-span-21 .c-span-21 {
+width: 100%
+}
+.cognito .c-span-21 .c-span-20 {
+width: 95.2381%
+}
+.cognito .c-span-21 .c-span-19 {
+width: 90.4762%
+}
+.cognito .c-span-21 .c-span-18 {
+width: 85.7143%
+}
+.cognito .c-span-21 .c-span-17 {
+width: 80.9524%
+}
+.cognito .c-span-21 .c-span-16 {
+width: 76.1905%
+}
+.cognito .c-span-21 .c-span-15 {
+width: 71.4286%
+}
+.cognito .c-span-21 .c-span-14 {
+width: 66.6667%
+}
+.cognito .c-span-21 .c-span-13 {
+width: 61.9048%
+}
+.cognito .c-span-21 .c-span-12 {
+width: 57.1429%
+}
+.cognito .c-span-21 .c-span-11 {
+width: 52.381%
+}
+.cognito .c-span-21 .c-span-10 {
+width: 47.619%
+}
+.cognito .c-span-21 .c-span-9 {
+width: 42.8571%
+}
+.cognito .c-span-21 .c-span-8 {
+width: 38.0952%
+}
+.cognito .c-span-21 .c-span-7 {
+width: 33.3333%
+}
+.cognito .c-span-21 .c-span-6 {
+width: 28.5714%
+}
+.cognito .c-span-21 .c-span-5 {
+width: 23.8095%
+}
+.cognito .c-span-21 .c-span-4 {
+width: 19.0476%
+}
+.cognito .c-span-21 .c-span-3 {
+width: 14.2857%
+}
+.cognito .c-span-21 .c-span-2 {
+width: 9.5238%
+}
+.cognito .c-span-21 .c-span-1 {
+width: 4.7619%
+}
+.cognito .c-span-20 .c-span-20 {
+width: 100%
+}
+.cognito .c-span-20 .c-span-19 {
+width: 95%
+}
+.cognito .c-span-20 .c-span-18 {
+width: 90%
+}
+.cognito .c-span-20 .c-span-17 {
+width: 85%
+}
+.cognito .c-span-20 .c-span-16 {
+width: 80%
+}
+.cognito .c-span-20 .c-span-15 {
+width: 75%
+}
+.cognito .c-span-20 .c-span-14 {
+width: 70%
+}
+.cognito .c-span-20 .c-span-13 {
+width: 65%
+}
+.cognito .c-span-20 .c-span-12 {
+width: 60%
+}
+.cognito .c-span-20 .c-span-11 {
+width: 55%
+}
+.cognito .c-span-20 .c-span-10 {
+width: 50%
+}
+.cognito .c-span-20 .c-span-9 {
+width: 45%
+}
+.cognito .c-span-20 .c-span-8 {
+width: 40%
+}
+.cognito .c-span-20 .c-span-7 {
+width: 35%
+}
+.cognito .c-span-20 .c-span-6 {
+width: 30%
+}
+.cognito .c-span-20 .c-span-5 {
+width: 25%
+}
+.cognito .c-span-20 .c-span-4 {
+width: 20%
+}
+.cognito .c-span-20 .c-span-3 {
+width: 15%
+}
+.cognito .c-span-20 .c-span-2 {
+width: 10%
+}
+.cognito .c-span-20 .c-span-1 {
+width: 5%
+}
+.cognito .c-span-19 .c-span-19 {
+width: 100%
+}
+.cognito .c-span-19 .c-span-18 {
+width: 94.7368%
+}
+.cognito .c-span-19 .c-span-17 {
+width: 89.4737%
+}
+.cognito .c-span-19 .c-span-16 {
+width: 84.2105%
+}
+.cognito .c-span-19 .c-span-15 {
+width: 78.9473%
+}
+.cognito .c-span-19 .c-span-14 {
+width: 73.6842%
+}
+.cognito .c-span-19 .c-span-13 {
+width: 68.4211%
+}
+.cognito .c-span-19 .c-span-12 {
+width: 63.1579%
+}
+.cognito .c-span-19 .c-span-11 {
+width: 57.8947%
+}
+.cognito .c-span-19 .c-span-10 {
+width: 52.6316%
+}
+.cognito .c-span-19 .c-span-9 {
+width: 47.3684%
+}
+.cognito .c-span-19 .c-span-8 {
+width: 42.1053%
+}
+.cognito .c-span-19 .c-span-7 {
+width: 36.8421%
+}
+.cognito .c-span-19 .c-span-6 {
+width: 31.5789%
+}
+.cognito .c-span-19 .c-span-5 {
+width: 26.3158%
+}
+.cognito .c-span-19 .c-span-4 {
+width: 21.0526%
+}
+.cognito .c-span-19 .c-span-3 {
+width: 15.7895%
+}
+.cognito .c-span-19 .c-span-2 {
+width: 10.5263%
+}
+.cognito .c-span-19 .c-span-1 {
+width: 5.2632%
+}
+.cognito .c-span-18 .c-span-18 {
+width: 100%
+}
+.cognito .c-span-18 .c-span-17 {
+width: 94.4444%
+}
+.cognito .c-span-18 .c-span-16 {
+width: 88.8889%
+}
+.cognito .c-span-18 .c-span-15 {
+width: 83.3334%
+}
+.cognito .c-span-18 .c-span-14 {
+width: 77.7778%
+}
+.cognito .c-span-18 .c-span-13 {
+width: 72.2222%
+}
+.cognito .c-span-18 .c-span-12 {
+width: 66.6667%
+}
+.cognito .c-span-18 .c-span-11 {
+width: 61.1111%
+}
+.cognito .c-span-18 .c-span-10 {
+width: 55.5556%
+}
+.cognito .c-span-18 .c-span-9 {
+width: 50%
+}
+.cognito .c-span-18 .c-span-8 {
+width: 44.4444%
+}
+.cognito .c-span-18 .c-span-7 {
+width: 38.8889%
+}
+.cognito .c-span-18 .c-span-6 {
+width: 33.3333%
+}
+.cognito .c-span-18 .c-span-5 {
+width: 27.7778%
+}
+.cognito .c-span-18 .c-span-4 {
+width: 22.2222%
+}
+.cognito .c-span-18 .c-span-3 {
+width: 16.6667%
+}
+.cognito .c-span-18 .c-span-2 {
+width: 11.1111%
+}
+.cognito .c-span-18 .c-span-1 {
+width: 5.5556%
+}
+.cognito .c-span-17 .c-span-17 {
+width: 100%
+}
+.cognito .c-span-17 .c-span-16 {
+width: 94.1176%
+}
+.cognito .c-span-17 .c-span-15 {
+width: 88.2353%
+}
+.cognito .c-span-17 .c-span-14 {
+width: 82.3529%
+}
+.cognito .c-span-17 .c-span-13 {
+width: 76.4706%
+}
+.cognito .c-span-17 .c-span-12 {
+width: 70.5882%
+}
+.cognito .c-span-17 .c-span-11 {
+width: 64.7059%
+}
+.cognito .c-span-17 .c-span-10 {
+width: 58.8235%
+}
+.cognito .c-span-17 .c-span-9 {
+width: 52.9412%
+}
+.cognito .c-span-17 .c-span-8 {
+width: 47.05882%
+}
+.cognito .c-span-17 .c-span-7 {
+width: 41.1765%
+}
+.cognito .c-span-17 .c-span-6 {
+width: 35.2941%
+}
+.cognito .c-span-17 .c-span-5 {
+width: 29.4118%
+}
+.cognito .c-span-17 .c-span-4 {
+width: 23.5294%
+}
+.cognito .c-span-17 .c-span-3 {
+width: 17.6471%
+}
+.cognito .c-span-17 .c-span-2 {
+width: 11.7647%
+}
+.cognito .c-span-17 .c-span-1 {
+width: 5.8824%
+}
+.cognito .c-span-16 .c-span-16 {
+width: 100%
+}
+.cognito .c-span-16 .c-span-15 {
+width: 93.75%
+}
+.cognito .c-span-16 .c-span-14 {
+width: 87.5%
+}
+.cognito .c-span-16 .c-span-13 {
+width: 81.25%
+}
+.cognito .c-span-16 .c-span-12 {
+width: 75%
+}
+.cognito .c-span-16 .c-span-11 {
+width: 68.75%
+}
+.cognito .c-span-16 .c-span-10 {
+width: 62.5%
+}
+.cognito .c-span-16 .c-span-9 {
+width: 56.25%
+}
+.cognito .c-span-16 .c-span-8 {
+width: 50%
+}
+.cognito .c-span-16 .c-span-7 {
+width: 43.75%
+}
+.cognito .c-span-16 .c-span-6 {
+width: 37.5%
+}
+.cognito .c-span-16 .c-span-5 {
+width: 31.25%
+}
+.cognito .c-span-16 .c-span-4 {
+width: 25%
+}
+.cognito .c-span-16 .c-span-3 {
+width: 18.75%
+}
+.cognito .c-span-16 .c-span-2 {
+width: 12.5%
+}
+.cognito .c-span-16 .c-span-1 {
+width: 6.25%
+}
+.cognito .c-span-15 .c-span-15 {
+width: 100%
+}
+.cognito .c-span-15 .c-span-14 {
+width: 93.3333%
+}
+.cognito .c-span-15 .c-span-13 {
+width: 86.6667%
+}
+.cognito .c-span-15 .c-span-12 {
+width: 80%
+}
+.cognito .c-span-15 .c-span-11 {
+width: 73.3333%
+}
+.cognito .c-span-15 .c-span-10 {
+width: 66.6667%
+}
+.cognito .c-span-15 .c-span-9 {
+width: 60%
+}
+.cognito .c-span-15 .c-span-8 {
+width: 53.3333%
+}
+.cognito .c-span-15 .c-span-7 {
+width: 46.6667%
+}
+.cognito .c-span-15 .c-span-6 {
+width: 40%
+}
+.cognito .c-span-15 .c-span-5 {
+width: 33.3333%
+}
+.cognito .c-span-15 .c-span-4 {
+width: 26.6667%
+}
+.cognito .c-span-15 .c-span-3 {
+width: 20%
+}
+.cognito .c-span-15 .c-span-2 {
+width: 13.3333%
+}
+.cognito .c-span-15 .c-span-1 {
+width: 6.6667%
+}
+.cognito .c-span-14 .c-span-14 {
+width: 100%
+}
+.cognito .c-span-14 .c-span-13 {
+width: 92.8571%
+}
+.cognito .c-span-14 .c-span-12 {
+width: 85.7143%
+}
+.cognito .c-span-14 .c-span-11 {
+width: 78.5714%
+}
+.cognito .c-span-14 .c-span-10 {
+width: 71.4286%
+}
+.cognito .c-span-14 .c-span-9 {
+width: 64.2857%
+}
+.cognito .c-span-14 .c-span-8 {
+width: 57.1429%
+}
+.cognito .c-span-14 .c-span-7 {
+width: 50%
+}
+.cognito .c-span-14 .c-span-6 {
+width: 42.8571%
+}
+.cognito .c-span-14 .c-span-5 {
+width: 35.7143%
+}
+.cognito .c-span-14 .c-span-4 {
+width: 28.5714%
+}
+.cognito .c-span-14 .c-span-3 {
+width: 21.4286%
+}
+.cognito .c-span-14 .c-span-2 {
+width: 14.2857%
+}
+.cognito .c-span-14 .c-span-1 {
+width: 7.1429%
+}
+.cognito .c-span-13 .c-span-13 {
+width: 100%
+}
+.cognito .c-span-13 .c-span-12 {
+width: 92.3077%
+}
+.cognito .c-span-13 .c-span-11 {
+width: 84.6154%
+}
+.cognito .c-span-13 .c-span-10 {
+width: 76.9231%
+}
+.cognito .c-span-13 .c-span-9 {
+width: 69.2308%
+}
+.cognito .c-span-13 .c-span-8 {
+width: 61.5385%
+}
+.cognito .c-span-13 .c-span-7 {
+width: 53.8462%
+}
+.cognito .c-span-13 .c-span-6 {
+width: 46.1538%
+}
+.cognito .c-span-13 .c-span-5 {
+width: 38.4615%
+}
+.cognito .c-span-13 .c-span-4 {
+width: 30.7692%
+}
+.cognito .c-span-13 .c-span-3 {
+width: 23.0769%
+}
+.cognito .c-span-13 .c-span-2 {
+width: 15.3846%
+}
+.cognito .c-span-13 .c-span-1 {
+width: 7.6923%
+}
+.cognito .c-span-12 .c-span-12 {
+width: 100%
+}
+.cognito .c-span-12 .c-span-11 {
+width: 91.6667%
+}
+.cognito .c-span-12 .c-span-10 {
+width: 83.3333%
+}
+.cognito .c-span-12 .c-span-9 {
+width: 75%
+}
+.cognito .c-span-12 .c-span-8 {
+width: 66.6667%
+}
+.cognito .c-span-12 .c-span-7 {
+width: 58.3333%
+}
+.cognito .c-span-12 .c-span-6 {
+width: 50%
+}
+.cognito .c-span-12 .c-span-5 {
+width: 41.6667%
+}
+.cognito .c-span-12 .c-span-4 {
+width: 33.3333%
+}
+.cognito .c-span-12 .c-span-3 {
+width: 25%
+}
+.cognito .c-span-12 .c-span-2 {
+width: 16.6667%
+}
+.cognito .c-span-12 .c-span-1 {
+width: 8.3333%
+}
+.cognito .c-span-11 .c-span-11 {
+width: 100%
+}
+.cognito .c-span-11 .c-span-10 {
+width: 90.9091%
+}
+.cognito .c-span-11 .c-span-9 {
+width: 81.8181%
+}
+.cognito .c-span-11 .c-span-8 {
+width: 72.7272%
+}
+.cognito .c-span-11 .c-span-7 {
+width: 63.6364%
+}
+.cognito .c-span-11 .c-span-6 {
+width: 54.5455%
+}
+.cognito .c-span-11 .c-span-5 {
+width: 45.4545%
+}
+.cognito .c-span-11 .c-span-4 {
+width: 36.3636%
+}
+.cognito .c-span-11 .c-span-3 {
+width: 27.2727%
+}
+.cognito .c-span-11 .c-span-2 {
+width: 18.1818%
+}
+.cognito .c-span-11 .c-span-1 {
+width: 9.0909%
+}
+.cognito .c-span-10 .c-span-10 {
+width: 100%
+}
+.cognito .c-span-10 .c-span-9 {
+width: 90%
+}
+.cognito .c-span-10 .c-span-8 {
+width: 80%
+}
+.cognito .c-span-10 .c-span-7 {
+width: 70%
+}
+.cognito .c-span-10 .c-span-6 {
+width: 60%
+}
+.cognito .c-span-10 .c-span-5 {
+width: 50%
+}
+.cognito .c-span-10 .c-span-4 {
+width: 40%
+}
+.cognito .c-span-10 .c-span-3 {
+width: 30%
+}
+.cognito .c-span-10 .c-span-2 {
+width: 20%
+}
+.cognito .c-span-10 .c-span-1 {
+width: 10%
+}
+.cognito .c-span-9 .c-span-9 {
+width: 100%
+}
+.cognito .c-span-9 .c-span-8 {
+width: 88.8889%
+}
+.cognito .c-span-9 .c-span-7 {
+width: 77.7778%
+}
+.cognito .c-span-9 .c-span-6 {
+width: 66.6667%
+}
+.cognito .c-span-9 .c-span-5 {
+width: 55.5556%
+}
+.cognito .c-span-9 .c-span-4 {
+width: 44.4444%
+}
+.cognito .c-span-9 .c-span-3 {
+width: 33.3333%
+}
+.cognito .c-span-9 .c-span-2 {
+width: 22.2222%
+}
+.cognito .c-span-9 .c-span-1 {
+width: 11.1111%
+}
+.cognito .c-span-8 .c-span-8 {
+width: 100%
+}
+.cognito .c-span-8 .c-span-7 {
+width: 87.5%
+}
+.cognito .c-span-8 .c-span-6 {
+width: 75%
+}
+.cognito .c-span-8 .c-span-5 {
+width: 62.5%
+}
+.cognito .c-span-8 .c-span-4 {
+width: 50%
+}
+.cognito .c-span-8 .c-span-3 {
+width: 37.5%
+}
+.cognito .c-span-8 .c-span-2 {
+width: 25%
+}
+.cognito .c-span-8 .c-span-1 {
+width: 12.5%
+}
+.cognito .c-span-7 .c-span-7 {
+width: 100%
+}
+.cognito .c-span-7 .c-span-6 {
+width: 85.7143%
+}
+.cognito .c-span-7 .c-span-5 {
+width: 71.4286%
+}
+.cognito .c-span-7 .c-span-4 {
+width: 57.1429%
+}
+.cognito .c-span-7 .c-span-3 {
+width: 42.8571%
+}
+.cognito .c-span-7 .c-span-2 {
+width: 28.5714%
+}
+.cognito .c-span-7 .c-span-1 {
+width: 14.2857%
+}
+.cognito .c-span-6 .c-span-6 {
+width: 100%
+}
+.cognito .c-span-6 .c-span-5 {
+width: 83.3333%
+}
+.cognito .c-span-6 .c-span-4 {
+width: 66.6667%
+}
+.cognito .c-span-6 .c-span-3 {
+width: 50%
+}
+.cognito .c-span-6 .c-span-2 {
+width: 33.3333%
+}
+.cognito .c-span-6 .c-span-1 {
+width: 16.6667%
+}
+.cognito .c-span-5 .c-span-5 {
+width: 100%
+}
+.cognito .c-span-5 .c-span-4 {
+width: 80%
+}
+.cognito .c-span-5 .c-span-3 {
+width: 60%
+}
+.cognito .c-span-5 .c-span-2 {
+width: 40%
+}
+.cognito .c-span-5 .c-span-1 {
+width: 20%
+}
+.cognito .c-span-4 .c-span-4 {
+width: 100%
+}
+.cognito .c-span-4 .c-span-3 {
+width: 75%
+}
+.cognito .c-span-4 .c-span-2 {
+width: 50%
+}
+.cognito .c-span-4 .c-span-1 {
+width: 25%
+}
+.cognito .c-span-3 .c-span-3 {
+width: 100%
+}
+.cognito .c-span-3 .c-span-2 {
+width: 66.6667%
+}
+.cognito .c-span-3 .c-span-1 {
+width: 33.3333%
+}
+.cognito .c-span-2 .c-span-2 {
+width: 100%
+}
+.cognito .c-span-2 .c-span-1 {
+width: 50%
+}
+.cognito .c-span-1 .c-span-1 {
+width: 100%
+}
+.cognito.c-lrg .c-lrg-75 {
+width: 75%;
+float: left
+}
+.cognito.c-lrg .c-lrg-25 {
+width: 25%;
+float: left
+}
+.cognito.c-lrg .c-lrg-67 {
+width: 67%;
+float: left
+}
+.cognito.c-lrg .c-lrg-33 {
+width: 33%;
+float: left
+}
+.cognito.c-lrg .c-lrg-30 {
+width: 30%;
+float: left
+}
+.cognito.c-lrg .c-lrg-70 {
+width: 70%;
+float: left
+}
+.cognito.c-lrg .c-lrg-50 {
+width: 50%;
+float: left
+}
+.cognito.c-lrg .c-lrg-100 {
+width: 100%!important;
+float: none
+}
+.cognito.c-med .c-span-3 .c-span-1 {
+width: 50%
+}
+.cognito.c-med .c-span-3 .c-span-2 {
+width: 50%
+}
+.cognito.c-med .c-span-3 .c-span-1+.c-col-3 {
+clear: left
+}
+.cognito.c-med .c-span-2 .c-span-1 {
+width: 50%
+}
+.cognito.c-med .c-span-3 .c-span-2 .c-span-1 {
+width: 100%
+}
+.cognito.c-med .c-med-33 {
+width: 33%;
+float: left
+}
+.cognito.c-med .c-med-67 {
+width: 67%;
+float: left
+}
+.cognito.c-med .c-med-30 {
+width: 30%;
+float: left
+}
+.cognito.c-med .c-med-70 {
+width: 70%;
+float: left
+}
+.cognito.c-med .c-med-50 {
+width: 50%;
+float: left
+}
+.cognito.c-med .c-content-section .c-button-right {
+float: none
+}
+.cognito.c-med .c-editor.c-columns-4 .c-choice-fillin {
+width: 50%!important
+}
+.cognito.c-med .c-editor.c-columns-3 .c-choice-fillin {
+width: 66%!important
+}
+.cognito.c-med .c-editor.c-columns-2 .c-choice-fillin {
+width: 100%!important
+}
+.cognito.c-med .c-editor-date,.cognito.c-med .c-editor-time {
+width: 50%
+}
+.cognito.c-sml .c-button-section button {
+width: 100%;
+margin: 0 auto 10px auto
+}
+.cognito.c-sml .c-action {
+margin: 0 8px;
+float: none!important
+}
+.cognito.c-sml .c-drill i {
+position: static
+}
+.cognito.c-sml .c-title h2 {
+padding-right: 20px
+}
+.cognito.c-sml i.c-field-required {
+font-size: 100%
+}
+.cognito.c-sml .c-dropdown i {
+font-size: 100%
+}
+.cognito.c-sml .c-editor .c-choice-option {
+width: 100%!important
+}
+.cognito.c-sml .c-editor .c-choice-option label {
+width: 100%!important
+}
+.cognito.c-sml .c-editor-time-icon,.cognito.c-sml .c-editor-date-icon {
+padding-top: 0;
+padding-bottom: 0
+}
+.cognito.c-sml .c-content-section {
+padding-left: 0!important
+}
+.cognito.c-sml .c-name .c-editor,.cognito.c-sml .c-address .c-editor {
+padding-bottom: 10px!important
+}
+.cognito.c-sml .c-name .c-editor:last-of-type,.cognito.c-sml .c-address .c-editor:last-of-type {
+padding-bottom: 0!important
+}
+.cognito.c-sml .c-button-section .c-button-section {
+display: block;
+text-align: center
+}
+.cognito.c-sml .c-signature .c-signature-glyph:after {
+top: 60%
+}
+.cognito.c-sml .c-sml-col-1 {
+clear: left
+}
+.cognito.c-sml .c-span-12 .c-sml-span-12 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-12 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-11 {
+width: 91.66666666666666%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-10 {
+width: 83.33333333333334%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-9 {
+width: 75%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-8 {
+width: 66.66666666666666%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-7 {
+width: 58.333333333333336%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-6 {
+width: 50%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-5 {
+width: 41.66666666666667%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-4 {
+width: 33.33333333333333%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-3 {
+width: 25%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-2 {
+width: 16.666666666666664%
+}
+.cognito.c-sml .c-sml-span-12 .c-sml-span-1 {
+width: 8.333333333333332%
+}
+.cognito.c-sml .c-sml-span-11 .c-sml-span-11 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-11 .c-sml-span-10 {
+width: 90.9090909090909%
+}
+.cognito.c-sml .c-sml-span-11 .c-sml-span-9 {
+width: 81.81818181818183%
+}
+.cognito.c-sml .c-sml-span-11 .c-sml-span-8 {
+width: 72.72727272727273%
+}
+.cognito.c-sml .c-sml-span-11 .c-sml-span-7 {
+width: 63.63636363636363%
+}
+.cognito.c-sml .c-sml-span-11 .c-sml-span-6 {
+width: 54.54545454545454%
+}
+.cognito.c-sml .c-sml-span-11 .c-sml-span-5 {
+width: 45.45454545454545%
+}
+.cognito.c-sml .c-sml-span-11 .c-sml-span-4 {
+width: 36.36363636363637%
+}
+.cognito.c-sml .c-sml-span-11 .c-sml-span-3 {
+width: 27.27272727272727%
+}
+.cognito.c-sml .c-sml-span-11 .c-sml-span-2 {
+width: 18.181818181818183%
+}
+.cognito.c-sml .c-sml-span-11 .c-sml-span-1 {
+width: 9.090909090909092%
+}
+.cognito.c-sml .c-sml-span-10 .c-sml-span-10 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-10 .c-sml-span-9 {
+width: 90%
+}
+.cognito.c-sml .c-sml-span-10 .c-sml-span-8 {
+width: 80%
+}
+.cognito.c-sml .c-sml-span-10 .c-sml-span-7 {
+width: 70%
+}
+.cognito.c-sml .c-sml-span-10 .c-sml-span-6 {
+width: 60%
+}
+.cognito.c-sml .c-sml-span-10 .c-sml-span-5 {
+width: 50%
+}
+.cognito.c-sml .c-sml-span-10 .c-sml-span-4 {
+width: 40%
+}
+.cognito.c-sml .c-sml-span-10 .c-sml-span-3 {
+width: 30%
+}
+.cognito.c-sml .c-sml-span-10 .c-sml-span-2 {
+width: 20%
+}
+.cognito.c-sml .c-sml-span-10 .c-sml-span-1 {
+width: 10%
+}
+.cognito.c-sml .c-sml-span-9 .c-sml-span-9 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-9 .c-sml-span-8 {
+width: 88.88888888888889%
+}
+.cognito.c-sml .c-sml-span-9 .c-sml-span-7 {
+width: 77.77777777777779%
+}
+.cognito.c-sml .c-sml-span-9 .c-sml-span-6 {
+width: 66.66666666666666%
+}
+.cognito.c-sml .c-sml-span-9 .c-sml-span-5 {
+width: 55.55555555555556%
+}
+.cognito.c-sml .c-sml-span-9 .c-sml-span-4 {
+width: 44.44444444444444%
+}
+.cognito.c-sml .c-sml-span-9 .c-sml-span-3 {
+width: 33.33333333333333%
+}
+.cognito.c-sml .c-sml-span-9 .c-sml-span-2 {
+width: 22.22222222222222%
+}
+.cognito.c-sml .c-sml-span-9 .c-sml-span-1 {
+width: 11.11111111111111%
+}
+.cognito.c-sml .c-sml-span-8 .c-sml-span-8 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-8 .c-sml-span-7 {
+width: 87.5%
+}
+.cognito.c-sml .c-sml-span-8 .c-sml-span-6 {
+width: 75%
+}
+.cognito.c-sml .c-sml-span-8 .c-sml-span-5 {
+width: 62.5%
+}
+.cognito.c-sml .c-sml-span-8 .c-sml-span-4 {
+width: 50%
+}
+.cognito.c-sml .c-sml-span-8 .c-sml-span-3 {
+width: 37.5%
+}
+.cognito.c-sml .c-sml-span-8 .c-sml-span-2 {
+width: 25%
+}
+.cognito.c-sml .c-sml-span-8 .c-sml-span-1 {
+width: 12.5%
+}
+.cognito.c-sml .c-sml-span-7 .c-sml-span-7 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-7 .c-sml-span-6 {
+width: 85.71428571428571%
+}
+.cognito.c-sml .c-sml-span-7 .c-sml-span-5 {
+width: 71.42857142857143%
+}
+.cognito.c-sml .c-sml-span-7 .c-sml-span-4 {
+width: 57.14285714285714%
+}
+.cognito.c-sml .c-sml-span-7 .c-sml-span-3 {
+width: 42.857142857142854%
+}
+.cognito.c-sml .c-sml-span-7 .c-sml-span-2 {
+width: 28.57142857142857%
+}
+.cognito.c-sml .c-sml-span-7 .c-sml-span-1 {
+width: 14.285714285714285%
+}
+.cognito.c-sml .c-sml-span-6 .c-sml-span-6 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-6 .c-sml-span-5 {
+width: 83.33333333333334%
+}
+.cognito.c-sml .c-sml-span-6 .c-sml-span-4 {
+width: 66.66666666666666%
+}
+.cognito.c-sml .c-sml-span-6 .c-sml-span-3 {
+width: 50%
+}
+.cognito.c-sml .c-sml-span-6 .c-sml-span-2 {
+width: 33.33333333333333%
+}
+.cognito.c-sml .c-sml-span-6 .c-sml-span-1 {
+width: 16.666666666666664%
+}
+.cognito.c-sml .c-sml-span-5 .c-sml-span-5 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-5 .c-sml-span-4 {
+width: 80%
+}
+.cognito.c-sml .c-sml-span-5 .c-sml-span-3 {
+width: 60%
+}
+.cognito.c-sml .c-sml-span-5 .c-sml-span-2 {
+width: 40%
+}
+.cognito.c-sml .c-sml-span-5 .c-sml-span-1 {
+width: 20%
+}
+.cognito.c-sml .c-sml-span-4 .c-sml-span-4 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-4 .c-sml-span-3 {
+width: 75%
+}
+.cognito.c-sml .c-sml-span-4 .c-sml-span-2 {
+width: 50%
+}
+.cognito.c-sml .c-sml-span-4 .c-sml-span-1 {
+width: 25%
+}
+.cognito.c-sml .c-sml-span-3 .c-sml-span-3 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-3 .c-sml-span-2 {
+width: 66.66666666666666%
+}
+.cognito.c-sml .c-sml-span-3 .c-sml-span-1 {
+width: 33.33333333333333%
+}
+.cognito.c-sml .c-sml-span-2 .c-sml-span-2 {
+width: 100%
+}
+.cognito.c-sml .c-sml-span-2 .c-sml-span-1 {
+width: 50%
+}
+.cognito.c-sml .c-sml-span-1 .c-sml-span-1 {
+width: 100%
+}
+.cognito .c-editor-date,.cognito .c-editor-time {
+max-width: calc(100% - 2em);
+display: inline-block;
+vertical-align: middle;
+padding: 0!important;
+margin: 0!important
+}
+.cognito .c-editor-date+div,.cognito .c-editor-time+div {
+display: inline-block;
+vertical-align: middle;
+padding: 6px!important;
+cursor: pointer
+}
+.c-editor-time-icon,.c-editor-date-icon {
+width: auto!important;
+margin: 0
+}
+.cognito .c-editor-time-icon .icon-time:before,.cognito .c-editor-date-icon .icon-calendar:before {
+font-family: FontAwesome!important
+}
+.cognito .c-html * {
+white-space: normal!important
+}
+.cognito .c-html h1,.cognito .c-html h2,.cognito .c-html h3,.cognito .c-html h4,.cognito .c-html h5,.cognito .c-html h6 {
+margin: 0;
+padding: 0;
+border: 0
+}
+.cognito .c-editor.c-html img {
+max-width: 100%;
+height: auto
+}
+.cognito .c-loading {
+position: relative;
+clear: both;
+text-align: center
+}
+.cognito .c-loading-spinner {
+display: none!important
+}
+.cognito .c-loading .c-loading-spinner {
+display: block!important;
+position: absolute;
+top: 23%;
+z-index: 1;
+font-size: 1em;
+color: rgba(150,150,150,.3);
+width: 100%
+}
+.cognito .c-lookup-radiobuttons .c-loading,.cognito .c-lookup-checkboxes .c-loading {
+min-height: 28px;
+background: rgba(150,150,150,.15);
+margin: 0 8px
+}
+.c-loading-spinner:before {
+display: inline-block;
+-moz-animation: spin 2s infinite linear;
+-o-animation: spin 2s infinite linear;
+-webkit-animation: spin 2s infinite linear;
+animation: spin 2s infinite linear
+}
+@-moz-document url-prefix() {
+.icon-spin {
+height: .9em;
+}
+.btn .icon-spin {
+height: auto;
+}
+.icon-spin.icon-large {
+height: 1.25em;
+}
+.btn .icon-spin.icon-large {
+height: .75em;
+}
+}
+.cognito .adobe-pdf-file-icon-32x32 {
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADmklEQVRYhc2VSWgTURjHgycFPVsEtQdRXE96UFDxZHtRXFDRClrxICoIIl7EhWo9eFDEi+jFBRFxqRUFccEusY11abSKjSa2WZqmbZaZzGRt+/d9r5nxzSSpk9iCD34Mb/Le/P7vmy+Jzfafj6l+vx+Ez+fT0e4FAgH09fUhGAyiv7+fEwqFMDAwgMHBQY7T6VzPnjOl3AAVotzr9eoBSG4OQHIxwNDQELq7u4lzRQ3RShsmAwpEAXp6enhQj8dzpmCAMFssr5g5odAzqVIUgK7xeJxXjVXwdF6A0FwbzGRZWZOtLYgcOzI2D/Yh9dmJcG0Nnw+zMqe+OKE8fpS3V4NOHg6HeYBUKgVJkngl2H1jJYJssZm0x43Q5mok3znG5r88CK5cAvX1yz/zAvtEtABut1vvIbrncrnoeldvTP8cG8xkWRMpTW8QOrCfz0lI19TPH2Ofs9ImqSKXL+bt1SBZJBJBNBpFLBbjUBVkWeYw9XQeoJctNpNiFTDMWQDfupVQP37Q54X2GejtLSqnnmDqWTyAe7YNZhLfvhrmadYDSucneGu28Xmy+3veHjP0lS0mVxSFAlTyAC62eDKgd15MbgjwnS2eDOhrV0iuqipHD8DGbMb8Iqxrbm5GU1OTTktLC6e1tRV2ux1tbW1ob2/nOBwOdHR0oKuri/8iamKzPJFIGAJMY8wowmJqJjP0fjUK/UeQnBpQLLkoTyaThgDjjUp6kBmtuQj51VPED22HfP2SodyFTq3JSwogysSu1ohfqYfs+gZ5d7VBXExOv4qE5QCiTGwq/bQNdxB/cBvyvi3jijV5Op3mWA6QJ8ydUj9tMABp7ULEr14cVyzKM5mM9QAGWe6EIiSU1iyC2vnBkpjIZrPWA5hlIiRTO99D2rAa8uljlsTE8PCw9QBmoQjJ5JNHody8BrXxPpR7t/8qJkZGRqwHMJfVQMCHyPJ5SLx3QLlxDbH9NYju2Aj5Qj2ks6cgn6/LExOjo6PWA5jLqqG+eIZo9WrE9m6D+vwpMqrCT6s2PoR04jiUO7cwsHSBQU5igoblAGJJiZTfC+lgLeIX6hBetQxpWTKUmZ+YQr+1I+PtNYg1eUkBtPeoEavdyUNENlUhaW/Oe7/mUotScVgOIJ6MiB09jOiurUg8aRhXWkxccgBRUkhYirSsAKKokLAUaVkBzLJyhWUHmBDbPwSoYFQx9kwwVbln/3VMzS2snGAqcs+2/QZXZB6MU7ZPlQAAAABJRU5ErkJggg==);
+background-repeat: no-repeat;
+height: 32px;
+width: 32px;
+padding-right: 4px
+}
+.cognito .ms-word-file-icon-32x32 {
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0M0RTI0QzE4NDhGMTFFNUI5RUJCMjhEMDkyQkE1QzMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0M0RTI0QzA4NDhGMTFFNUI5RUJCMjhEMDkyQkE1QzMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NjM3NkVBNDg4MzNBMTFFNTkzMkZCQjYxQTAzMTg2QTAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NjM3NkVBNDk4MzNBMTFFNTkzMkZCQjYxQTAzMTg2QTAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7A8nG/AAAChElEQVR42mL8//8/AzawYtky7BJEgt+//jbGJsQ2EFQIcgA2vHzp0v/kgjWrVv9fDcSL5i9qwGU+DDMx0AD8+vWLwc/fj4GTm7N+8YLFeEOBJg4AATY2NqIcwUKMYTNnziTJ8ovnLzBERkfBHbFp4yaQIxiwpglapIFlS1D1/vz5E2eawBoFjIyMNI0OoPlMNI+Cw4cPo4jZ2tqCHcLCylQP5PYA8ReiHZCenk610ABGLYjiI8oBNx68Zfj87SfD9fsg+hfD6WvPwOKnrz0H01dXppEdKxhRUDRhz8U7T94z3Hn0gcE1e5le88bPDAwb11ItenCFItwBO4/f04MkQAaGp68/E+0VSqOHZgURsYCFUgMojQJ4gaAVNvN/YOkacMGx+9T9/yB+2/yjYP6UVWfA/FNXn4H5IDYIk1dILQHVsgpYC6KbD4Gp/esvBk0FYTDfVFsKTJtBaSlRHnDOoGkU3AA6wlRLEsyGOwTI5+FiY5AW5WVYdOoKbXIBDACDGWyhv70a2EKQjzWADgkA8iEOfEPbXHAKWtjEeemC6UXbLoPpQAd1SCF09RmNowAaxyBfg9LDxoO3GNqyHMB8UPnw7M0X2kbBF2CRCwv2k0hFLyharmNJgJRGAdZyYO/pB+Cyfx+QBoE9p+6DaRif5gXRtDVnwRgGlmy/AsY0rQvIBcOnLvj/n/HS+8/fGIT4OPXoWRfAHXBtVao+UptQoX3CwvvOri7wxsjT158Ynr3+wvDp609gkf2OtrkABORFmIFZTwqMaQkGd3sA2EGluQMYsfWOgWlAAkiBKgNJKofSPyAGtWgvA+19gc8BHECKH4hBNDV7KSDLfgDxR6C9IJoBIMAA9JQ/pJvyi9wAAAAASUVORK5CYII=);
+background-repeat: no-repeat;
+height: 32px;
+width: 32px;
+padding-right: 4px
+}
+.cognito .c-forms-document-link {
+margin-right: 10px
+}
+.cognito .c-forms-document-link span {
+display: inline-block;
+vertical-align: middle
+}
+.cognito .has-switch input[type="checkbox"]+*:before,.cognito .has-switch input[type="checkbox"]+*:after {
+display: none!important
+}
+.c-table-section .c-hidden-column {
+width: 0%!important;
+height: 0!important;
+visibility: hidden;
+transition: width .5s,visibility 0s linear .5s;
+border: none!important;
+padding: 0!important
+}
+.c-table-section .c-hidden-column .c-field {
+height: 0!important;
+transition: height 0s linear .5s
+}
+.c-table-section .c-hidden-column .c-editor>span {
+display: none
+}
+.c-table-section .c-hidden-column .c-label {
+display: inline-block
+}
+.c-table-section .c-table-footer .c-hidden-column {
+height: 100%!important;
+padding: 5px 0!important
+}
+.c-table-section input[type=text],.c-table-section input[type=password],.c-table-section textarea,.c-table-section select {
+transition: height linear 0s!important
+}
+.cognito .c-table-section:not(.c-responsive),.cognito:not(.c-sml)>form .c-table-section.c-responsive,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive {
+display: table;
+table-layout: fixed;
+border-collapse: separate;
+overflow: visible;
+margin: 4px 8px 0 7px
+}
+.cognito .c-table-section:not(.c-responsive)~.c-repeating-section-add,.cognito:not(.c-sml)>form .c-table-section.c-responsive~.c-repeating-section-add,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive~.c-repeating-section-add,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive~.c-repeating-section-add {
+padding-left: calc(2em + 7px)
+}
+.cognito .c-table-section:not(.c-responsive)~.c-repeating-section-add .c-add-item,.cognito:not(.c-sml)>form .c-table-section.c-responsive~.c-repeating-section-add .c-add-item,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive~.c-repeating-section-add .c-add-item,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive~.c-repeating-section-add .c-add-item {
+margin-left: 0
+}
+.cognito .c-table-section:not(.c-responsive) .c-helptext,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-helptext,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-helptext,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-helptext {
+display: none
+}
+.cognito .c-table-section:not(.c-responsive) .c-field,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-field,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-field,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-field {
+height: 100%
+}
+.cognito .c-table-section:not(.c-responsive)>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive>*,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive>*,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive>* {
+display: table-row-group
+}
+.cognito .c-table-section:not(.c-responsive)>*.c-table-body>*>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive>*.c-table-body>*>*,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive>*.c-table-body>*>*,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive>*.c-table-body>*>* {
+height: calc(1em + 18px)
+}
+.cognito .c-table-section:not(.c-responsive)>*>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive>*>*,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive>*>*,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive>*>* {
+display: table-row
+}
+.cognito .c-table-section:not(.c-responsive)>*>*>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive>*>*>*,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive>*>*>*,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive>*>*>* {
+display: table-cell;
+vertical-align: top
+}
+.cognito .c-table-section:not(.c-responsive)>*>*>*.c-text-multiplelines,.cognito .c-table-section:not(.c-responsive)>*>*>*[class*=c-calculation-],.cognito:not(.c-sml)>form .c-table-section.c-responsive>*>*>*.c-text-multiplelines,.cognito:not(.c-sml)>form .c-table-section.c-responsive>*>*>*[class*=c-calculation-],.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive>*>*>*.c-text-multiplelines,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive>*>*>*[class*=c-calculation-],.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive>*>*>*.c-text-multiplelines,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive>*>*>*[class*=c-calculation-] {
+height: auto
+}
+.cognito .c-table-section:not(.c-responsive)>*>*>*.c-text-multiplelines .c-editor,.cognito .c-table-section:not(.c-responsive)>*>*>*[class*=c-calculation-] .c-editor,.cognito:not(.c-sml)>form .c-table-section.c-responsive>*>*>*.c-text-multiplelines .c-editor,.cognito:not(.c-sml)>form .c-table-section.c-responsive>*>*>*[class*=c-calculation-] .c-editor,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive>*>*>*.c-text-multiplelines .c-editor,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive>*>*>*[class*=c-calculation-] .c-editor,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive>*>*>*.c-text-multiplelines .c-editor,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive>*>*>*[class*=c-calculation-] .c-editor {
+position: static!important
+}
+.cognito .c-table-section:not(.c-responsive)>*>*>*:first-child,.cognito:not(.c-sml)>form .c-table-section.c-responsive>*>*>*:first-child,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive>*>*>*:first-child,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive>*>*>*:first-child {
+vertical-align: middle
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-header,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header {
+font-weight: bold;
+display: table-header-group
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-header .c-table-row>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header .c-table-row>*,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header .c-table-row>*,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header .c-table-row>* {
+border: none;
+vertical-align: bottom;
+max-width: 0;
+padding-right: 4px;
+transition: width .5s,visibility 0s linear 0s;
+text-overflow: clip;
+overflow: hidden
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-header .c-table-row>*.c-currency .c-label,.cognito .c-table-section:not(.c-responsive) .c-table-header .c-table-row>*.c-calculation-integer .c-label,.cognito .c-table-section:not(.c-responsive) .c-table-header .c-table-row>*.c-calculation-decimal .c-label,.cognito .c-table-section:not(.c-responsive) .c-table-header .c-table-row>*.c-calculation-percent .c-label,.cognito .c-table-section:not(.c-responsive) .c-table-header .c-table-row>*.c-calculation-currency .c-label,.cognito .c-table-section:not(.c-responsive) .c-table-header .c-table-row>*.c-number-integer .c-label,.cognito .c-table-section:not(.c-responsive) .c-table-header .c-table-row>*.c-number-decimal .c-label,.cognito .c-table-section:not(.c-responsive) .c-table-header .c-table-row>*.c-number-percent .c-label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header .c-table-row>*.c-currency .c-label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-integer .c-label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-decimal .c-label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-percent .c-label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-currency .c-label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header .c-table-row>*.c-number-integer .c-label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header .c-table-row>*.c-number-decimal .c-label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header .c-table-row>*.c-number-percent .c-label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header .c-table-row>*.c-currency .c-label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-integer .c-label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-decimal .c-label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-percent .c-label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-currency .c-label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header .c-table-row>*.c-number-integer .c-label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header .c-table-row>*.c-number-decimal .c-label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header .c-table-row>*.c-number-percent .c-label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header .c-table-row>*.c-currency .c-label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-integer .c-label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-decimal .c-label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-percent .c-label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header .c-table-row>*.c-calculation-currency .c-label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header .c-table-row>*.c-number-integer .c-label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header .c-table-row>*.c-number-decimal .c-label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header .c-table-row>*.c-number-percent .c-label {
+text-align: right
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-header .c-table-row>* .c-label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header .c-table-row>* .c-label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header .c-table-row>* .c-label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header .c-table-row>* .c-label {
+width: 100%;
+vertical-align: bottom;
+padding: 4px 1px 2px 3px
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-header .c-table-row>* .c-label .c-field-required,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-header .c-table-row>* .c-label .c-field-required,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-header .c-table-row>* .c-label .c-field-required,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-header .c-table-row>* .c-label .c-field-required {
+font-weight: bold;
+color: #8b0000;
+font-style: normal
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-footer,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-footer,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-footer,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-footer {
+display: table-footer-group
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-footer.c-table-footer-display,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-footer.c-table-footer-display,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-footer.c-table-footer-display,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-footer.c-table-footer-display {
+display: table-footer-group
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-footer .c-table-row>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-footer .c-table-row>*,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-footer .c-table-row>*,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-footer .c-table-row>* {
+border: none;
+font-weight: bold;
+background-color: transparent
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-body .c-repeating-section-container:last-child>*:not(:first-child),.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-body .c-repeating-section-container:last-child>*:not(:first-child),.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-body .c-repeating-section-container:last-child>*:not(:first-child),.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-body .c-repeating-section-container:last-child>*:not(:first-child) {
+border-bottom: 1px solid #ccc
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-body>.c-repeating-section-item>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>*,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>*,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>* {
+border-right: 1px solid #ccc
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-body>.c-repeating-section-item>*:not(:first-child),.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>*:not(:first-child),.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>*:not(:first-child),.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>*:not(:first-child) {
+border-top: 1px solid #ccc
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-body>.c-repeating-section-item>* .c-readonly,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>* .c-readonly,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>* .c-readonly,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>* .c-readonly {
+background-color: #efefef
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-row,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-row,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-row,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-row {
+text-align: left;
+padding: 0
+}
+.cognito .c-table-section:not(.c-responsive) .c-table-row>*:first-child,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-row>*:first-child,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-table-row>*:first-child,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-table-row>*:first-child {
+text-align: center
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group>div:nth-child(odd),.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group>div:nth-child(odd),.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group>div:nth-child(odd),.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group>div:nth-child(odd) {
+background: none
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item-title h1,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item-title h2,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item-title h3,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item-title h4,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item-title h5,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item-title h6,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h1,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h2,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h3,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h4,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h5,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h6,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h1,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h2,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h3,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h4,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h5,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h6,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h1,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h2,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h3,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h4,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h5,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item-title h6 {
+display: none
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item .c-field,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-field,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-field,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-field {
+padding: 0;
+overflow: visible;
+position: relative;
+float: none!important
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item .c-repeating-section-item-title .c-remove-item,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-repeating-section-item-title .c-remove-item,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-repeating-section-item-title .c-remove-item,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-repeating-section-item-title .c-remove-item {
+width: auto;
+font-size: 100%
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item .c-readonly,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-readonly,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-readonly,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-readonly {
+padding: 5px
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item .c-readonly .c-editor,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-readonly .c-editor,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-readonly .c-editor,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-readonly .c-editor {
+position: relative;
+z-index: 2
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item span.c-visible-container>*>.c-visible-container:not(.toggle-on),.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item span.c-visible-container>*>.c-visible-container:not(.toggle-on),.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item span.c-visible-container>*>.c-visible-container:not(.toggle-on),.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item span.c-visible-container>*>.c-visible-container:not(.toggle-on) {
+background-color: #efefef
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>.c-error:after,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on:after,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-error:after,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on:after,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-error:after,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on:after,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-error:after,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on:after {
+content: "!";
+position: absolute;
+bottom: 0;
+right: 0;
+text-align: center;
+border-radius: unset;
+line-height: normal;
+width: 1em
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>.c-error:hover .c-validation,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>.c-error.c-editor-focused .c-validation,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on:hover .c-validation,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on.c-editor-focused .c-validation,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-error:hover .c-validation,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-error.c-editor-focused .c-validation,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on:hover .c-validation,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on.c-editor-focused .c-validation,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-error:hover .c-validation,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-error.c-editor-focused .c-validation,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on:hover .c-validation,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on.c-editor-focused .c-validation,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-error:hover .c-validation,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-error.c-editor-focused .c-validation,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on:hover .c-validation,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-visible-container .c-error .toggle-on.c-editor-focused .c-validation {
+opacity: 1;
+height: auto;
+z-index: 11
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>.c-field.c-submit-error,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-field.c-submit-error,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-field.c-submit-error,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-field.c-submit-error {
+display: none
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error {
+visibility: visible;
+height: auto
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-icon-container .c-validation-icon,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-icon-container .c-validation-icon,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-icon-container .c-validation-icon,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-icon-container .c-validation-icon {
+position: absolute;
+bottom: 0;
+left: 0;
+text-align: center;
+border-radius: 0;
+line-height: normal;
+width: 14px;
+user-select: none;
+cursor: default;
+font-family: sans-serif
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-icon-container:hover~.c-validation-container .c-validation,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-icon-container:hover~.c-validation-container .c-validation,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-icon-container:hover~.c-validation-container .c-validation,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-icon-container:hover~.c-validation-container .c-validation {
+opacity: 1;
+height: auto;
+z-index: 11;
+display: block;
+user-select: none
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-container,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-container,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-container,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-container {
+position: absolute;
+width: 150px;
+top: 100%;
+right: calc(100% - 14px);
+border-radius: 0
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-container .c-validation,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-container .c-validation,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-container .c-validation,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>.c-hidden-column.c-submit-error .c-validation-container .c-validation {
+position: relative;
+border-radius: 0
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* {
+width: auto!important
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-action-col,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-action-col,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-action-col,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-action-col {
+padding: 0;
+width: 2em
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-visible-container,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-visible-container,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-visible-container,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-visible-container {
+height: 100%
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-visible-container:not(.toggle-on)>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-visible-container:not(.toggle-on)>*,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-visible-container:not(.toggle-on)>*,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-visible-container:not(.toggle-on)>* {
+visibility: hidden
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-label {
+display: none
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-currency,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-calculation-integer,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-calculation-decimal,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-calculation-percent,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-calculation-currency,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-number-integer,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-number-decimal,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-number-percent,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-currency,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-integer,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-decimal,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-percent,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-currency,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-integer,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-decimal,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-percent,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-currency,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-integer,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-decimal,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-percent,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-currency,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-integer,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-decimal,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-percent,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-currency,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-integer,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-decimal,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-percent,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-currency,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-integer,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-decimal,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-percent {
+text-align: right
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-currency input,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-calculation-integer input,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-calculation-decimal input,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-calculation-percent input,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-calculation-currency input,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-number-integer input,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-number-decimal input,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*.c-number-percent input,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-currency input,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-integer input,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-decimal input,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-percent input,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-currency input,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-integer input,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-decimal input,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-percent input,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-currency input,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-integer input,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-decimal input,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-percent input,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-currency input,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-integer input,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-decimal input,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-percent input,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-currency input,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-integer input,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-decimal input,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-percent input,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-calculation-currency input,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-integer input,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-decimal input,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*.c-number-percent input {
+text-align: right
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-validation,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-validation,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-validation,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-validation {
+margin: 0;
+opacity: 0;
+position: absolute;
+height: 0;
+top: 100%;
+right: 0;
+text-align: left;
+word-wrap: break-word;
+max-width: 150px;
+z-index: 0
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*:not(.c-editor-focused) .c-dropdown:after,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(.c-editor-focused) .c-dropdown:after,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(.c-editor-focused) .c-dropdown:after,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(.c-editor-focused) .c-dropdown:after {
+display: none
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*:not(.c-editor-focused) .c-dropdown select,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(.c-editor-focused) .c-dropdown select,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(.c-editor-focused) .c-dropdown select,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(.c-editor-focused) .c-dropdown select {
+padding-right: 5px
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*:not(.c-readonly) .c-editor,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(.c-readonly) .c-editor,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(.c-readonly) .c-editor,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(.c-readonly) .c-editor {
+white-space: nowrap;
+text-overflow: clip;
+min-height: calc(1em + 12px)
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor {
+padding: 0;
+width: 100%;
+margin: 0;
+position: absolute;
+top: 0;
+bottom: 0
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-content,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-content,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-content,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-content {
+padding: 5px;
+vertical-align: middle;
+white-space: normal!important
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch {
+width: 200%
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on {
+width: 100%
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off label,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off label,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on label {
+display: none
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off span,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on span,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off span,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on span,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off span,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on span,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-off span,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .has-switch .switch-on span {
+text-align: left;
+color: #000;
+background: none;
+width: 50%
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor input,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor textarea,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-editor-date,.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-editor-time,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor input,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor textarea,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-editor-date,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-editor-time,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor input,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor textarea,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-editor-date,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-editor-time,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor input,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor textarea,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-editor-date,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-editor-time {
+border: none;
+height: 100%
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor textarea,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor textarea,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor textarea,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor textarea {
+resize: none;
+overflow-y: hidden;
+white-space: normal
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-dropdown,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-dropdown,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-dropdown,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-dropdown {
+height: 100%
+}
+.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-dropdown select,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-dropdown select,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-dropdown select,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-dropdown select {
+border: none;
+height: 100%
+}
+.cognito .c-table-section:not(.c-responsive) .c-editor-date,.cognito .c-table-section:not(.c-responsive) .c-editor-time,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-editor-date,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-editor-time,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-editor-date,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-editor-time,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-editor-date,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-editor-time {
+width: 100%!important;
+max-width: 100%
+}
+.cognito .c-table-section:not(.c-responsive) .c-editor-date-icon,.cognito .c-table-section:not(.c-responsive) .c-editor-time-icon,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-editor-date-icon,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-editor-time-icon,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-editor-date-icon,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-editor-time-icon,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-editor-date-icon,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-editor-time-icon {
+display: none
+}
+.cognito .c-table-section:not(.c-responsive) .c-pad-column,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-pad-column,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive .c-pad-column,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive .c-pad-column {
+visibility: hidden
+}
+.cognito .c-table-section:not(.c-responsive).c-readonly.c-table-section,.cognito:not(.c-sml)>form .c-table-section.c-responsive.c-readonly.c-table-section,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive.c-readonly.c-table-section,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive.c-readonly.c-table-section {
+width: calc(100% - 15px)
+}
+.cognito .c-table-section:not(.c-responsive).c-readonly .c-table-header,.cognito:not(.c-sml)>form .c-table-section.c-responsive.c-readonly .c-table-header,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive.c-readonly .c-table-header,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive.c-readonly .c-table-header {
+border-bottom: 1px solid #efefef
+}
+.cognito .c-table-section:not(.c-responsive).c-readonly .c-table-header .c-label,.cognito:not(.c-sml)>form .c-table-section.c-responsive.c-readonly .c-table-header .c-label,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive.c-readonly .c-table-header .c-label,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive.c-readonly .c-table-header .c-label {
+padding-left: 5px!important
+}
+.cognito .c-table-section:not(.c-responsive).c-readonly .c-table-row>*:first-child,.cognito:not(.c-sml)>form .c-table-section.c-responsive.c-readonly .c-table-row>*:first-child,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive.c-readonly .c-table-row>*:first-child,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive.c-readonly .c-table-row>*:first-child {
+display: none
+}
+.cognito .c-table-section:not(.c-responsive).c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-editor,.cognito:not(.c-sml)>form .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-editor,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-editor,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-editor {
+position: static;
+padding: 5px
+}
+.cognito .c-table-section:not(.c-responsive).c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-editor .c-content,.cognito:not(.c-sml)>form .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-editor .c-content,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-editor .c-content,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-editor .c-content {
+padding: 0
+}
+.cognito .c-table-section:not(.c-responsive).c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-readonly,.cognito:not(.c-sml)>form .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-readonly,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-readonly,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-readonly {
+background-color: transparent!important
+}
+.cognito .c-table-section:not(.c-responsive).c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-readonly .c-editor,.cognito:not(.c-sml)>form .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-readonly .c-editor,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-readonly .c-editor,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item .c-readonly .c-editor {
+padding: 0
+}
+.cognito .c-table-section:not(.c-responsive).c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>*,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>*,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>* {
+border: none
+}
+.cognito .c-table-section:not(.c-responsive).c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>* .c-visible-container,.cognito:not(.c-sml)>form .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>* .c-visible-container,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>* .c-visible-container,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>* .c-visible-container {
+background: transparent!important
+}
+.cognito .c-table-section:not(.c-responsive).c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>* .c-editor,.cognito:not(.c-sml)>form .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>* .c-editor,.cognito:not(.c-sml) .c-entries .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>* .c-editor,.cognito:not(.c-sml) .c-forms-form-public-readonly .c-table-section.c-responsive.c-readonly>.c-repeating-section-group>.c-table-row.c-repeating-section-item>* .c-editor {
+white-space: normal
+}
+.cognito.c-sml .c-table-section.c-readonly .c-repeating-section-item {
+padding-left: 0!important
+}
+.cognito.c-sml .c-table-section:not(.c-readonly) .c-repeating-section-item-title {
+margin-left: calc(-2em + 8px)
+}
+.cognito.c-sml .c-table-section .c-pad-column {
+display: none
+}
+.cognito.c-sml .c-table-section.c-responsive {
+display: block
+}
+.cognito.c-sml .c-table-section.c-responsive .c-table-header,.cognito.c-sml .c-table-section.c-responsive thead {
+display: none
+}
+.cognito.c-sml .c-table-section.c-responsive>* {
+display: block
+}
+.cognito.c-sml .c-table-section.c-responsive>*>* {
+display: block;
+overflow: hidden
+}
+.cognito.c-sml .c-table-section.c-responsive>*>*>* {
+display: block
+}
+.cognito.c-sml .c-table-section.c-responsive .c-repeating-section-group.c-table-footer .c-table-row>*:not(.c-field) {
+display: none
+}
+.cognito.c-sml .c-table-section.c-responsive .c-repeating-section-group.c-table-footer .c-field.c-readonly:empty {
+padding: 0
+}
+.cognito.c-sml .c-table-section.c-responsive .c-repeating-section-group>.c-repeating-section-item {
+margin-left: 8px;
+padding-left: 2em
+}
+.cognito.c-sml .c-table-section.c-responsive .c-repeating-section-group>.c-repeating-section-item .c-helptext {
+padding-left: 8px
+}
+.cognito.c-sml .c-table-section.c-responsive .c-repeating-section-group>.c-repeating-section-item>.c-visible-container {
+float: left
+}
+.cognito.c-sml .c-table-section.c-responsive .c-repeating-section-group>.c-repeating-section-item>.c-visible-container>.c-field {
+padding: 0
+}
+.cognito.c-sml .c-table-section.c-responsive .c-repeating-section-group>.c-repeating-section-item .c-field {
+overflow: hidden
+}
+.cognito.c-sml .c-table-section.c-responsive .c-repeating-section-group>.c-repeating-section-item .c-field>.c-visible-container {
+padding: 8px 0;
+max-height: 150px;
+transition: max-height .5s linear,padding .5s,visibility 0s linear .1s
+}
+.cognito.c-sml .c-table-section.c-responsive .c-repeating-section-group>.c-repeating-section-item .c-field>.c-visible-container:not(.toggle-on) {
+padding: 0;
+max-height: 0;
+visibility: hidden;
+transition: max-height .5s ease,padding .5s,visibility 0s linear .4s
+}
+.cognito.c-sml .c-table-section.c-responsive .c-repeating-section-group>.c-repeating-section-item .c-field.c-submit-error {
+display: block
+}
+/*!
+* Bootstrap v2.3.2
+*
+* Copyright 2013 Twitter, Inc
+* Licensed under the Apache License v2.0
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Designed and built with all the love in the world @twitter by @mdo and @fat.
+*/
+.cognito ul.typeahead {
+margin: 0!important
+}
+.cognito .btn .caret {
+margin-top: 8px;
+margin-left: 0
+}
+.cognito .dropdown-toggle {
+*margin-bottom: -3px
+}
+.cognito .dropdown-toggle:active,.cognito .open .dropdown-toggle {
+outline: 0
+}
+.cognito .caret {
+display: inline-block;
+width: 0;
+height: 0;
+vertical-align: top;
+border-top: 4px solid #000;
+border-right: 4px solid transparent;
+border-left: 4px solid transparent;
+content: ""
+}
+.cognito .dropdown .caret {
+margin-top: 8px;
+margin-left: 2px
+}
+.cognito .dropdown-menu {
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 1000;
+display: none;
+float: left;
+min-width: 160px;
+padding: 5px 0;
+margin: 2px 0 0;
+list-style: none;
+background-color: #fff;
+border: 1px solid #ccc;
+border: 1px solid rgba(0,0,0,.2);
+*border-right-width: 2px;
+*border-bottom-width: 2px;
+-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+-moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+box-shadow: 0 5px 10px rgba(0,0,0,.2);
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding;
+background-clip: padding-box
+}
+.cognito .dropdown-menu.pull-right {
+right: 0;
+left: auto
+}
+.cognito .dropdown-menu .divider {
+*width: 100%;
+height: 1px;
+margin: 9px 1px;
+*margin: -5px 0 5px;
+overflow: hidden;
+background-color: #e5e5e5;
+border-bottom: 1px solid #fff
+}
+.cognito .dropdown-menu>li>a {
+display: block;
+padding: 3px 20px;
+clear: both;
+font-weight: normal;
+line-height: 20px;
+color: #333;
+white-space: nowrap
+}
+.cognito .dropdown-menu>li>a:hover,.cognito .dropdown-menu>li>a:focus,.cognito .dropdown-submenu:hover>a,.cognito .dropdown-submenu:focus>a {
+text-decoration: none;
+color: #fff!important;
+background-color: gray;
+background-image: -moz-linear-gradient(top,#b3b3b3,gray);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#b3b3b3),to(gray));
+background-image: -webkit-linear-gradient(top,#b3b3b3,gray);
+background-image: -o-linear-gradient(top,#b3b3b3,gray);
+background-image: linear-gradient(to bottom,#b3b3b3,gray);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3',endColorstr='#808080',GradientType=0)
+}
+.cognito .dropdown-menu>.active>a,.cognito .dropdown-menu>.active>a:hover,.cognito .dropdown-menu>.active>a:focus {
+color: #fff!important;
+text-decoration: none;
+outline: 0;
+background-color: gray;
+background-image: -moz-linear-gradient(top,#b3b3b3,gray);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#b3b3b3),to(gray));
+background-image: -webkit-linear-gradient(top,#b3b3b3,gray);
+background-image: -o-linear-gradient(top,#b3b3b3,gray);
+background-image: linear-gradient(to bottom,#b3b3b3,gray);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb3b3b3',endColorstr='#ff808080',GradientType=0)
+}
+.cognito .dropdown-menu>.disabled>a,.cognito .dropdown-menu>.disabled>a:hover,.cognito .dropdown-menu>.disabled>a:focus {
+color: #999
+}
+.cognito .dropdown-menu>.disabled>a:hover,.cognito .dropdown-menu>.disabled>a:focus {
+text-decoration: none;
+background-color: transparent;
+background-image: none;
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+cursor: default
+}
+.cognito .open {
+*z-index: 1000
+}
+.cognito .open>.dropdown-menu {
+display: block
+}
+.cognito .dropdown-backdrop {
+position: fixed;
+left: 0;
+right: 0;
+bottom: 0;
+top: 0;
+z-index: 990
+}
+.cognito .pull-right>.dropdown-menu {
+right: 0;
+left: auto
+}
+.cognito .dropup .caret,.cognito .navbar-fixed-bottom .dropdown .caret {
+border-top: 0;
+border-bottom: 4px solid #000;
+content: ""
+}
+.cognito .dropup .dropdown-menu,.cognito .navbar-fixed-bottom .dropdown .dropdown-menu {
+top: auto;
+bottom: 100%;
+margin-bottom: 1px
+}
+.cognito .dropdown-submenu {
+position: relative
+}
+.cognito .dropdown-submenu>.dropdown-menu {
+top: 0;
+left: 100%;
+margin-top: -6px;
+margin-left: -1px
+}
+.cognito .dropdown-submenu:hover>.dropdown-menu {
+display: block
+}
+.cognito .dropup .dropdown-submenu>.dropdown-menu {
+top: auto;
+bottom: 0;
+margin-top: 0;
+margin-bottom: -2px
+}
+.cognito .dropdown-submenu>a:after {
+display: block;
+content: " ";
+float: right;
+width: 0;
+height: 0;
+border-color: transparent;
+border-style: solid;
+border-width: 5px 0 5px 5px;
+border-left-color: #ccc;
+margin-top: 5px;
+margin-right: -10px
+}
+.cognito .dropdown-submenu:hover>a:after {
+border-left-color: #fff
+}
+.cognito .dropdown-submenu.pull-left {
+float: none
+}
+.cognito .dropdown-submenu.pull-left>.dropdown-menu {
+left: -100%;
+margin-left: 10px
+}
+.cognito .dropdown .dropdown-menu .nav-header {
+padding-left: 20px;
+padding-right: 20px
+}
+.cognito .typeahead {
+z-index: 1051;
+margin-top: 2px
+}
+.cognito .close {
+float: right;
+font-size: 20px;
+font-weight: bold;
+line-height: 20px;
+color: #000;
+text-shadow: 0 1px 0 #fff;
+opacity: .2;
+filter: alpha(opacity=20)
+}
+.cognito .close:hover,.cognito .close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+opacity: .4;
+filter: alpha(opacity=40)
+}
+.cognito button.close {
+padding: 0;
+cursor: pointer;
+background: transparent;
+border: 0;
+-webkit-appearance: none
+}
+/*!
+* Datepicker for Bootstrap
+*
+* Copyright 2012 Stefan Petre
+* Improvements by Andrew Rowls
+* Licensed under the Apache License v2.0
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+*/
+.cognito-dropdown-menu {
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 1000;
+display: none;
+float: left;
+min-width: 160px;
+padding: 5px 0;
+margin: 2px 0 0;
+list-style: none;
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding;
+background-clip: padding-box
+}
+.cognito-dropdown-menu.pull-right {
+right: 0;
+left: auto
+}
+.cognito-dropdown-menu .divider {
+height: 1px;
+margin: 9px 1px;
+overflow: hidden
+}
+.cognito-dropdown-menu>li>a {
+display: block;
+padding: 3px 20px;
+clear: both;
+line-height: 20px;
+white-space: nowrap
+}
+.cognito-dropdown-menu>.disabled>a:hover,.cognito-dropdown-menu>.disabled>a:focus {
+cursor: default
+}
+.cognito-datepicker {
+padding: 4px;
+direction: ltr
+}
+.cognito-datepicker-inline {
+width: 220px
+}
+.cognito-datepicker.datepicker-rtl {
+direction: rtl
+}
+.cognito-datepicker.datepicker-rtl table tr td span {
+float: right
+}
+.cognito-datepicker-dropdown {
+top: 0;
+left: 0
+}
+.cognito-datepicker-dropdown:before {
+content: '';
+display: inline-block;
+position: absolute
+}
+.cognito-datepicker-dropdown:after {
+content: '';
+display: inline-block;
+position: absolute
+}
+.cognito-datepicker-dropdown.cognito-datepicker-orient-left:before {
+left: 6px
+}
+.cognito-datepicker-dropdown.cognito-datepicker-orient-left:after {
+left: 7px
+}
+.cognito-datepicker-dropdown.cognito-datepicker-orient-right:before {
+right: 6px
+}
+.cognito-datepicker-dropdown.cognito-datepicker-orient-right:after {
+right: 7px
+}
+.cognito-datepicker-dropdown.cognito-datepicker-orient-top:before {
+top: -7px
+}
+.cognito-datepicker-dropdown.cognito-datepicker-orient-top:after {
+top: -6px
+}
+.cognito-datepicker-dropdown.cognito-datepicker-orient-bottom:before {
+bottom: -7px
+}
+.cognito-datepicker-dropdown.cognito-datepicker-orient-bottom:after {
+bottom: -6px
+}
+.cognito-datepicker-dropdown.cognito-datepicker-center-arrow:before {
+left: 90px
+}
+.cognito-datepicker-dropdown.cognito-datepicker-center-arrow:after {
+left: 91px
+}
+.cognito-datepicker>div {
+display: none
+}
+.cognito-datepicker.days div.cognito-datepicker-days {
+display: block
+}
+.cognito-datepicker.months div.cognito-datepicker-months {
+display: block
+}
+.cognito-datepicker.years div.cognito-datepicker-years {
+display: block
+}
+.cognito-datepicker table {
+margin: 0;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none
+}
+.cognito-datepicker td,.cognito-datepicker th {
+text-align: center;
+width: 15px;
+height: 17px;
+padding: 2px!important
+}
+.cognito-datepicker table tr td.day:hover {
+cursor: pointer
+}
+.cognito-datepicker table tr td.disabled,.cognito-datepicker table tr td.disabled:hover {
+cursor: default
+}
+.cognito-datepicker table tr td span {
+display: block;
+width: 23%;
+height: 54px;
+line-height: 54px;
+float: left;
+margin: 1%;
+cursor: pointer
+}
+.cognito-datepicker table tr td span.disabled,.cognito-datepicker table tr td span.disabled:hover {
+cursor: default
+}
+.cognito-datepicker th.datepicker-switch {
+width: 145px
+}
+.cognito-datepicker thead tr:first-child th,.cognito-datepicker tfoot tr th {
+cursor: pointer
+}
+.cognito-datepicker .cw {
+width: 12px;
+padding: 0 2px 0 5px;
+vertical-align: middle
+}
+.cognito-datepicker thead tr:first-child th.cw {
+cursor: default
+}
+.input-append.date .add-on i,.input-prepend.date .add-on i {
+display: block;
+cursor: pointer;
+width: 16px;
+height: 16px
+}
+.input-daterange input {
+text-align: center
+}
+.input-daterange .add-on {
+display: inline-block;
+width: auto;
+min-width: 16px;
+height: 18px;
+padding: 4px 5px;
+line-height: 18px;
+text-align: center;
+vertical-align: middle;
+margin-left: -5px;
+margin-right: -5px
+}
+/*!
+* Timepicker Component for Twitter Bootstrap
+*
+* Copyright 2013 Joris de Wit
+*
+* Contributors https://github.com/jdewit/bootstrap-timepicker/graphs/contributors
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+.cognito-dropdown-menu [class^="icon-"],.cognito[class*=" icon-"] {
+font-family: FontAwesome;
+font-weight: normal;
+font-style: normal!important;
+text-decoration: inherit;
+-webkit-font-smoothing: antialiased;
+display: inline;
+width: auto;
+height: auto;
+line-height: normal;
+vertical-align: baseline;
+background-image: none;
+background-position: 0% 0%;
+background-repeat: repeat;
+margin-top: 0
+}
+.cognito-dropdown-menu {
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 1000;
+display: none;
+float: left;
+min-width: 160px;
+padding: 5px 0;
+margin: 2px 0 0;
+list-style: none;
+background-color: #fff;
+border: 1px solid #ccc;
+border: 1px solid rgba(0,0,0,.2);
+*border-right-width: 2px;
+*border-bottom-width: 2px;
+-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+-moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+box-shadow: 0 5px 10px rgba(0,0,0,.2);
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding;
+background-clip: padding-box
+}
+.cognito-dropdown-menu.pull-right {
+right: 0;
+left: auto
+}
+.cognito-dropdown-menu .divider {
+*width: 100%;
+height: 1px;
+margin: 9px 1px;
+*margin: -5px 0 5px;
+overflow: hidden;
+background-color: #e5e5e5;
+border-bottom: 1px solid #fff
+}
+.cognito-dropdown-menu>li>a {
+display: block;
+padding: 3px 20px;
+clear: both;
+font-weight: normal;
+line-height: 20px;
+color: #333;
+white-space: nowrap
+}
+.cognito-dropdown-menu>li>a:hover,.cognito-dropdown-menu>li>a:focus,.cognito-dropdown-submenu:hover>a,.cognito-dropdown-submenu:focus>a {
+text-decoration: none;
+color: #fff!important;
+background-color: gray;
+background-image: -moz-linear-gradient(top,#b3b3b3,gray);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#b3b3b3),to(gray));
+background-image: -webkit-linear-gradient(top,#b3b3b3,gray);
+background-image: -o-linear-gradient(top,#b3b3b3,gray);
+background-image: linear-gradient(to bottom,#b3b3b3,gray);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3',endColorstr='#808080',GradientType=0)
+}
+.cognito-dropdown-menu>.active>a,.cognito-dropdown-menu>.active>a:hover,.cognito-dropdown-menu>.active>a:focus {
+color: #fff!important;
+text-decoration: none;
+outline: 0;
+background-color: gray;
+background-image: -moz-linear-gradient(top,#b3b3b3,gray);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#b3b3b3),to(gray));
+background-image: -webkit-linear-gradient(top,#b3b3b3,gray);
+background-image: -o-linear-gradient(top,#b3b3b3,gray);
+background-image: linear-gradient(to bottom,#b3b3b3,gray);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb3b3b3',endColorstr='#ff808080',GradientType=0)
+}
+.cognito-dropdown-menu>.disabled>a,.cognito-dropdown-menu>.disabled>a:hover,.cognito-dropdown-menu>.disabled>a:focus {
+color: #999
+}
+.cognito-dropdown-menu>.disabled>a:hover,.cognito-dropdown-menu>.disabled>a:focus {
+text-decoration: none;
+background-color: transparent;
+background-image: none;
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+cursor: default
+}
+.cognito-timepicker.pull-right .cognito-timepicker-widget.cognito-dropdown-menu {
+left: auto;
+right: 0
+}
+.cognito-timepicker.pull-right .cognito-timepicker-widget.cognito-dropdown-menu:before {
+left: auto;
+right: 12px
+}
+.cognito-timepicker.pull-right .cognito-timepicker-widget.cognito-dropdown-menu:after {
+left: auto;
+right: 13px
+}
+.cognito-timepicker .add-on {
+cursor: pointer
+}
+.cognito-timepicker .add-on i {
+display: inline-block;
+width: 16px;
+height: 16px
+}
+.cognito-timepicker-widget.cognito-dropdown-menu {
+padding: 2px 3px 2px 2px;
+z-index: 1100
+}
+.cognito-timepicker-widget.cognito-dropdown-menu.open {
+display: inline-block
+}
+.cognito-timepicker-widget.cognito-dropdown-menu:before {
+border-bottom: 7px solid rgba(0,0,0,.2);
+border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+content: "";
+display: inline-block;
+left: 9px;
+position: absolute
+}
+.cognito-timepicker-widget.cognito-dropdown-menu:after {
+border-bottom: 6px solid #fff;
+border-left: 6px solid transparent;
+border-right: 6px solid transparent;
+content: "";
+display: inline-block;
+left: 10px;
+position: absolute
+}
+.cognito-timepicker-widget.cognito-timepicker-orient-top:before {
+top: -7px
+}
+.cognito-timepicker-widget.cognito-timepicker-orient-top:after {
+top: -6px
+}
+.cognito-timepicker-widget.cognito-timepicker-orient-bottom:before {
+bottom: -7px;
+border-bottom: 0;
+border-top: 7px solid #999
+}
+.cognito-timepicker-widget.cognito-timepicker-orient-bottom:after {
+bottom: -6px;
+border-bottom: 0;
+border-top: 6px solid #fff
+}
+.cognito-timepicker-widget a.btn,.cognito-timepicker-widget input {
+border-radius: 0
+}
+.cognito-timepicker-widget table {
+width: 100%;
+margin: 0;
+border: none
+}
+.cognito-timepicker-widget table td {
+text-align: center;
+height: 30px;
+margin: 0;
+padding: 2px
+}
+.cognito-timepicker-widget table td:not(.separator) {
+min-width: 30px
+}
+.cognito-timepicker-widget table td span {
+width: 100%
+}
+.cognito-timepicker-widget table td a {
+border: 1px transparent solid;
+width: 100%;
+display: inline-block;
+margin: 0;
+padding: 8px 0;
+outline: 0;
+color: #333;
+text-decoration: none
+}
+.cognito-timepicker-widget table td a:hover {
+text-decoration: none;
+background-color: #eee;
+border-color: #ddd
+}
+.cognito-timepicker-widget table td a i {
+margin-top: 2px
+}
+.cognito-timepicker-widget table td input {
+width: 25px;
+margin: 0;
+text-align: center;
+-webkit-box-sizing: content-box;
+-moz-box-sizing: content-box;
+box-sizing: content-box
+}
+.cognito-timepicker-widget .modal-content {
+padding: 4px
+}
+.cognito .has-switch {
+display: inline-block;
+cursor: pointer;
+position: relative;
+text-align: left;
+overflow: hidden;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+vertical-align: middle;
+margin: 0
+}
+.cognito .has-switch.deactivate {
+opacity: .5;
+filter: alpha(opacity=50);
+cursor: default!important
+}
+.cognito .has-switch.deactivate label,.cognito .has-switch.deactivate span {
+cursor: default!important
+}
+.cognito .has-switch>div {
+display: inline-block;
+width: 151%;
+position: relative;
+top: 0
+}
+.cognito .has-switch>div.switch-animate {
+-webkit-transition: left .5s;
+-moz-transition: left .5s;
+-o-transition: left .5s;
+transition: left .5s;
+margin: 0
+}
+.cognito .has-switch>div.switch-off {
+left: -50%
+}
+.cognito .has-switch>div.switch-on {
+left: 0%
+}
+.cognito .has-switch input[type=radio],.cognito .has-switch input[type=checkbox] {
+display: none
+}
+.cognito .has-switch span,.cognito .has-switch label {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+cursor: pointer;
+position: relative;
+display: inline-block;
+padding: 5px
+}
+.cognito .has-switch label {
+text-align: center;
+margin-top: -1px;
+margin-bottom: -1px;
+z-index: 2;
+width: 34%
+}
+.cognito .has-switch label i {
+pointer-events: none
+}
+.cognito .has-switch span {
+text-align: center;
+z-index: 1;
+width: 33%;
+white-space: nowrap;
+text-overflow: clip
+}
+.cognito .has-switch span.switch-right:hover,.cognito .has-switch span.switch-right:focus,.cognito .has-switch span.switch-right:active,.cognito .has-switch span.switch-right.active,.cognito .has-switch span.switch-right.disabled,.cognito .has-switch span.switch-right[disabled] {
+color: #333;
+background-color: #fff;
+*background-color: #f2f2f2
+}
+.cognito .has-switch span.switch-right:active,.cognito .has-switch span.switch-right.active {
+background-color: #e6e6e6 \9
+}
+
+/*!
+core.css
+*/
+.cognito .c-label{padding:0 8px 2px 8px}.cognito .c-editor{padding-right:7px;padding-left:8px;position:relative}.cognito .c-title{padding:0 8px}.cognito .c-repeating-section-container{margin:0 8px;padding:8px 0}.cognito .c-repeating-section-add .c-add-item{margin:8px 8px 8px}.cognito .c-field{padding:8px 0}.cognito .c-rating-scale{padding:8px}.cognito label[for],.cognito input[type=radio],.cognito input[type=checkbox]{cursor:pointer}.cognito input[type=checkbox],.cognito input[type=radio]{width:1em;height:1em;padding:0;margin:0 .3em 0 0;font-size:100%}.cognito{overflow:visible;line-height:normal}.cognito form{margin:0}.cognito a{cursor:pointer}.cognito a:hover{text-decoration:underline}.cognito .c-forms-form{outline:none}.cognito i:hover,.cognito a:hover i{text-decoration:none}.cognito input[type=text],.cognito input[type=password],.cognito textarea,.cognito .c-dropdown{display:block;width:100%;margin:0;font-family:Arial,'Helvetica LT Std',sans-serif;font-size:100%}.cognito button,.cognito input[type=button]{font-size:100%;cursor:pointer}.cognito ::-webkit-input-placeholder{color:#ccc}.cognito ::-moz-placeholder{color:#999}.cognito :-ms-input-placeholder{color:#ccc!important}.cognito input:-moz-placeholder{color:#999}.cognito .c-placeholder{color:#ccc}.cognito select option[value=""]{color:#ccc}.cognito select.c-placeholder-text-styled{color:#ccc}.cognito ul{list-style-type:none}.cognito input[type=text],.cognito input[type=password],.cognito select,.cognito textarea,.c-payment .c-payment-field{border:1px solid #ccc;padding:5px;-webkit-appearance:none;border-radius:0}.cognito select{font-size:100%;background-color:#fff}.cognito input[type=file]{border:1px solid #ccc;margin-top:5px}.cognito h3 a{font-size:inherit}.cognito small{display:block;margin-top:3px;font-size:75%;color:rgba(0,0,0,.5);line-height:100%}.cognito legend{border:0}.cognito .c-cancel{background-color:rgba(153,153,153,1)!important}.cognito .c-editor label{cursor:pointer}.cognito .c-helptext{font-style:italic;font-size:.9em}.cognito .c-validation-message{color:#fff;text-decoration:underline}.cognito .c-submit-error .c-validation{border-radius:4px;padding:5px}.cognito INPUT[type=text],.cognito INPUT[type=password],.cognito textarea,.cognito select{height:auto}.cognito .c-label{font-weight:700;font-size:100%;line-height:100%}.cognito .c-field.c-required .c-label:after,.cognito .c-rating-scale.c-required .c-choice-question:after{font-weight:bold;color:#8b0000;font-style:normal}.cognito .c-repeating-section-add .c-add-item{border-width:1px;border-style:solid;line-height:100%;border-radius:4px;padding:.5em;margin-top:8px}.cognito .c-button{border-width:1px;line-height:100%;border-radius:2px;border-style:solid}.cognito .c-rating-scale table{width:100%;border-spacing:0;border:0!important;background-color:transparent}.cognito .c-rating-scale .c-validation-row .c-validation{margin:0;font-size:1em}.cognito .c-rating-scale th.c-choice-option-header{text-align:center;font-weight:normal;width:1%;vertical-align:bottom;padding-top:2px}.cognito .c-field.c-text-singleline .c-editor.c-filter-field:after{content:"";color:#444;font-family:"FontAwesome";font-weight:normal;position:absolute;top:50%;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);right:10px;padding:6px;pointer-events:all}.cognito .c-field.c-text-singleline .c-editor.c-filter-field input{padding-right:26px}.cognito .c-editor .c-choice-fillin div:not(.printHelper){width:100%;text-indent:-1.6em}.cognito .c-dropdown{position:relative}.cognito .c-dropdown option{color:#444;background-color:#fff;font-family:Arial,Helvetica,sans-serif}.cognito .c-dropdown select{-moz-appearance:none;-webkit-appearance:none;padding-right:20px}.cognito .c-dropdown:after,.c-select-input .chevron::before{content:"";color:#444;font-family:"FontAwesome";font-weight:normal;position:absolute;top:50%;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);right:4px;padding:2px;pointer-events:none}.cognito.c-ie .c-dropdown:after{display:none}.cognito.c-ie .c-dropdown select{padding-right:5px}.cognito.c-ie .c-dropdown:after{display:none}.cognito.c-ie .c-dropdown select{padding-right:5px}.cognito .c-html{line-height:1.3em;white-space:normal!important}.cognito .c-html em{font-style:italic}.cognito .c-editor.c-html hr{height:1px;border:0;border-top:1px;margin:0}.cognito .c-html ul{list-style-type:disc}.cognito .c-html ol,.cognito .c-html ul{padding-left:1.3em;margin-bottom:1em}.cognito .c-html li,.cognito .c-html p{margin-bottom:1em}@font-face{font-family:'FontAwesome';src:url('https://services.cognitoforms.com/content/fonts/fontawesome/fontawesome-webfont.eot?v=4.5.0');src:url('https://services.cognitoforms.com/content/fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'),url('https://services.cognitoforms.com/content/fonts/fontawesome/fontawesome-webfont.woff?v=4.5.0') format('woff'),url('https://services.cognitoforms.com/content/fonts/fontawesome/fontawesome-webfont.ttf?v=4.5.0') format('truetype'),url('https://services.cognitoforms.com/content/fonts/fontawesome/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg'),url('https://services.cognitoforms.com/content/fonts/fontawesome/fontawesome-webfont.woff2?v=4.5.0') format('woff2');font-weight:normal;font-style:normal}.cognito [class^="icon-"],.cognito [class*=" icon-"]{font-family:FontAwesome;font-weight:normal;font-style:normal!important;text-decoration:inherit;-webkit-font-smoothing:antialiased;display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0% 0%;background-repeat:repeat;margin-top:0}.cognito [class^="icon-"]:before,.cognito[class*=" icon-"]:before{text-decoration:inherit;display:inline-block;speak:none}.cognito a [class^="icon-"],.cognito a [class*=" icon-"]{display:inline-block}.cognito .icon-large:before{vertical-align:-10%;font-size:1.3333333333333333em}.cognito .icon-2x{font-size:2em}.cognito .icon-2x.icon-border{border-width:2px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.cognito .icon-3x{font-size:3em}.cognito .icon-3x.icon-border{border-width:3px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}.cognito .icon-4x{font-size:4em}.cognito .icon-4x.icon-border{border-width:4px;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px}.cognito .icon-5x{font-size:4.5em}.cognito .icon-5x.icon-border{border-width:4px;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px}.cognito .icon-download-alt:before{content:""}.cognito .icon-credit-card:before{content:""}.cognito .icon-cog:before{content:""}.cognito .icon-plus:before{content:""}.cognito .icon-trash:before{content:""}.cognito .icon-chevron-up:before,.cognito-timepicker-widget .icon-chevron-up:before{content:""}.cognito .icon-chevron-down:before,.cognito-timepicker-widget .icon-chevron-down:before{content:""}.cognito .icon-calendar:before{content:""}.cognito .icon-time:before{content:""}.cognito .icon-remove-sign:before{content:""}.cognito .icon-remove:before{content:""}.cognito .icon-lock:before{content:""}.cognito .icon-map-marker:before{content:""}.cognito .icon-arrow-circle-o-down:before{content:""}.cognito .icon-spin{display:inline-block;-moz-animation:spin 2s infinite linear;-o-animation:spin 2s infinite linear;-webkit-animation:spin 2s infinite linear;animation:spin 2s infinite linear}@-moz-keyframes spin{0%{-moz-transform:rotate(0deg)}100%{-moz-transform:rotate(359deg)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(359deg)}}@-o-keyframes spin{0%{-o-transform:rotate(0deg);}100%{-o-transform:rotate(359deg);}}@-ms-keyframes spin{0%{-ms-transform:rotate(0deg)}100%{-ms-transform:rotate(359deg)}}@keyframes spin{0%{-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-ms-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}.cognito .c-rating-scale table td,.cognito .c-rating-scale th{padding:10px 5px;border:0;line-height:100%}.cognito .c-table-section:not(.c-responsive) .c-table-body .c-repeating-section-container:last-child>*:not(:first-child),.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-body .c-repeating-section-container:last-child>*:not(:first-child){border-bottom:1px solid #ccc}.cognito .c-table-section:not(.c-responsive) .c-table-body>.c-repeating-section-item>*,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>*{border-right:1px solid #ccc}.cognito .c-table-section:not(.c-responsive) .c-table-body>.c-repeating-section-item>*:not(:first-child),.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>*:not(:first-child){border-top:1px solid #ccc}.cognito .c-table-section:not(.c-responsive) .c-table-body>.c-repeating-section-item>* .c-readonly,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-table-body>.c-repeating-section-item>* .c-readonly{background-color:#efefef}.cognito .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor,.cognito:not(.c-sml)>form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor{padding:0;width:100%;margin:0;position:absolute;top:0;bottom:0}.cognito .c-signature .c-signature-glyph:after{position:absolute;bottom:35px;left:14px;padding:4px;vertical-align:text-bottom;font-family:FontAwesome;font-weight:normal;content:"";color:#333}.cognito .c-signature .c-editor{color:#333}.cognito .c-signature-present .c-signature-glyph:after{content:"";cursor:pointer}.cognito .c-signature .c-jsignature{cursor:url('data:image/gif;base64,R0lGODlhIAAgAKIFAP//////AMzMzJmZmQAAAP///wAAAAAAACH5BAEAAAUALAAAAAAgACAAAAN0WKrUTivKOQm4GDjK4/vg0zGEEATNqa4nMQzQWDiAEIayZ9mXhVmxnKdHzGiCwtmvYewlF75iE5mMNn9Pj+CaaWQZW67Pm20Mpr3N1/xLq78zV8kmgnsG9Ld99vrsJSB/FXqCUFSFiImKi4yNjo+QkZKTTwkAOw=='),auto}.cognito .c-signature .c-editor>div{border:1px solid #ccc}.cognito .c-readonly .c-signature-container.c-signature-present{border:1px solid #ccc}.cognito .c-fileupload-dropzone-active{border:1px dashed #000}.c-fileupload .c-upload-button button{border-width:1px;border-style:solid}.cognito .c-repeating-section-add .c-add-item:before{content:"";font-family:FontAwesome;font-size:.9em;font-weight:normal;padding-right:3px;vertical-align:middle}.cognito .c-repeating-section-group>div:last-child{border-bottom-width:1px;border-bottom-style:solid}.cognito .has-switch{border:1px solid #ccc}.cognito .has-switch label{border-left:1px solid #ccc;border-right:1px solid #ccc;color:#333;text-shadow:0 -1px 0 rgba(0,0,0,.25);background-color:#f5f5f5;background-image:-moz-linear-gradient(top,#fff,#e6e6e6);background-image:-webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));background-image:-webkit-linear-gradient(top,#fff,#e6e6e6);background-image:-o-linear-gradient(top,#fff,#e6e6e6);background-image:linear-gradient(to bottom,#fff,#e6e6e6);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);border-color:#e6e6e6 #e6e6e6 #bfbfbf;border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25)}.cognito .has-switch label:hover,.cognito .has-switch label:focus,.cognito .has-switch label:active,.cognito .has-switch label.active,.cognito .has-switch label.disabled,.cognito .has-switch label[disabled]{color:#333;background-color:#e6e6e6}.cognito .has-switch label:active,.cognito .has-switch label.active{background-color:#ccc}.cognito .has-switch label i{color:#000;text-shadow:0 1px 0 #fff;line-height:18px}.cognito .has-switch span.switch-right{color:#333;text-shadow:0 1px 1px rgba(255,255,255,.75);background-color:#f0f0f0;background-image:-moz-linear-gradient(top,#e6e6e6,#fff);background-image:-webkit-gradient(linear,0 0,0 100%,from(#e6e6e6),to(#fff));background-image:-webkit-linear-gradient(top,#e6e6e6,#fff);background-image:-o-linear-gradient(top,#e6e6e6,#fff);background-image:linear-gradient(to bottom,#e6e6e6,#fff);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe6e6e6',endColorstr='#ffffffff',GradientType=0);border-color:#fff #fff #d9d9d9;border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25)}.cognito .has-switch span.switch-left{color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,.25);background-color:#9e9e9e;background-image:-moz-linear-gradient(top,#b3b3b3,gray);background-image:-ms-linear-gradient(top,#b3b3b3,gray);background-image:-webkit-gradient(linear,0 0,0 100%,from(#b3b3b3),to(gray));background-image:-webkit-linear-gradient(top,#b3b3b3,gray);background-image:-o-linear-gradient(top,#b3b3b3,gray);background-image:linear-gradient(top,#b3b3b3,gray);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3',endColorstr='#808080',GradientType=0);border-color:#08c #08c #005580;border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25)}headerLayout
+/*!
+* Datepicker for Bootstrap
+*
+* Copyright 2012 Stefan Petre
+* Improvements by Andrew Rowls
+* Licensed under the Apache License v2.0
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+*/
+.cognito-dropdown-menu{background-color:#fff;border:1px solid #ccc;border:1px solid rgba(0,0,0,.2);-webkit-box-shadow:0 5px 10px rgba(0,0,0,.2);-moz-box-shadow:0 5px 10px rgba(0,0,0,.2);box-shadow:0 5px 10px rgba(0,0,0,.2)}.cognito-dropdown-menu .divider{background-color:#e5e5e5;border-bottom:1px solid #fff}.cognito-dropdown-menu>li>a{color:#333}.cognito-dropdown-menu>li>a:hover,.cognito-dropdown-menu>li>a:focus,.cognito-dropdown-submenu:hover>a,.cognito-dropdown-submenu:focus>a{text-decoration:none;color:#fff!important;background-color:gray;background-image:-moz-linear-gradient(top,#b3b3b3,gray);background-image:-webkit-gradient(linear,0 0,0 100%,from(#b3b3b3),to(gray));background-image:-webkit-linear-gradient(top,#b3b3b3,gray);background-image:-o-linear-gradient(top,#b3b3b3,gray);background-image:linear-gradient(to bottom,#b3b3b3,gray);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3',endColorstr='#808080',GradientType=0)}.cognito-dropdown-menu>.active>a,.cognito-dropdown-menu>.active>a:hover,.cognito-dropdown-menu>.active>a:focus{color:#fff!important;text-decoration:none;outline:0;background-color:gray;background-image:-moz-linear-gradient(top,#b3b3b3,gray);background-image:-webkit-gradient(linear,0 0,0 100%,from(#b3b3b3),to(gray));background-image:-webkit-linear-gradient(top,#b3b3b3,gray);background-image:-o-linear-gradient(top,#b3b3b3,gray);background-image:linear-gradient(to bottom,#b3b3b3,gray);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb3b3b3',endColorstr='#ff808080',GradientType=0)}.cognito-dropdown-menu>.disabled>a,.cognito-dropdown-menu>.disabled>a:hover,.cognito-dropdown-menu>.disabled>a:focus{color:#999}.cognito-dropdown-menu>.disabled>a:hover,.cognito-dropdown-menu>.disabled>a:focus{text-decoration:none;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled=false)}.cognito-datepicker{font-family:Arial,Helvetica,sans-serif;font-size:13px}.cognito-datepicker-dropdown:before{border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid #ccc;border-top:0;border-bottom-color:rgba(0,0,0,.2)}.cognito-datepicker-dropdown:after{border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff;border-top:0}.cognito-datepicker-dropdown.cognito-datepicker-orient-bottom:before{border-bottom:0;border-top:7px solid #999}.cognito-datepicker-dropdown.cognito-datepicker-orient-bottom:after{bottom:-6px;border-bottom:0;border-top:6px solid #fff}.cognito-datepicker td,.cognito-datepicker th{border:none;color:#333}.table-striped .datepicker table tr td,.table-striped .datepicker table tr th{background-color:transparent}.cognito-datepicker table tr td.day:hover{background:#eee}.cognito-datepicker table tr td.old,.cognito-datepicker table tr td.new{color:#999}.cognito-datepicker table tr td.disabled,.cognito-datepicker table tr td.disabled:hover{background:none;color:#999}.cognito-datepicker table tr td.today,.cognito-datepicker table tr td.today:hover,.cognito-datepicker table tr td.today.disabled,.cognito-datepicker table tr td.today.disabled:hover{background-color:#fde19a;background-image:-moz-linear-gradient(top,#fdd49a,#fdf59a);background-image:-ms-linear-gradient(top,#fdd49a,#fdf59a);background-image:-webkit-gradient(linear,0 0,0 100%,from(#fdd49a),to(#fdf59a));background-image:-webkit-linear-gradient(top,#fdd49a,#fdf59a);background-image:-o-linear-gradient(top,#fdd49a,#fdf59a);background-image:linear-gradient(top,#fdd49a,#fdf59a);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdd49a',endColorstr='#fdf59a',GradientType=0);border-color:#fdf59a #fdf59a #fbed50;border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);color:#000}.cognito-datepicker table tr td.today:hover,.cognito-datepicker table tr td.today:hover:hover,.cognito-datepicker table tr td.today.disabled:hover,.cognito-datepicker table tr td.today.disabled:hover:hover,.cognito-datepicker table tr td.today:active,.cognito-datepicker table tr td.today:hover:active,.cognito-datepicker table tr td.today.disabled:active,.cognito-datepicker table tr td.today.disabled:hover:active,.cognito-datepicker table tr td.today.active,.cognito-datepicker table tr td.today:hover.active,.cognito-datepicker table tr td.today.disabled.active,.cognito-datepicker table tr td.today.disabled:hover.active,.cognito-datepicker table tr td.today.disabled,.cognito-datepicker table tr td.today:hover.disabled,.cognito-datepicker table tr td.today.disabled.disabled,.cognito-datepicker table tr td.today.disabled:hover.disabled,.cognito-datepicker table tr td.today[disabled],.cognito-datepicker table tr td.today:hover[disabled],.cognito-datepicker table tr td.today.disabled[disabled],.cognito-datepicker table tr td.today.disabled:hover[disabled]{background-color:#fdf59a}.cognito-datepicker table tr td.today:active,.cognito-datepicker table tr td.today:hover:active,.cognito-datepicker table tr td.today.disabled:active,.cognito-datepicker table tr td.today.disabled:hover:active,.cognito-datepicker table tr td.today.active,.cognito-datepicker table tr td.today:hover.active,.cognito-datepicker table tr td.today.disabled.active,.cognito-datepicker table tr td.today.disabled:hover.active{background-color:#fbf069 \9}.cognito-datepicker table tr td.today:hover:hover{color:#000}.cognito-datepicker table tr td.today.active:hover{color:#fff}.cognito-datepicker table tr td.range,.cognito-datepicker table tr td.range:hover,.cognito-datepicker table tr td.range.disabled,.cognito-datepicker table tr td.range.disabled:hover{background:#eee;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}.cognito-datepicker table tr td.range.today,.cognito-datepicker table tr td.range.today:hover,.cognito-datepicker table tr td.range.today.disabled,.cognito-datepicker table tr td.range.today.disabled:hover{background-color:#f3d17a;background-image:-moz-linear-gradient(top,#f3c17a,#f3e97a);background-image:-ms-linear-gradient(top,#f3c17a,#f3e97a);background-image:-webkit-gradient(linear,0 0,0 100%,from(#f3c17a),to(#f3e97a));background-image:-webkit-linear-gradient(top,#f3c17a,#f3e97a);background-image:-o-linear-gradient(top,#f3c17a,#f3e97a);background-image:linear-gradient(top,#f3c17a,#f3e97a);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3c17a',endColorstr='#f3e97a',GradientType=0);border-color:#f3e97a #f3e97a #edde34;border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}.cognito-datepicker table tr td.range.today:hover,.cognito-datepicker table tr td.range.today:hover:hover,.cognito-datepicker table tr td.range.today.disabled:hover,.cognito-datepicker table tr td.range.today.disabled:hover:hover,.cognito-datepicker table tr td.range.today:active,.cognito-datepicker table tr td.range.today:hover:active,.cognito-datepicker table tr td.range.today.disabled:active,.cognito-datepicker table tr td.range.today.disabled:hover:active,.cognito-datepicker table tr td.range.today.active,.cognito-datepicker table tr td.range.today:hover.active,.cognito-datepicker table tr td.range.today.disabled.active,.cognito-datepicker table tr td.range.today.disabled:hover.active,.cognito-datepicker table tr td.range.today.disabled,.cognito-datepicker table tr td.range.today:hover.disabled,.cognito-datepicker table tr td.range.today.disabled.disabled,.cognito-datepicker table tr td.range.today.disabled:hover.disabled,.cognito-datepicker table tr td.range.today[disabled],.cognito-datepicker table tr td.range.today:hover[disabled],.cognito-datepicker table tr td.range.today.disabled[disabled],.cognito-datepicker table tr td.range.today.disabled:hover[disabled]{background-color:#f3e97a}.cognito-datepicker table tr td.range.today:active,.cognito-datepicker table tr td.range.today:hover:active,.cognito-datepicker table tr td.range.today.disabled:active,.cognito-datepicker table tr td.range.today.disabled:hover:active,.cognito-datepicker table tr td.range.today.active,.cognito-datepicker table tr td.range.today:hover.active,.cognito-datepicker table tr td.range.today.disabled.active,.cognito-datepicker table tr td.range.today.disabled:hover.active{background-color:#efe24b \9}.cognito-datepicker table tr td.selected,.cognito-datepicker table tr td.selected:hover,.cognito-datepicker table tr td.selected.disabled,.cognito-datepicker table tr td.selected.disabled:hover{background-color:#9e9e9e;background-image:-moz-linear-gradient(top,#b3b3b3,gray);background-image:-ms-linear-gradient(top,#b3b3b3,gray);background-image:-webkit-gradient(linear,0 0,0 100%,from(#b3b3b3),to(gray));background-image:-webkit-linear-gradient(top,#b3b3b3,gray);background-image:-o-linear-gradient(top,#b3b3b3,gray);background-image:linear-gradient(top,#b3b3b3,gray);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3',endColorstr='#808080',GradientType=0);border-color:gray gray #595959;border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,.25)}.cognito-datepicker table tr td.selected:hover,.cognito-datepicker table tr td.selected:hover:hover,.cognito-datepicker table tr td.selected.disabled:hover,.cognito-datepicker table tr td.selected.disabled:hover:hover,.cognito-datepicker table tr td.selected:active,.cognito-datepicker table tr td.selected:hover:active,.cognito-datepicker table tr td.selected.disabled:active,.cognito-datepicker table tr td.selected.disabled:hover:active,.cognito-datepicker table tr td.selected.active,.cognito-datepicker table tr td.selected:hover.active,.cognito-datepicker table tr td.selected.disabled.active,.cognito-datepicker table tr td.selected.disabled:hover.active,.cognito-datepicker table tr td.selected.disabled,.cognito-datepicker table tr td.selected:hover.disabled,.cognito-datepicker table tr td.selected.disabled.disabled,.cognito-datepicker table tr td.selected.disabled:hover.disabled,.cognito-datepicker table tr td.selected[disabled],.cognito-datepicker table tr td.selected:hover[disabled],.cognito-datepicker table tr td.selected.disabled[disabled],.cognito-datepicker table tr td.selected.disabled:hover[disabled]{background-color:gray}.cognito-datepicker table tr td.selected:active,.cognito-datepicker table tr td.selected:hover:active,.cognito-datepicker table tr td.selected.disabled:active,.cognito-datepicker table tr td.selected.disabled:hover:active,.cognito-datepicker table tr td.selected.active,.cognito-datepicker table tr td.selected:hover.active,.cognito-datepicker table tr td.selected.disabled.active,.cognito-datepicker table tr td.selected.disabled:hover.active{background-color:#666 \9}.cognito-datepicker table tr td.active,.cognito-datepicker table tr td.active:hover,.cognito-datepicker table tr td.active.disabled,.cognito-datepicker table tr td.active.disabled:hover{background-color:#686868;background-image:-moz-linear-gradient(top,#919191,#686868);background-image:-ms-linear-gradient(top,#919191,#686868);background-image:-webkit-gradient(linear,0 0,0 100%,from(#919191),to(#686868));background-image:-webkit-linear-gradient(top,#919191,#686868);background-image:-o-linear-gradient(top,#919191,#686868);background-image:linear-gradient(top,#919191,#686868);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#919191',endColorstr='#686868',GradientType=0);border-color:#686868 #686868 #002a80;border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,.25)}.cognito-datepicker table tr td.active:hover,.cognito-datepicker table tr td.active:hover:hover,.cognito-datepicker table tr td.active.disabled:hover,.cognito-datepicker table tr td.active.disabled:hover:hover,.cognito-datepicker table tr td.active:active,.cognito-datepicker table tr td.active:hover:active,.cognito-datepicker table tr td.active.disabled:active,.cognito-datepicker table tr td.active.disabled:hover:active,.cognito-datepicker table tr td.active.active,.cognito-datepicker table tr td.active:hover.active,.cognito-datepicker table tr td.active.disabled.active,.cognito-datepicker table tr td.active.disabled:hover.active,.cognito-datepicker table tr td.active.disabled,.cognito-datepicker table tr td.active:hover.disabled,.cognito-datepicker table tr td.active.disabled.disabled,.cognito-datepicker table tr td.active.disabled:hover.disabled,.cognito-datepicker table tr td.active[disabled],.cognito-datepicker table tr td.active:hover[disabled],.cognito-datepicker table tr td.active.disabled[disabled],.cognito-datepicker table tr td.active.disabled:hover[disabled]{background-color:#686868}.cognito-datepicker table tr td.active:active,.cognito-datepicker table tr td.active:hover:active,.cognito-datepicker table tr td.active.disabled:active,.cognito-datepicker table tr td.active.disabled:hover:active,.cognito-datepicker table tr td.active.active,.cognito-datepicker table tr td.active:hover.active,.cognito-datepicker table tr td.active.disabled.active,.cognito-datepicker table tr td.active.disabled:hover.active{background-color:#039 \9}.cognito-datepicker table tr td span:hover{background:#eee}.cognito-datepicker table tr td span.disabled,.cognito-datepicker table tr td span.disabled:hover{background:none;color:#999}.cognito-datepicker table tr td span.active,.cognito-datepicker table tr td span.active:hover,.cognito-datepicker table tr td span.active.disabled,.cognito-datepicker table tr td span.active.disabled:hover{background-color:#006dcc;background-image:-moz-linear-gradient(top,#919191,#686868);background-image:-ms-linear-gradient(top,#919191,#686868);background-image:-webkit-gradient(linear,0 0,0 100%,from(#919191),to(#686868));background-image:-webkit-linear-gradient(top,#919191,#686868);background-image:-o-linear-gradient(top,#919191,#686868);background-image:linear-gradient(top,#919191,#686868);background-repeat:repeat-x;border-color:#686868 #686868 #002a80;border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25);color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,.25)}.cognito-datepicker table tr td span.active:hover,.cognito-datepicker table tr td span.active:hover:hover,.cognito-datepicker table tr td span.active.disabled:hover,.cognito-datepicker table tr td span.active.disabled:hover:hover,.cognito-datepicker table tr td span.active:active,.cognito-datepicker table tr td span.active:hover:active,.cognito-datepicker table tr td span.active.disabled:active,.cognito-datepicker table tr td span.active.disabled:hover:active,.cognito-datepicker table tr td span.active.active,.cognito-datepicker table tr td span.active:hover.active,.cognito-datepicker table tr td span.active.disabled.active,.cognito-datepicker table tr td span.active.disabled:hover.active,.cognito-datepicker table tr td span.active.disabled,.cognito-datepicker table tr td span.active:hover.disabled,.cognito-datepicker table tr td span.active.disabled.disabled,.cognito-datepicker table tr td span.active.disabled:hover.disabled,.cognito-datepicker table tr td span.active[disabled],.cognito-datepicker table tr td span.active:hover[disabled],.cognito-datepicker table tr td span.active.disabled[disabled],.cognito-datepicker table tr td span.active.disabled:hover[disabled]{background-color:#686868}.cognito-datepicker table tr td span.active:active,.cognito-datepicker table tr td span.active:hover:active,.cognito-datepicker table tr td span.active.disabled:active,.cognito-datepicker table tr td span.active.disabled:hover:active,.cognito-datepicker table tr td span.active.active,.cognito-datepicker table tr td span.active:hover.active,.cognito-datepicker table tr td span.active.disabled.active,.cognito-datepicker table tr td span.active.disabled:hover.active{background-color:#039 \9}.cognito-datepicker table tr td span.old,.cognito-datepicker table tr td span.new{color:#999}.cognito-datepicker thead tr:first-child th:hover,.cognito-datepicker tfoot tr th:hover{background:#eee}.cognito-datepicker .cw{font-size:10px}.cognito-datepicker thead tr:first-child th.cw{background-color:transparent}.input-daterange .add-on{font-weight:normal;text-shadow:0 1px 0 #fff;background-color:#eee;border:1px solid #ccc}.c-public-form .cognito:not(.c-sml) .c-forms-form-main{padding:0 20px 8px 20px;overflow:auto;min-height:100px}.c-public-form .cognito:not(.c-sml) .c-forms-logo{padding:28px 28px 0 28px}.c-public-form .cognito:not(.c-sml) .c-forms-heading .c-forms-form-title{padding:28px 20px 10px 20px}.cognito.c-sml .c-forms-heading .c-forms-form-title{padding-top:0}.cognito .c-forms-confirmation{display:none;overflow:auto}.cognito .c-forms-confirmation,.c-forms-form-readonly-public{min-height:300px;padding:0;line-height:1.3em}.cognito .c-forms-form-main{clear:both;margin-top:4px}.cognito .c-forms-heading{overflow:visible}.cognito .c-forms-heading .c-forms-form-title{padding:28px 0 10px 0}.cognito .c-forms-logo{padding:28px 8px 0 8px}.cognito .c-button-section{padding:0 0 20px 0}.cognito .c-forms-confirmation-message{padding:28px 8px 20px 8px}.cognito .c-forms-confirmation-message img{max-width:100%}.cognito div[class^="c-page-page"] .c-button-section{padding:0}.cognito div[class^="c-page-page"] .c-forms-payment{padding:8px 0 0 0}.cognito .c-forms-not-available-message{padding:8px;min-height:200px}.cognito.c-sml .c-forms-form-main,.cognito.c-sml .c-forms-payment{padding:0;margin-bottom:10px}.cognito.c-sml .c-forms-form-title{padding-left:0;padding-right:0}.cognito.c-med .c-forms-form{padding:0}.cognito.c-sml .c-button-section{padding:8px 0 0 0}.cognito.c-sml .c-forms-heading .c-forms-form-title{padding-top:0}.c-forms-form{overflow:visible;line-height:normal;position:relative}.c-forms-form-public-readonly{overflow:auto}.c-forms-form-public-readonly .c-forms-payment-order-summary .c-title{padding-left:0}.c-forms-error{padding:0 20px}.cognito .c-forms-template{overflow:visible}.cognito .c-forms-heading h2{padding:5px 8px;margin:0;border-bottom:1px}.cognito .c-forms-heading .c-forms-description{padding:8px;line-height:1.3em}.cognito.c-sml .c-forms-logo{padding:8px}.cognito .c-forms-form-details{clear:both}.cognito .c-forms-form-details .c-rating-scale{padding:0}.c-forms-form-body{overflow:visible}.c-forms-pages{position:relative;overflow:hidden}.cognito .c-page{width:100%;overflow:auto}.cognito .c-progress-section{padding:8px;overflow:auto;line-height:normal}.cognito .c-forms-progress ol{counter-reset:mycounter;list-style:none;margin:0;clear:both;padding:0}.cognito .c-forms-progress li{float:left;position:relative;list-style-type:none;margin-bottom:5px}.cognito .c-progress-steps ol{position:relative;display:inline-block;padding:0!important}.cognito .c-progress-steps li{padding:0;margin-right:1em;font-weight:bold;opacity:.7}.cognito .c-progress-steps li:hover{cursor:pointer}.cognito .c-progress-steps li:before{content:counter(mycounter);counter-increment:mycounter;display:inline-block;vertical-align:middle;color:#999;font-size:.8em;text-align:center;width:1.5em;height:1.5em;line-height:1.5em;border-radius:50%;border-width:1px;border-style:solid;background-color:#fff}.cognito .c-progress-steps li span{display:inline-block;vertical-align:middle;padding-left:.5em}.cognito .c-progress-steps li.c-page-selected{font-weight:bold;opacity:1}.cognito .c-progress-steps.c-progress-notext li{font-weight:normal;opacity:1;color:#999;height:2em}.cognito .c-progress-steps.c-progress-notext li span{font-size:0;width:0;height:0}.cognito .c-progress-steps.c-progress-notext li:before{font-size:14px;width:25px;height:25px;line-height:25px;top:0}.cognito.c-sml .c-progress-steps li span{font-size:.1px;width:0;height:0}.cognito .c-progress-bar{background:#fff;display:block;padding:0!important;padding-top:20px}.cognito .c-progress-bar li{text-align:center;padding:8px 4px 4px 4px;border-right:1px solid transparent}.cognito .c-progress-bar li:hover{cursor:pointer}.cognito .c-progress-bar li span{opacity:.7}.cognito .c-progress-bar li.c-page-selected span{font-weight:bold;opacity:1}.cognito .c-progress-bar li:before{content:"";position:absolute;top:-8px;left:0;width:100%;height:6px;display:block}.cognito .c-progress-bar li.c-page-selected:after{content:"";position:absolute;top:-3px;left:50%;width:0;height:0;display:block;border:5px solid transparent;margin-left:-5px}.cognito .c-progress-bar.c-progress-notext li span{display:none;padding:4px}.cognito .c-progress-bar.c-progress-notext li.c-page-selected:after{display:none}.cognito .c-page-numbering{float:right;margin-top:12px;padding:8px}.cognito.c-sml .c-progress-bar li{margin-bottom:0}.cognito.c-sml .c-progress-bar li span{font-size:0;width:0;height:0;display:none}.cognito.c-sml .c-progress-bar li.c-page-selected:after{display:none}.cognito .c-forms-form .c-save-resume-button-container{float:right;margin:0 8px}.cognito .c-forms-form .c-save-resume-button{background-color:transparent;position:relative;margin-right:0}.cognito .c-forms-form .c-save-resume-button:hover{background-color:transparent}.cognito .c-forms-form .c-save-resume-button i{position:absolute;right:.25em;font-size:1em}.cognito #c-save-resume-dialog{position:absolute;right:0;bottom:3px;left:0;z-index:10050;height:1000px;width:60%;margin:auto;overflow:auto;background-color:#fff;visibility:hidden}.cognito #c-save-resume-dialog .dialog-contents{position:absolute;top:0;left:0;right:0;padding:23px}.cognito #c-save-resume-dialog .c-save-resume-title{padding:0 8px;margin-top:14px;line-height:1.2em}.cognito #c-save-resume-dialog .c-save-resume-close{position:absolute;top:1px;right:1px;cursor:pointer;padding:3px 5px}.cognito #c-save-resume-dialog #c-save-resume-content{padding:0 8px;line-height:1.3em}.cognito #c-save-resume-dialog #c-save-resume-email-link{min-width:inherit;display:inline-block;vertical-align:middle;min-height:27px;margin:0 0 0 5px;width:calc(25% - 5px);white-space:nowrap}.cognito #c-save-resume-dialog #c-save-resume-email{width:75%;display:inline-block;vertical-align:middle}.cognito #c-save-resume-dialog .c-email-sent-message{clear:both;padding:5px 8px;text-align:center}.cognito #c-save-resume-dialog .c-email-sent-message span{padding:2px;display:inline-block}.cognito.c-iframe #c-modal-overlay{background-color:transparent!important}.cognito.c-iframe #c-save-resume-dialog{box-shadow:0 0 2px 2px #ccc}.cognito .c-forms-checkout{border:none;overflow:hidden;width:100%;margin-top:4px}.cognito .c-forms-payment{border:1px solid transparent;margin:0;clear:both;overflow:visible}.cognito .c-forms-payment h2,.cognito .c-forms-payment h3{border-bottom:0}.cognito .c-forms-payment .c-order-noaccount{float:right!important}.cognito .c-forms-payment .c-payment-section,.cognito .c-forms-confirmation .c-payment-section{padding:8px;margin:0}.cognito .c-forms-payment .c-payment-section .c-field{padding-right:5px;padding-left:5px}.cognito .c-forms-payment .c-background-highlight{overflow:auto;margin:0}.cognito .c-forms-payment table,.cognito .c-forms-payment .c-payment-section table{border-width:0;margin:0}.cognito .c-forms-payment .c-payment-section.c-payment-paypal-section .c-col-1{display:none}.cognito .c-forms-payment .c-payment-section.c-payment-paypal-section .c-col-13{width:100%;max-width:none}.cognito .c-payment-section.c-payment-paypal-section .c-order-summary{max-width:none}.cognito .c-forms-payment .c-payment-section.c-payment-paypal-section .c-order-item>td{min-width:200px}.cognito .c-forms-payment-order-summary.c-section{float:none!important}.cognito .c-order-summary{width:100%;border-spacing:0;background-color:transparent;float:right;border-width:0}.cognito .c-order-summary td,.cognito .c-payment-section .c-order-summary th{border:none}.cognito .c-order-item>td{text-align:right;padding:6px;min-width:100px;background-color:transparent}.cognito .c-order-item div,.c-order-total div{float:left}.cognito .c-order-item .c-forms-payment-lineitem-amount{font-weight:normal;width:1%;white-space:nowrap}.cognito .c-order-item.c-line-item>td:first-child{text-align:left}.cognito .c-order-item.c-subtotal{font-weight:bold!important}.cognito .c-forms-payment-lineitem-group td,.cognito td.c-forms-payment-lineitem-group{float:none!important;font-weight:bold;padding:6px}.cognito .c-order-item .c-forms-payment-lineitem-label{width:99%;text-align:left;font-weight:normal}.cognito .c-order-item .c-forms-payment-lineitem-label.grouped{padding-left:15px}.cognito .c-payment-section-lineitem-variant{font-style:italic}.cognito .c-order-total{font-weight:bold;clear:both}.cognito .c-forms-payment-label{margin:0 5px;padding:0}.cognito .c-forms-payment-order-summary .c-forms-payment-total-amount{font-size:150%;margin:0 8px;padding:10px 5px 0 5px;text-align:right;font-weight:bold!important;line-height:120%}.cognito .c-forms-payment-total-amount,.cognito .c-forms-order-total-amount{font-size:150%;margin:0;padding:10px 5px 0 5px;text-align:right;font-weight:bold!important;line-height:120%}.cognito .c-footer-terms ul{padding-bottom:10px}.cognito .c-order-amount-due{display:table;width:100%;font-weight:bold}.cognito .c-order-amount-due>div{display:table-cell;padding:4px;text-align:right}.cognito .c-order-amount-due>div:first-child{text-align:left}.cognito .c-forms-payment-order-summary .detail{padding:5px 8px;line-height:100%}.cognito .c-forms-payment-order-summary .c-background-highlight{overflow:auto;padding:8px}.cognito .c-forms-payment-subtotal-amount,.cognito .c-forms-payment-fee-amount{white-space:nowrap}.cognito .c-forms-payment.c-not-collecting-payment .c-order-summary{display:none}.cognito .c-forms-payment.c-not-collecting-payment .c-forms-payment-total-amount{display:none}.cognito .c-forms-payment .c-card-on-file-agreement-field{display:none}.cognito .c-forms-payment .c-card-on-file-agreement-field.c-show-card-agreement{display:block}.cognito.c-med .c-forms-payment .c-order-item>td{min-width:initial}.cognito.c-med .c-table .c-payment-account .c-section{padding-left:0!important}.cognito.c-sml .c-table .c-payment-account .c-section{padding-left:0!important}.cognito.c-sml .c-table .c-payment-account,.cognito.c-sml .c-table .c-payment-amountdue,.cognito.c-sml .c-table .c-payment-payamount,.cognito.c-sml .c-table .c-payment-item{display:block;width:100%!important}.cognito.c-sml .c-table .c-payment-amountdue,.cognito.c-sml .c-table .c-payment-account{border-bottom:0!important}.cognito.c-sml .c-table .c-payment-payamount{padding:8px 0}.cognito.c-sml #c-save-resume-dialog{width:100%;max-height:90%}.cognito.c-sml #c-save-resume-dialog #c-save-resume-email-link{width:100%;float:none;margin:0;margin-top:10px}.cognito.c-sml #c-save-resume-dialog #c-save-resume-email{float:none;width:100%;display:inline-block}.cognito.c-sml .c-forms-form .c-save-resume-button-container{float:none}.cognito.c-sml #c-web-paypal-checkout{text-align:center;display:block;padding:0}.cognito.c-sml .c-forms-payment .c-payment-section.c-payment-paypal-section .c-order-item>td{min-width:auto;min-width:initial}.cognito .c-forms-template>.c-section,.cognito .c-forms-form-body>.c-section{float:none!important}.cognito .c-forms-template>.c-section:after,.cognito .c-forms-form-body>.c-section:after{content:"";display:table;clear:both}@media print{.cognito .c-page{display:inline-block}}@media screen and (max-width:1542px){#c-forms-container .c-forms-form{margin:0!important;border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}#c-forms-container{padding-top:0}#c-web-powered-by{margin-top:0}}
+
+
+.cognito form { font-size: 16px; }
+.cognito:not(.c-forms-actionBar){ max-width: 1542px; margin: 0 auto; }
+.c-public-form .cognito {	max-width: 1542px; }
+.cognito .c-forms-form { background-color: #1c4587;}
+.cognito .c-forms-form .c-dropdown select{padding-right:26px;}
+.cognito.c-ie .c-forms-form .c-dropdown select{padding-right:6px;}
+.cognito-background { background-image: ; background-size: inherit; background-attachment:fixed; background-repeat: repeat; background-color: rgba(255, 255, 0, 0.27); }
+.cognito .c-forms-form .c-forms-heading {background-color:rgba(0, 0, 0, 0);}
+.cognito .c-forms-form .c-forms-form-title h2 { font-family: 'Open Sans Condensed',Helvetica,sans-serif; font-weight: bold; font-size: 2em; color:#000000; line-height:1.15em; }
+.cognito .c-forms-form .c-forms-description{color:#000000;font-family:Arial,Helvetica,sans-serif;font-size:0.875em;}
+.cognito .c-forms-form .dropdown-menu > li > a {font-family:Arial,Helvetica,sans-serif;font-size:100%;}
+.cognito .c-forms-form .c-helptext{font-family:Arial,Helvetica,sans-serif;color:#cccccc;font-size:calc(0.875em * .9);}
+.cognito .c-forms-form h1, .cognito .c-forms-form h2,.cognito .c-forms-form h3, .cognito .c-forms-form h4, .cognito .c-forms-form h5, .cognito .c-forms-form h6{font-family: 'Open Sans Condensed',Helvetica,sans-serif; font-weight: bold; color:#ffffff;line-height:1.2em;}
+.cognito .c-forms-form h1,.cognito .c-forms-form h2,.cognito .c-forms-form h3{font-size: 1.5em;}
+.cognito .c-forms-form h4{font-size: calc(1.5em * .9);}
+.cognito .c-forms-form h5{font-size: calc(1.5em * .9 * .9);}
+.cognito .c-forms-form h6{font-size: calc(1.5em * .9 * .9 * .9);}
+.cognito .c-forms-form .c-html h1{font-size: calc(1.5em / 0.875);}
+.cognito .c-forms-form .c-html h2{font-size: calc(1.5em * .9 / 0.875);}
+.cognito .c-forms-form .c-html h3{font-size: calc(1.5em * .9 * .9 / 0.875);}
+.cognito .c-forms-form .c-html h4{font-size: calc(1.5em * .9 * .9 * .9 / 0.875);}
+.cognito .c-forms-form .c-html h5{font-size: calc(1.5em * .9 * .9 * .9 * .9 / 0.875);}
+.cognito .c-forms-form .c-html h6{font-size: calc(1.5em * .9 * .9 * .9 * .9 * .9 / 0.875);}
+.cognito .c-forms-form .c-html a,.cognito .c-forms-form .c-forms-confirmation-message a{font-size:calc(0.875em / 0.875);}
+.cognito .c-forms-form .c-label{ font-family: 'Open Sans Condensed',Helvetica,sans-serif; font-weight: bold; font-size: 1em; color:#ffffff;line-height:1.3em; }
+.cognito .c-forms-form .c-editor-date-icon,.cognito .c-forms-form .c-editor-time-icon, .cognito .c-forms-form .c-remove-item, .cognito .c-forms-form .c-save-resume-close{color:#ffffff;}
+.cognito .c-forms-form .c-remove-item{ padding-top: .1em; font-size: 100%; }
+.cognito .remove-icon circle{ fill: #ffff00; stroke: #E5E500; }
+.cognito .remove-icon line { stroke: #000000; }
+.cognito .c-forms-form #c-save-resume-email-link{font-size:100%;}
+.cognito .c-forms-form .c-email-sent-message{font-family:Arial,Helvetica,sans-serif;font-size:0.875em;}
+.cognito .c-forms-form .c-table-section:not(.c-responsive) select, .cognito.c-med .c-forms-form .c-table-section.c-responsive select, .cognito.c-lrg .c-forms-form .c-table-section.c-responsive select
+{font-size:1em}
+.cognito .c-forms-form .c-table-section:not(.c-responsive)>*:not(.c-table-header)>*>*,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive>*:not(.c-table-header)>*>*,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive>*:not(.c-table-header)>*>*
+{font-size:0.875em;}
+.cognito .c-forms-form .c-table-section:not(.c-responsive)>*>*>* .c-editor,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive>*>*>* .c-editor,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive>*>*>* .c-editor
+{font-size:1em}
+.cognito.c-sml .c-forms-form .c-table.c-table-section.c-responsive:not(.c-readonly) .c-repeating-section-group > .c-repeating-section-item{padding-left: calc(2em * 0.875 - 8px)}
+.cognito.c-sml .c-forms-form .c-table.c-table-section.c-responsive:not(.c-readonly) .c-repeating-section-group>.c-repeating-section-item .c-repeating-section-item-title{margin-left: calc(-2em * 0.875 + 8px)}
+.cognito .c-table-section:not(.c-responsive)+.c-validation, .cognito.c-med .c-table-section.c-responsive+.c-validation, .cognito.c-lrg .c-table-section.c-responsive+.c-validation
+{margin-left: calc(2em / 0.875)}
+.cognito .c-forms-form .c-table-section:not(.c-responsive)~.c-repeating-section-add,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive~.c-repeating-section-add,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive~.c-repeating-section-add{font-size:0.875em}
+.cognito :not(.c-responsive).c-table-section ~ .c-repeating-section-add .c-add-item, .cognito.c-med .c-table-section.c-responsive ~ .c-repeating-section-add .c-add-item, .cognito.c-lrg .c-table-section.c-responsive ~ .c-repeating-section-add .c-add-item
+{font-size:calc(1.125em / 0.875)}
+.cognito .c-forms-form .c-table-section:not(.c-readonly):not(.c-responsive) .c-repeating-section-group .c-repeating-section-item [class^=c-calculation-],
+.cognito.c-med .c-forms-form .c-table-section.c-responsive:not(.c-readonly) .c-repeating-section-group .c-repeating-section-item [class^=c-calculation-],
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive:not(.c-readonly) .c-repeating-section-group .c-repeating-section-item [class^=c-calculation-] {
+background-color: rgba(255,255,255,0.15);
+}
+.cognito .c-forms-form .c-table-section:not(.c-responsive).c-readonly>.c-repeating-section-group.c-table-body>.c-table-row.c-repeating-section-item:nth-child(odd),
+.cognito.c-med .c-forms-form .c-table-section.c-responsive.c-readonly>.c-repeating-section-group.c-table-body>.c-table-row.c-repeating-section-item:nth-child(odd),
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive.c-readonly>.c-repeating-section-group.c-table-body>.c-table-row.c-repeating-section-item:nth-child(odd)
+{background-color: rgba(255,255,255,0.15);}
+.cognito .c-forms-form .c-table-section:not(.c-responsive).c-readonly>.c-repeating-section-group.c-table-body>.c-table-row.c-repeating-section-item:last-child>*:not(:first-child),
+.cognito.c-med .c-forms-form .c-table-section.c-responsive.c-readonly>.c-repeating-section-group.c-table-body>.c-table-row.c-repeating-section-item:last-child>*:not(:first-child),
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive.c-readonly>.c-repeating-section-group.c-table-body>.c-table-row.c-repeating-section-item:last-child>*:not(:first-child)
+{border-bottom:1px solid rgba(255,255,255,0.15);border-radius:0;}
+.cognito .c-forms-form{ background-color: #1c4587; }
+.cognito .c-forms-form .c-rating-scale .c-choice-option .c-label{ font-family:Arial,Helvetica,sans-serif; font-weight: normal; font-size: 0.875em; color: #cccccc; }
+.cognito .c-forms-form .c-editor, .cognito .c-forms-form .c-rating-scale-questions{ font-family:Arial,Helvetica,sans-serif; font-weight: normal; font-size: 0.875em; color: #cccccc; }
+.cognito .c-forms-form select, .cognito .c-forms-form input[type=text], .cognito .c-forms-form input[type=password], .cognito .c-forms-form textarea { font-family:Arial,Helvetica,sans-serif; font-weight: normal;}
+.cognito .c-editor .c-choice-option label, .cognito .c-editor label.c-yesno-radio, .cognito .c-editor.c-yesno-checkbox label {font-weight: normal;}
+.cognito .c-forms-form input::-webkit-input-placeholder{color: #ffffff;}
+.cognito .c-forms-form input:-ms-input-placeholder {color: #ffffff;}
+.cognito .c-forms-form input::-webkit-input-placeholder {color: #ffffff;}
+.cognito .c-forms-form input:-moz-placeholder {color: #ffffff;}
+.cognito .c-forms-form input::-moz-placeholder {color: #ffffff;}
+.cognito .c-forms-form .c-placeholder-text-styled {color: #ffffff;}
+.cognito .c-forms-form textarea::-webkit-input-placeholder{color: #ffffff;}
+.cognito .c-forms-form textarea:-ms-input-placeholder {color: #ffffff;}
+.cognito .c-forms-form textarea::-webkit-input-placeholder {color: #ffffff;}
+.cognito .c-forms-form textarea:-moz-placeholder {color: #ffffff;}
+.cognito .c-forms-form textarea::-moz-placeholder {color: #ffffff;}
+.cognito .c-forms-form a{ color: #ffffff;font-family: 'Open Sans Condensed',Helvetica,sans-serif; font-weight: normal; font-size: 0.875em; }
+.cognito .c-forms-form .c-fileupload-download a,.cognito .c-forms-form .c-fileupload-delete i{text-decoration:none;color: #ffffff;}
+.cognito .c-forms-form button {padding: .5em 1.25em; }
+.cognito .c-forms-form .c-add-item{padding:.5em;}
+.cognito .c-forms-form button,.cognito .c-forms-form .c-add-item, .cognito .c-forms-form input[type=button],.cognito .c-forms-form .c-fileupload-dropzone .c-upload-button button { background-color: #ffff00; border-color: #E5E500; color: #000000; font-family: 'Open Sans Condensed',Helvetica,sans-serif; font-weight: bold; font-size: 1.125em;	border-radius:4px; }
+.cognito .c-forms-form .c-fileupload-dropzone .c-upload-button { font-size: inherit;	}
+.cognito .c-forms-form button:hover, .cognito .c-forms-form input[type=button]:hover,.cognito .c-forms-form .c-add-item:hover, .cognito .c-forms-form .c-fileupload-dropzone .c-upload-button button:hover { background-color: #E5E500;}
+.cognito .c-forms-form [class^="icon-"]:after, .cognito .c-forms-form [class*=" icon-"]:after {color:.c-forms-form;}
+.cognito .c-forms-form .c-repeating-section-group > div:nth-child(odd){background:rgba(255,255,255,0.15);}
+.cognito .c-forms-form .c-repeating-section-group > div:last-child{border-bottom-color:rgba(255,255,255,0.15);}
+.cognito .c-forms-form .c-rating-scale tbody:nth-child(even){background:rgba(255,255,255,0.15);}
+.cognito .c-forms-form tbody.c-line-item-container{border-bottom-color: rgba(255,255,255,0.35)!important;}
+.cognito .c-forms-form hr {background-color:rgba(204,204,204,0.697);}
+.cognito .c-forms-form .c-background-highlight {background:rgba(255,255,255,0.15);}
+.cognito .c-forms-form .c-text-light {color:rgba(204,204,204,0.697);}
+.cognito .c-forms-form .c-progress-bar li:before{background:rgba(255,255,255,0.15);border-color:#1c4587;}
+.cognito .c-forms-form .c-forms-progress li.c-page-selected:before {background-color: #ffff00; color: #000000;border-color: #ffff00;}
+.cognito .c-forms-form .c-progress-bar li.c-page-selected:before {background-color: #ffff00;border-color: #ffff00;color: #000000;}
+.cognito .c-forms-form .c-progress-bar li.c-page-selected:after{border-top-color:#ffff00;}
+.cognito .c-forms-form .c-save-resume-button{color:#cccccc;}
+.cognito .c-forms-form #c-save-resume-dialog{background-image: ; background-size: inherit; background-attachment:fixed; background-repeat: repeat; background-color: rgba(255, 255, 0, 0.27);}
+.cognito .c-forms-form #c-save-resume-dialog .dialog-contents{background-color: #1c4587;}
+.cognito .c-forms-form #c-modal-overlay{background:rgba(255,255,255,1);}
+.cognito .c-forms-form .c-email-sent-message span{background-color:#ffff00;color: #000000;}
+.cognito .c-forms-form .c-progress-steps li:before{background-color: rgba(255,255,255,0.15);color:#cccccc;}
+.cognito .c-forms-form .c-forms-payment table{padding-top:8px;}
+.cognito .c-forms-form .c-forms-payment-total-amount{font-family:Arial,Helvetica,sans-serif; font-weight: normal; font-size: 1.313em; color: #cccccc;}
+.cognito .c-forms-form .c-footer-terms a {color:#ffffff;}
+.cognito .c-forms-form .c-forms-not-available-message,.cognito .c-forms-form .c-page-numbering, .cognito .c-forms-form .c-forms-confirmation-message, .cognito .c-forms-form #c-save-resume-content,.cognito .c-forms-form .c-progress-section, .cognito .c-forms-form .c-forms-payment-order-summary .detail, .cognito .c-forms-form .c-web-paypal-processing { font-family:Arial,Helvetica,sans-serif; font-weight: normal; font-size: 0.875em; color: #cccccc; }
+.cognito .c-forms-form .c-validation  { font-family:Arial,Helvetica,sans-serif; font-weight: normal; font-size: 0.875em; }
+.cognito .c-forms-form .c-table-section *.c-error:after  { font-family:Arial,Helvetica,sans-serif; font-weight: normal; }
+.cognito .c-forms-form .c-table-section:not(.c-responsive)>*>*>* .c-validation,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive>*>*>* .c-validation,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive>*>*>*  .c-validation { font-size:inherit; }
+.cognito .c-forms-form .c-forms-payment-lineitem-label,
+.cognito .c-forms-form .c-forms-payment-lineitem-amount { font-weight: normal; }
+.cognito .c-forms-form .c-validation,
+.cognito .c-forms-form .c-error:after,
+.cognito .c-forms-form .c-error .toggle-on:after,
+.cognito .c-forms-form .c-validation-icon {
+background-color:#ff5858; color:white;
+}
+.cognito .c-validation { border-radius: 0 0 4px 4px; line-height: 1.3em; }
+.cognito .c-forms-form .c-forms-heading { text-align: left }
+.cognito .c-forms-form .c-forms-heading {padding-bottom:28px; }
+.cognito .c-forms-form .c-forms-logo, .cognito .c-forms-form .c-forms-form-title {display:inline-block;vertical-align:middle }
+.cognito .c-forms-form .c-forms-logo {max-width:30%;/*padding-right:0;*/ }
+.cognito .c-forms-form .c-forms-form-title {max-width:70%; }
+.cognito.c-sml .c-forms-form .c-forms-form-title {max-width:100%;}
+.cognito.c-sml .c-forms-form .c-forms-logo {max-width:100%; }
+.cognito .c-forms-form input[type=text],.cognito .c-forms-form input[type=password],.cognito .c-forms-form textarea, .cognito .c-forms-form select,.cognito .c-forms-form .c-signature .c-editor>div,.cognito.c-payment .c-payment-field
+{border-width:0;background-color: rgba(255,255,255,0.15);}
+.cognito .c-forms-form .c-readonly .c-signature .c-editor>div {border-width:0;background-color: transparent;}
+.cognito .c-forms-form .c-signature .c-signature-glyph:after{color:#cccccc;}
+.cognito .c-forms-form input[type=text],.cognito .c-forms-form input[type=password], .cognito .c-forms-form input[type=password],.cognito .c-forms-form select,.cognito .c-forms-form textarea, .cognito.c-payment .c-payment-field
+{padding:8px;color: #cccccc; }
+.cognito .c-forms-form .c-save-resume-button{background-color: rgba(255,255,255,0.15);}
+.cognito .c-forms-form ::-webkit-input-placeholder {color: #ffffff;}
+.cognito .c-forms-form :-ms-input-placeholder {color: #ffffff;}
+.cognito .c-forms-form ::-moz-placeholder {color: #ffffff;  opacity: 1;}
+.cognito .c-forms-form :-moz-placeholder { color: #ffffff;  opacity: 1;}
+.cognito .c-forms-form .c-payment-icon i{color:rgba(0,0,0,.7);}
+.cognito .c-forms-form input[type=text],.cognito .c-forms-form input[type=password], .cognito .c-forms-form textarea, .cognito .c-forms-form select {  transition: all 0.30s ease-in-out;  border: 1px solid transparent;}
+.cognito.c-payment,.cognito .c-forms-form .c-payment-section .c-background-highlight{background:transparent;}
+.cognito .c-forms-form .c-forms-payment .c-payment-section{padding:0;}
+.cognito .c-order-item > td{padding:10px;}
+.cognito .c-forms-form .c-forms-payment-total-amount{border-top:1px solid rgba(255,255,255,0.15);padding:10px 0 0 0;margin:0px 8px;}
+.cognito .c-forms-form .c-dropdown:after{color:inherit;}
+.cognito .c-forms-form .has-switch > * > *{ padding: 8px !important; line-height: normal; }
+.cognito .c-forms-form .c-table-section:not(.c-responsive)>.c-table-body>*>*,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive>.c-table-body>*>*,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive>.c-table-body>*>*
+{height:calc(1em + 22px)}
+.cognito.c-ie .c-forms-form :not(.c-responsive).c-table-section .c-repeating-section-group .c-repeating-section-item > * .c-validation,
+.cognito.c-ie.c-med .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item > * .c-validation,
+.cognito.c-ie.c-lrg .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item > * .c-validation
+{top:calc(1em + 20px)}
+.cognito .c-forms-form :not(.c-responsive).c-table-section .c-repeating-section-group .c-repeating-section-item > *:not(.c-readonly) .c-editor,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item > *:not(.c-readonly) .c-editor,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item > *:not(.c-readonly) .c-editor
+{min-height:calc(1em + 22px)}
+.cognito .c-forms-form .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-content,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-content,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>* .c-editor .c-content
+{padding:8px;}
+.cognito .c-forms-form .c-table-section:not(.c-readonly):not(.c-responsive) .c-repeating-section-group .c-repeating-section-item .c-text-multiplelines,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive:not(.c-readonly) .c-repeating-section-group .c-repeating-section-item .c-text-multiplelines,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive:not(.c-readonly) .c-repeating-section-group .c-repeating-section-item .c-text-multiplelines {
+background-color: rgba(255,255,255,0.15);
+}
+.cognito .c-forms-form .c-table-section:not(.c-readonly):not(.c-responsive) textarea,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive:not(.c-readonly) textarea,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive:not(.c-readonly) textarea {
+background-color: transparent;
+}
+.cognito .c-forms-form .c-table-section:not(.c-responsive), .cognito.c-med .c-forms-form .c-table-section.c-responsive, .cognito.c-lrg .c-forms-form .c-table-section.c-responsive
+{border-spacing:1px;}
+.cognito .c-forms-form .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item >.c-repeating-section-item-title,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item >.c-repeating-section-item-title,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item >.c-repeating-section-item-title
+{border:none;}
+.cognito .c-forms-form .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*:not(:first-child),
+.cognito.c-med .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(:first-child),
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(:first-child)
+{border:none;}
+.cognito .c-forms-form .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item .c-readonly,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-readonly,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item .c-readonly
+{background-color:transparent;}
+.cognito .c-forms-form .c-table-section.c-readonly:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*:not(:first-child),
+.cognito.c-med .c-forms-form .c-table-section.c-readonly.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(:first-child),
+.cognito.c-lrg .c-forms-form .c-table-section.c-readonly.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(:first-child)
+{box-shadow:none;}
+.cognito .c-forms-form .c-table-section:not(.c-responsive) .c-repeating-section-group .c-repeating-section-item>*:not(.c-editor-focused) .c-dropdown select,
+.cognito.c-med .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(.c-editor-focused) .c-dropdown select,
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive .c-repeating-section-group .c-repeating-section-item>*:not(.c-editor-focused) .c-dropdown select
+{padding-right:8px}
+.cognito .c-forms-form .c-table-section:not(.c-responsive):not(.c-readonly) .c-repeating-section-group.c-table-body .c-repeating-section-item [class*=c-calculation-],
+.cognito.c-med .c-forms-form .c-table-section.c-responsive:not(.c-readonly) .c-repeating-section-group.c-table-body .c-repeating-section-item [class*=c-calculation-],
+.cognito.c-lrg .c-forms-form .c-table-section.c-responsive:not(.c-readonly) .c-repeating-section-group.c-table-body .c-repeating-section-item [class*=c-calculation-]
+{background-color: rgba(255,255,255,0.24)!important;}
+.cognito .c-forms-form .c-table-section:not(.c-responsive).c-readonly, .cognito.c-med .c-forms-form .c-table-section.c-responsive.c-readonly, .cognito.c-lrg .c-forms-form .c-table-section.c-responsive.c-readonly
+{border-spacing:0;}
+
+
+
+.cognito .c-forms-form .c-forms-heading{
+    text-align: center;
+}
+
+.cognito.c-med .c-forms-form .c-forms-logo{
+    max-width: 60%;
+}
+
+.datepicker{
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+}
+
+.datepicker td, .datepicker th{
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    height: 17px;
+    width: 15px;
+    padding: 2px !important;
+}
+
+
+.form-container .custom-form-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-container .custom-form-row .custom-form-col-25{
+    width: 25% !important;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 767px){
+    .form-container .custom-form-row .custom-form-col-25{
+        width: 50% !important;
+    }   
+}
