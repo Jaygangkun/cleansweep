@@ -48,7 +48,7 @@ class PageController extends CI_Controller {
 	{
 		$data['page_name'] = 'clean_sweep_login_page';
 
-		$data['title'] = 'Clean Sweep Login Page | Clean Sweep HHI';
+		$data['title'] = 'Clean Sweep HHI Login Page | Clean Sweep HHI';
 		$data['og_url'] = 'clean-sweep-login-page';
 
 		if(isset($_SESSION['owner_id']) && $_SESSION['owner_id'] != 0){
@@ -57,7 +57,7 @@ class PageController extends CI_Controller {
 			$data['owner'] = $owner;
 
 			$this->load->Model('ServiceReqModel');		
-			$data['service_reqs'] = $this->ServiceReqModel->get($_SESSION['owner_id']);
+			$data['service_reqs'] = $this->ServiceReqModel->getServices($_SESSION['owner_id']);
 		}
 
 		$this->load->view('page-template', $data);

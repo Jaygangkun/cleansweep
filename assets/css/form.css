@@ -3179,6 +3179,7 @@ background-color: transparent;
 .datepicker{
     font-family: Arial,Helvetica,sans-serif;
     font-size: 13px;
+    border-radius: 0px;
 }
 
 .datepicker td, .datepicker th{
@@ -3200,6 +3201,16 @@ background-color: transparent;
 .form-container .custom-form-row .custom-form-col-25{
     width: 25% !important;
     margin-bottom: 10px;
+}
+
+a:not([href]):not([tabindex]){
+    color: #007bff;
+    cursor: pointer;
+}
+
+a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+    color: inherit;
+    text-decoration: underline;
 }
 
 @media (max-width: 767px){

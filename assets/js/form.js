@@ -16,6 +16,7 @@ function resizeForm(){
   }
 
 }
+// resizeForm()
 
 function initForm(){
   $('.datepicker').datepicker({
@@ -32,8 +33,26 @@ function initForm(){
     keepOpen: true
   });
 }
+// initForm()
+
+function daysBetween(first, second) {
+
+  // Copy date parts of the timestamps, discarding the time parts.
+  var one = new Date(first.getFullYear(), first.getMonth(), first.getDate());
+  var two = new Date(second.getFullYear(), second.getMonth(), second.getDate());
+
+  // Do the math.
+  var millisecondsPerDay = 1000 * 60 * 60 * 24;
+  var millisBetween = two.getTime() - one.getTime();
+  var days = millisBetween / millisecondsPerDay;
+
+  // Round down.
+  return Math.floor(days);
+}
+// daysBetween()
 
 function checkServiceReqForm(){
+
   if($('#first_name').val() == ''){
     $('#first_name').parents('.c-required').addClass('c-error');
     $('#first_name').focus();
@@ -52,13 +71,76 @@ function checkServiceReqForm(){
     $('#last_name').parents('.c-required').removeClass('c-error');
   }
 
-  if($('#email').val() == ''){
-    $('#email').parents('.c-required').addClass('c-error');
-    $('#email').focus();
+  if($('#co_owner_first_name').val() == ''){
+    $('#co_owner_first_name').parents('.c-required').addClass('c-error');
+    $('#co_owner_first_name').focus();
     return false;
   }
   else{
-    $('#email').parents('.c-required').removeClass('c-error');
+    $('#co_owner_first_name').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#co_owner_last_name').val() == ''){
+    $('#co_owner_last_name').parents('.c-required').addClass('c-error');
+    $('#co_owner_last_name').focus();
+    return false;
+  }
+  else{
+    $('#co_owner_last_name').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#co_owner_address').val() == ''){
+    $('#co_owner_address').parents('.c-required').addClass('c-error');
+    $('#co_owner_address').focus();
+    return false;
+  }
+  else{
+    $('#co_owner_address').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#co_owner_city').val() == ''){
+    $('#co_owner_city').parents('.c-required').addClass('c-error');
+    $('#co_owner_city').focus();
+    return false;
+  }
+  else{
+    $('#co_owner_city').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#co_owner_state').val() == ''){
+    $('#co_owner_state').parents('.c-required').addClass('c-error');
+    $('#co_owner_state').focus();
+    return false;
+  }
+  else{
+    $('#co_owner_state').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#co_owner_zipcode').val() == ''){
+    $('#co_owner_zipcode').parents('.c-required').addClass('c-error');
+    $('#co_owner_zipcode').focus();
+    return false;
+  }
+  else{
+    $('#co_owner_zipcode').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#co_owner_cell_phone').val() == ''){
+    $('#co_owner_cell_phone').parents('.c-required').addClass('c-error');
+    $('#co_owner_cell_phone').focus();
+    return false;
+  }
+  else{
+    $('#co_owner_cell_phone').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#co_owner_email').val() == ''){
+    $('#co_owner_email').parents('.c-required').addClass('c-error');
+    $('#co_owner_email').focus();
+    return false;
+  }
+  else{
+    $('#co_owner_email').parents('.c-required').removeClass('c-error');
   }
 
   if($('#req_service').val() == ''){
@@ -88,13 +170,14 @@ function checkServiceReqForm(){
     $('#check_out_date').parents('.c-required').removeClass('c-error');
   }
 
-  if($('#check_out_time').val() == ''){
-    $('#check_out_time').parents('.c-required').addClass('c-error');
-    $('#check_out_time').focus();
-    return false;
+  if(daysBetween(new Date($('#check_in_date').val()), new Date($('#check_out_date').val())) < 0){
+    alert('Check Out Date can not be before Check In Date.');
+    $('#check_out_date').parents('.c-required').addClass('c-error');
+    $('#check_out_date').focus();
+    return false;  
   }
   else{
-    $('#check_out_time').parents('.c-required').removeClass('c-error');
+    $('#check_out_date').parents('.c-required').removeClass('c-error');
   }
 
   if($('#address').val() == ''){
@@ -106,40 +189,13 @@ function checkServiceReqForm(){
     $('#address').parents('.c-required').removeClass('c-error');
   }
 
-  if($('#city').val() == ''){
-    $('#city').parents('.c-required').addClass('c-error');
-    $('#city').focus();
+  if($('#day_phone').val() == ''){
+    $('#day_phone').parents('.c-required').addClass('c-error');
+    $('#day_phone').focus();
     return false;
   }
   else{
-    $('#city').parents('.c-required').removeClass('c-error');
-  }
-
-  if($('#state').val() == ''){
-    $('#state').parents('.c-required').addClass('c-error');
-    $('#state').focus();
-    return false;
-  }
-  else{
-    $('#state').parents('.c-required').removeClass('c-error');
-  }
-
-  if($('#zipcode').val() == ''){
-    $('#zipcode').parents('.c-required').addClass('c-error');
-    $('#zipcode').focus();
-    return false;
-  }
-  else{
-    $('#zipcode').parents('.c-required').removeClass('c-error');
-  }
-
-  if($('#daytime_phone').val() == ''){
-    $('#daytime_phone').parents('.c-required').addClass('c-error');
-    $('#daytime_phone').focus();
-    return false;
-  }
-  else{
-    $('#daytime_phone').parents('.c-required').removeClass('c-error');
+    $('#day_phone').parents('.c-required').removeClass('c-error');
   }
 
   if($('#cell_phone').val() == ''){
@@ -150,7 +206,7 @@ function checkServiceReqForm(){
   else{
     $('#cell_phone').parents('.c-required').removeClass('c-error');
   }
-
+  
   if($('#email').val() == ''){
     $('#email').parents('.c-required').addClass('c-error');
     $('#email').focus();
@@ -162,6 +218,7 @@ function checkServiceReqForm(){
 
   return true;
 }
+// checkServiceReqForm()
 
 function initServiceReqForm(){
   $(document).on('click', '#req_submit_btn', function(){
@@ -176,14 +233,18 @@ function initServiceReqForm(){
       data: {
         'first_name': $('#first_name').val(),
         'last_name': $('#last_name').val(),
+        'co_owner_first_name': $('#co_owner_first_name').val(),
+        'co_owner_last_name': $('#co_owner_last_name').val(),
+        'co_owner_address': $('#co_owner_address').val(),
+        'co_owner_city': $('#co_owner_city').val(),
+        'co_owner_state': $('#co_owner_state').val(),
+        'co_owner_zipcode': $('#co_owner_zipcode').val(),
+        'co_owner_cell_phone': $('#co_owner_cell_phone').val(),
+        'co_owner_email': $('#co_owner_email').val(),
         'req_service': $('#req_service').val(),
         'check_in_date': $('#check_in_date').val(),
         'check_out_date': $('#check_out_date').val(),
-        'check_out_time': $('#check_out_time').val(),
         'cleaning_address': $('#cleaning_address').val(),
-        'cleaning_city': $('#cleaning_city').val(),
-        'cleaning_state': $('#cleaning_state').val(),
-        'cleaning_zipcode': $('#cleaning_zipcode').val(),
         'day_phone': $('#day_phone').val(),
         'cell_phone': $('#cell_phone').val(),
         'email': $('#email').val(),
@@ -198,7 +259,108 @@ function initServiceReqForm(){
       }
     })
   })
+
+  $(document).on('click', '.cancel-service-btn', function(){
+    
+    var id = $(this).attr('data-id');
+    $.ajax({
+      url: '/owner_service_cancel',
+      data: {
+        service_id: id,
+      },
+      type: 'POST',
+      success: function(response){
+        alert('Service Cancelled Successfully');
+        location.reload();
+      }
+    })
+  });
+
+  $(document).on('click', '.change-service-btn', function(){
+    
+    var id = $(this).attr('data-id');
+    $.ajax({
+      url: '/get_req_service_data',
+      data: {
+        service_id: id,
+      },
+      type: 'POST',
+      success: function(response){
+        var data = JSON.parse(response);
+
+        $('#req_submit_btn').hide();
+        $('#req_cancel_submit_btn').show();
+        $('#req_change_submit_btn').show();
+
+        $('#first_name').val(data['first_name']);
+        $('#last_name').val(data['last_name']);
+        $('#co_owner_first_name').val(data['co_owner_first_name']);
+        $('#co_owner_last_name').val(data['co_owner_last_name']);
+        $('#co_owner_address').val(data['co_owner_address']);
+        $('#co_owner_city').val(data['co_owner_city']);
+        $('#co_owner_state').val(data['co_owner_state']);
+        $('#co_owner_zipcode').val(data['co_owner_zipcode']);
+        $('#co_owner_cell_phone').val(data['co_owner_cell_phone']);
+        $('#co_owner_email').val(data['co_owner_email']);
+        $('#req_service').val(data['req_service']);
+        $('#check_in_date').val(data['check_in_date']);
+        $('#check_out_date').val(data['check_out_date']);
+        $('#cleaning_address').val(data['cleaning_address']);
+        $('#day_phone').val(data['day_phone']);
+        $('#cell_phone').val(data['cell_phone']);
+        $('#email').val(data['email']);
+        $('#comments').val(data['comments']);
+        $('#owner_id').val(data['owner_id']);
+        $('#id').val(data['id']);
+      }
+    })
+  });
+
+  $(document).on('click', '#req_cancel_submit_btn', function(){
+    location.reload();
+  });
+
+  $(document).on('click', '#req_change_submit_btn', function(){
+    if(!checkServiceReqForm()){
+      return false;
+    }
+
+    $.ajax({
+      // url:'owner_register',
+      url:'owner_service_request_update',
+      type: 'post',
+      data: {
+        'first_name': $('#first_name').val(),
+        'last_name': $('#last_name').val(),
+        'co_owner_first_name': $('#co_owner_first_name').val(),
+        'co_owner_last_name': $('#co_owner_last_name').val(),
+        'co_owner_address': $('#co_owner_address').val(),
+        'co_owner_city': $('#co_owner_city').val(),
+        'co_owner_state': $('#co_owner_state').val(),
+        'co_owner_zipcode': $('#co_owner_zipcode').val(),
+        'co_owner_cell_phone': $('#co_owner_cell_phone').val(),
+        'co_owner_email': $('#co_owner_email').val(),
+        'req_service': $('#req_service').val(),
+        'check_in_date': $('#check_in_date').val(),
+        'check_out_date': $('#check_out_date').val(),
+        'cleaning_address': $('#cleaning_address').val(),
+        'day_phone': $('#day_phone').val(),
+        'cell_phone': $('#cell_phone').val(),
+        'email': $('#email').val(),
+        'comments': $('#comments').val(),
+        'owner_id': $('#owner_id').val(),
+        'id': $('#id').val(),
+      },
+      success: function(response){
+        if(response == 'ok'){
+          alert('update successfully');
+          location.reload();
+        }
+      }
+    })
+  });
 }
+// initServiceReqForm()
 
 function checkContactForm(){
   return true;
@@ -248,11 +410,31 @@ function initContactForm(){
       success: function(response){
         if(response == 'ok'){
           alert('register successfully');
+          // location.reload();
+        }
+        else if(response == 'email exist'){
+          alert('email already exist');
+          // $('#email').focus();
         }
       }
     })
   });
+
+  $(document).on('change', '#add_another_prop_chbox', function(){
+    if($(this).is(':checked')){
+      $('#add_another_prop_btn').css('visibility', 'visible');
+    }
+    else{
+      $('#add_another_prop_btn').css('visibility', 'hidden');
+    }
+  })
+
+  $(document).on('click', '#add_another_prop_btn', function(){
+    var newhtml = $('#additional_prop_template').clone().html();
+    $('#additional_props_container').append(newhtml);
+  })
 }
+// initContactForm()
 
 function initLoginForm(){
   $(document).on('click', '#login_btn', function(){
@@ -292,6 +474,56 @@ function initLoginForm(){
     })
   })
 }
+// initLoginForm()
+
+function initOwnerInfo(){
+  $('#owner_info input').attr('disabled', 'disabled');
+  $('#owner_info select').attr('disabled', 'disabled');
+
+  $(document).on('click', '#edit_owner_btn', function(){
+    $('#owner_info input').removeAttr('disabled');
+    $('#owner_info select').removeAttr('disabled');
+
+    $('#edit_owner_btn').hide();
+    $('#save_owner_btn').show();
+    $('#cancel_owner_btn').show();
+  })
+
+  $(document).on('click', '#save_owner_btn', function(){
+
+    var formdata = new FormData($('#owner_info_form')[0]);
+    $.ajax({
+        url: '/do_owner_update',
+        type: 'post',
+        enctype: 'multipart/form-data',
+        data: formdata,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(data){
+            alert('saved successfully');
+
+            $('#owner_info input').attr('disabled', 'disabled');
+            $('#owner_info select').attr('disabled', 'disabled');
+
+            $('#edit_owner_btn').show();
+            $('#save_owner_btn').hide();
+            $('#cancel_owner_btn').hide();
+        }
+    })    
+  })
+
+  $(document).on('click', '#cancel_owner_btn', function(){
+    $('#owner_info input').attr('disabled', 'disabled');
+    $('#owner_info select').attr('disabled', 'disabled');
+
+    $('#edit_owner_btn').show();
+    $('#save_owner_btn').hide();
+    $('#cancel_owner_btn').hide();
+  })
+}
+// initOwnerInfo()
+
 $(document).ready(function(){
   $(window).resize(resizeForm);
   resizeForm();
@@ -310,6 +542,10 @@ $(document).ready(function(){
   
   if($('#login_form').length != 0){
     initLoginForm();
+  }
+
+  if($('#owner_info').length != 0){
+    initOwnerInfo();
   }
 
 })

@@ -10,46 +10,57 @@
     </ol>
 </section>
 <!-- Main content -->
-<section class="content">
+<section class="content" id="page_content_owner_edit">
     <div class="box box-primary">
         <!-- /.box-header -->
         <!-- form start -->
         <form role="form" id="owner_edit_form">
             <div class="box-body">
                 <div class="row">
+                    <div class="form-group col-xs-4">
+                        <label for="Account Name">Account Status</label>
+                        <select id="status" name="status" class="form-control">
+                            <option value="inactive" <?php if($owner['status'] == 'inactive' || $owner['status'] == '') echo "selected"; ?>>Inactive</option>
+                            <option value="active" <?php if($owner['status'] == 'active') echo "selected"; ?>>Active</option>
+                            <option value="suspend" <?php if($owner['status'] == 'suspend') echo "selected"; ?>>Suspend</option>
+                            <option value="delete" <?php if($owner['status'] == 'delete') echo "selected"; ?>>Delete</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="exampleInputEmail1">Account Name</label>
+                        <label for="Account Name">Account Name</label>
                         <input type="text" class="form-control" id="username" name="username" placeholder="Account Name" value="<?php echo $owner['username']?>">
                     </div>
 
                     <div class="form-group col-xs-6">
-                        <label for="exampleInputEmail1">Account Password</label>
+                        <label for="Account Password">Account Password</label>
                         <input type="text" class="form-control" id="password" name="password" placeholder="Account Password" value="<?php echo $owner['password']?>">
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="exampleInputEmail1">First Name</label>
+                        <label for="First Name">First Name</label>
                         <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="<?php echo $owner['first_name']?>">
                     </div>
 
                     <div class="form-group col-xs-6">
-                        <label for="exampleInputEmail1">Last Name</label>
+                        <label for="Last Name">Last Name</label>
                         <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" value="<?php echo $owner['last_name']?>">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="exampleInputEmail1">Owner's Email Address</label>
+                        <label for="Owner's Email Address">Owner's Email Address</label>
                         <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" value="<?php echo $owner['email']?>">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-xs-12">
-                        <label for="exampleInputEmail1">Actual Owner's Address</label>
+                        <label for="Actual Owner's Address">Actual Owner's Address</label>
                         <input type="text" class="form-control" id="address" name="address" placeholder="Enter email" value="<?php echo $owner['address']?>">
                     </div>
 
@@ -126,7 +137,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="form-group col-xs-6">
                         <label for="Check In Date">Hilton Head Property Address</label>
                         <input type="text" class="form-control" id="property_address" name="property_address" placeholder="Check In Date" value="<?php echo $owner['property_address']?>">
@@ -143,28 +154,28 @@
                         <label for="Check Out Date">Check Out Date</label>
                         <input type="text" class="form-control datepicker" id="check_out_date" name="check_out_date" placeholder="Check Out Date" value="<?php echo $owner['check_out_date']?>">
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row">
                     <div class="form-group col-xs-4">
-                        <label for="Check In Date"># of Bedrooms</label>
+                        <label for="# of Bedrooms"># of Bedrooms</label>
                         <input type="text" class="form-control" id="bedrooms" name="bedrooms" placeholder="" value="<?php echo $owner['bedrooms']?>">
                     </div>
 
                     <div class="form-group col-xs-4">
-                        <label for="Check Out Date"># of Bathrooms</label>
+                        <label for="# of Bathrooms"># of Bathrooms</label>
                         <input type="text" class="form-control" id="bathrooms" name="bathrooms" placeholder="" value="<?php echo $owner['bathrooms']?>">
                     </div>
 
                     <div class="form-group col-xs-4">
-                        <label for="Check Out Date"># of ½ Bathrooms</label>
+                        <label for="# of ½ Bathrooms"># of ½ Bathrooms</label>
                         <input type="text" class="form-control" id="hbathrooms" name="hbathrooms" placeholder="" value="<?php echo $owner['hbathrooms']?>">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-xs-12" style="margin-bottom: 0px;">
-                        <label for="Check In Date">Bed Configuration(s) & # of each</label>
+                        <label for="Bed Configuration(s) & # of each">Bed Configuration(s) & # of each</label>
                     </div>
                     <div class="form-group col-xs-1">
                         <input type="text" class="form-control" id="bed_conf_count1" name="bed_conf_count1" placeholder="" value="<?php echo $owner['bed_conf_count1']?>">
@@ -225,7 +236,7 @@
 
                 <div class="row">
                     <div class="form-group col-xs-4">
-                        <label for="Check In Date">Sleeper Sofa?</label>
+                        <label for="Sleeper Sofa">Sleeper Sofa?</label>
                         <select id="sleeper_sofa_exist" name="sleeper_sofa_exist" class="form-control">
                             <option value="Yes" <?php if($owner['sleeper_sofa_exist'] == 'Yes') echo "selected"; ?>>Yes</option>
                             <option value="No" <?php if($owner['sleeper_sofa_exist'] == 'No') echo "selected"; ?>>No</option>
@@ -233,7 +244,7 @@
                     </div>
 
                     <div class="form-group col-xs-4">
-                        <label for="Check Out Date">Size</label>
+                        <label for="Size">Size</label>
                         <select id="sleeper_sofa_size" name="sleeper_sofa_size" class="form-control">
                             <option value="Twin" <?php if($owner['sleeper_sofa_size'] == 'Twin') echo "selected"; ?>>Twin</option>
                             <option value="Full" <?php if($owner['sleeper_sofa_size'] == 'Full') echo "selected"; ?>>Full</option>
@@ -246,22 +257,22 @@
 
                 <div class="row">
                     <div class="form-group col-xs-4">
-                        <label for="Check In Date">Owner's Day Phone</label>
+                        <label for="Owner's Day Phone">Owner's Day Phone</label>
                         <input type="text" class="form-control" id="day_phone" name="day_phone" placeholder="" value="<?php echo $owner['day_phone']?>">
                     </div>
 
                     <div class="form-group col-xs-4">
-                        <label for="Check Out Date">Owner's Cell Phone</label>
+                        <label for="Owner's Cell Phone">Owner's Cell Phone</label>
                         <input type="text" class="form-control" id="cell_phone" name="cell_phone" placeholder="" value="<?php echo $owner['cell_phone']?>">
                     </div>
 
-                    <div class="form-group col-xs-4">
+                    <!-- <div class="form-group col-xs-4">
                         <label for="Check Out Date">Hilton Head Property Phone</label>
                         <input type="text" class="form-control" id="property_phone" name="property_phone" placeholder="" value="<?php echo $owner['property_phone']?>">
-                    </div>
+                    </div> -->
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="form-group col-xs-4">
                         <label for="Check In Date">CC To Be Used for Billing Purpose</label>
                         <input type="text" class="form-control" id="billing_purpose" name="billing_purpose" placeholder="" value="<?php echo $owner['billing_purpose']?>">
@@ -286,13 +297,14 @@
                         <label for="Check Out Date">Caretaking Rate</label>
                         <input type="text" class="form-control" id="office_caretaking_rate" name="office_caretaking_rate" placeholder="" value="<?php echo $owner['office_caretaking_rate']?>">
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- /.box-body -->
 
             <input type="hidden" id="id" name="id" value="<?php echo $owner['id']?>">
             <input type="hidden" id="username_old" name="username_old" value="<?php echo $owner['username']?>">
             <input type="hidden" id="password_old" name="password_old" value="<?php echo $owner['password']?>">
+            <input type="hidden" id="status_old" name="status_old" value="<?php echo $owner['status']?>">
 
             <div class="box-footer">
                 <button type="button" class="btn btn-default" onclick="location.href='/owner_management'">Cancel</button>

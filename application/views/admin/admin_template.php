@@ -375,16 +375,16 @@
 								<li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
 							</ul>
 						</li>
-						<li class="<?php if($sub_page == 'owner_management' || $sub_page == 'owner_edit') echo 'active';?>">
+						<li class="<?php if($sub_page == 'owner_management' || $sub_page == 'owner_edit' || $sub_page == 'owner_service_list') echo 'active';?>">
 							<a href="/owner_management">
-								<i class="fa fa-th"></i> <span>Owner Mangement</span>
+								<i class="fa fa-th"></i> <span>Owner Management</span>
 								<span class="pull-right-container">
 									<!-- <small class="label pull-right bg-green">new</small> -->
 								</span>
 							</a>
 						</li>
 
-						<li class="<?php if($sub_page == 'owner_service_management' || $sub_page == 'owner_service_edit' || $sub_page == 'owner_service_list') echo 'active';?>">
+						<li class="<?php if($sub_page == 'owner_service_management' || $sub_page == 'owner_service_edit') echo 'active';?>">
 							<a href="/owner_service_management">
 								<i class="fa fa-th"></i> <span>Owner Service Mangement</span>
 								<span class="pull-right-container">
@@ -537,13 +537,13 @@
 				?>
 			</div>
 			<!-- /.content-wrapper -->
-			<footer class="main-footer">
+			<!-- <footer class="main-footer">
 				<div class="pull-right hidden-xs">
 					<b>Version</b> 2.3.8
 				</div>
 				<strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
 				reserved.
-			</footer>
+			</footer> -->
 			<!-- Control Sidebar -->
 			<aside class="control-sidebar control-sidebar-dark">
 				<!-- Create the tabs -->
@@ -756,6 +756,16 @@
 					"info": true,
 					"autoWidth": false
 				});
+
+				$('#request_service_list table').DataTable({
+					"paging": true,
+					"lengthChange": false,
+					"searching": false,
+					"ordering": true,
+					"info": true,
+					"order": [[ 6, "desc" ]],
+					"autoWidth": false
+				})
 
 				$('.datepicker').datepicker({
 					format: 'mm/dd/yyyy',

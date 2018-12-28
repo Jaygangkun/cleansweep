@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Owner Service Request List
+        Owner Requested Service List
     </h1>
     <ol class="breadcrumb" style="display: none">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -10,7 +10,7 @@
     </ol>
 </section>
 <!-- Main content -->
-<section class="content">
+<section class="content" id="page_content_owner_service_list">
     <div class="box">
         <div class="box-header" style="display: none">
             <h3 class="box-title">Hover Data Table</h3>
@@ -22,10 +22,9 @@
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Request Service</th>
+                        <th>Requested Service</th>
                         <th>Check In Date</th>
                         <th>Check Out Date</th>
-                        <th>Check Out Time</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -41,10 +40,24 @@
                             <td><?php echo $service_req['req_service'];?></td>
                             <td><?php echo $service_req['check_in_date'];?></td>
                             <td><?php echo $service_req['check_out_date'];?></td>
-                            <td><?php echo $service_req['check_out_time'];?></td>
-                            <td></td>
                             <td>
-                                <a href="/owner_service_edit/<?php echo $service_req['id']?>">Edit</a>
+                                <?php
+                                if($service_req['status'] == '0'){
+                                    echo '<span class="form-group has-error"><span class="help-block">Request Cancelled</span></span>';
+                                }
+                                ?>
+                            </td>
+                            <td>
+                                <?php
+                                if($service_req['status'] == '0'){
+                                    echo "";
+                                }
+                                else{
+                                    ?>
+                                    <a href="/owner_service_edit/<?php echo $service_req['id']?>">Edit</a>
+                                    <?php
+                                }
+                                ?>
                             </td>
                         </tr>
                         <?php
@@ -58,12 +71,13 @@
                         <th>Request Service</th>
                         <th>Check In Date</th>
                         <th>Check Out Date</th>
-                        <th>Check Out Time</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
             </table>
+
+            <button type="button" class="btn btn-default" onclick="location.href='/owner_management'">Back</button>
         </div>
         <!-- /.box-body -->
     </div>

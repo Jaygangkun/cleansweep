@@ -62,9 +62,23 @@ $route['owner_service_management'] = "AdminController/owner_service_management";
 $route['owner_service_list/(:num)'] = "AdminController/owner_service_list/$1";
 $route['owner_service_edit/(:num)'] = "AdminController/owner_service_edit/$1";
 
-
 $route['admin_do_login'] = "AdminController/do_login";
+
+//owner_edit
 $route['do_owner_update'] = "AdminController/do_owner_update";
+
+//owner_service_edit 
+$route['do_req_service_update'] = "AdminController/do_req_service_update";
+
+//owner_service_management
+$route['do_service_req_search'] = "AdminController/do_service_req_search";
+$route['do_service_req_search_print'] = "AdminController/do_service_req_search_print";
+$route['do_service_req_search_print_download/(:any)'] = "AdminController/do_service_req_search_print_download/$1";
+
+
+//owner_management
+$route['do_owner_list_print'] = "AdminController/do_owner_list_print";
+
 
 //Front End page
 $route['contact-us'] = "PageController/contact_us";
@@ -75,6 +89,10 @@ $route['clean-sweep-login-page'] = "PageController/clean_sweep_login_page";
 $route['owner_register'] = 'APIController/owner_register';
 $route['owner_login'] = 'APIController/owner_login';
 $route['owner_service_request'] = 'APIController/owner_service_request';
+$route['owner_service_request_update'] = 'APIController/owner_service_request_update';
+$route['owner_service_cancel'] = "APIController/owner_service_cancel";
+$route['get_req_service_data'] = "APIController/get_req_service_data";
+
 
 
 // $route['sale_siteinspection/(:num)'] = "SaleController/siteinspection/$1";
