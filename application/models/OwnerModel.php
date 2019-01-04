@@ -5,14 +5,23 @@ if (!defined('BASEPATH'))
 class OwnerModel extends CI_Model{
 	
     public function register($data){
-        $sql = "INSERT INTO owners (`first_name`, `last_name`, `address`, `city`, `state`, `zipcode`, `property_address`, `bedrooms`, `bathrooms`, `hbathrooms`, `bed_conf_count1`, `bed_conf_type1`, `bed_conf_count2`, `bed_conf_type2`, `bed_conf_count3`, `bed_conf_type3`, `bed_conf_count4`, `bed_conf_type4`, `sleeper_sofa_exist`, `sleeper_sofa_size`, `day_phone`, `cell_phone`, `email`) VALUES('".$data['first_name']."', '".$data['last_name']."', '".$data['address']."', '".$data['city']."', '".$data['state']."', '".$data['zipcode']."', '".$data['property_address']."', '".$data['bedrooms']."', '".$data['bathrooms']."', '".$data['hbathrooms']."', '".$data['bed_conf_count1']."', '".$data['bed_conf_type1']."', '".$data['bed_conf_count2']."', '".$data['bed_conf_type2']."', '".$data['bed_conf_count3']."', '".$data['bed_conf_type3']."', '".$data['bed_conf_count4']."', '".$data['bed_conf_type4']."', '".$data['sleeper_sofa_exist']."', '".$data['sleeper_sofa_size']."', '".$data['day_phone']."', '".$data['cell_phone']."', '".$data['email']."')";
+
+        if(!isset($data['co_owners_data'])) {
+            $data['co_owners_data'] = '';
+        }
+
+        if(!isset($data['additional_props_data'])) {
+            $data['additional_props_data'] = '';
+        }
+
+        $sql = "INSERT INTO owners (`first_name`, `last_name`, `address`, `city`, `state`, `zipcode`, `day_phone`, `cell_phone`, `email`, `add_co_owner_chbox`, `co_owners_data`, `add_additional_prop_chbox`, `additional_props_data`) VALUES('".$data['first_name']."', '".$data['last_name']."', '".$data['address']."', '".$data['city']."', '".$data['state']."', '".$data['zipcode']."', '".$data['day_phone']."', '".$data['cell_phone']."', '".$data['email']."', '".$data['add_co_owner_chbox']."', '".json_encode($data['co_owners_data'])."', '".$data['add_additional_prop_chbox']."', '".json_encode($data['additional_props_data'])."')";
 
         $result = $this->db->query($sql);
         
     }
 
     public function update($data){
-        $sql = "UPDATE owners SET `first_name` = '".$data['first_name']."', `last_name` = '".$data['last_name']."', `address` = '".$data['address']."', `city` = '".$data['city']."', `state` = '".$data['state']."', `zipcode` = '".$data['zipcode']."', `bedrooms` = '".$data['bedrooms']."', `bathrooms` = '".$data['bathrooms']."', `hbathrooms` = '".$data['hbathrooms']."', `bed_conf_count1` = '".$data['bed_conf_count1']."', `bed_conf_type1` = '".$data['bed_conf_type1']."', `bed_conf_count2` = '".$data['bed_conf_count2']."', `bed_conf_type2` = '".$data['bed_conf_type2']."', `bed_conf_count3` = '".$data['bed_conf_count3']."', `bed_conf_type3` = '".$data['bed_conf_type3']."', `bed_conf_count4` = '".$data['bed_conf_count4']."', `bed_conf_type4` = '".$data['bed_conf_type4']."', `sleeper_sofa_exist` = '".$data['sleeper_sofa_exist']."', `sleeper_sofa_size` = '".$data['sleeper_sofa_size']."', `day_phone` = '".$data['day_phone']."', `cell_phone` = '".$data['cell_phone']."', `email` = '".$data['email']."', `username` = '".$data['username']."', `password` = '".$data['password']."', `status` = '".$data['status']."' WHERE `id` = '".$data['id']."'";
+        $sql = "UPDATE owners SET `first_name` = '".$data['first_name']."', `last_name` = '".$data['last_name']."', `address` = '".$data['address']."', `city` = '".$data['city']."', `state` = '".$data['state']."', `zipcode` = '".$data['zipcode']."', `day_phone` = '".$data['day_phone']."', `cell_phone` = '".$data['cell_phone']."', `email` = '".$data['email']."', `username` = '".$data['username']."', `password` = '".$data['password']."', `status` = '".$data['status']."', `add_co_owner_chbox` = '".$data['add_co_owner_chbox']."', `co_owners_data` = '".json_encode($data['co_owners_data'])."', `add_additional_prop_chbox` = '".$data['add_additional_prop_chbox']."', `additional_props_data` = '".json_encode($data['additional_props_data'])."' WHERE `id` = '".$data['id']."'";
 
         $result = $this->db->query($sql);
         

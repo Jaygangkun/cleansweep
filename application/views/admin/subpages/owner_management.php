@@ -23,7 +23,6 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        <th>Hilton Head Property Address</th>
                         <th>Owner's Phone number</th>
                         <th>Request List</th>
                         <th>Account Status</th>
@@ -38,8 +37,7 @@
                         <tr>
                             <td><?php echo $owner['first_name'];?></td>
                             <td><?php echo $owner['last_name'];?></td>
-                            <td><?php echo $owner['email'];?></td>
-                            <td><?php echo $owner['property_address'];?></td>                            
+                            <td><?php echo $owner['email'];?></td>                      
                             <td><?php echo "Day Phone: ".$owner['day_phone']."<br>Cell Phone: ".$owner['cell_phone'];?></td>
                             <td><a href="/owner_service_list/<?php echo $owner['id']?>">view</td>
                             <td>
@@ -71,6 +69,7 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
+                        <th>Owner's Phone number</th>
                         <th>Request List</th>
                         <th>Account Status</th>
                         <th>Actions</th>

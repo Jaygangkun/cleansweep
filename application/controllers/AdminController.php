@@ -50,6 +50,17 @@ class AdminController extends CI_Controller {
 
 		$this->load->Model('ServiceReqModel');		
 		$data['service_reqs'] = $this->ServiceReqModel->getServices($owner_id);
+		$data['owner_id'] = $owner_id;
+
+		$this->load->view('admin/admin_template', $data);
+	}
+
+	public function owner_service_create($owner_id){
+		$data = array();
+		$data['title'] = 'Admin Owner Service Request Create';
+		$data['sub_page'] = 'owner_service_create';
+
+		$data['owner_id'] = $owner_id;
 
 		$this->load->view('admin/admin_template', $data);
 	}

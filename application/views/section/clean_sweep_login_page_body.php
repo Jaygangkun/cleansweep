@@ -245,7 +245,7 @@
             <?php
             if(isset($owner)){
                 ?>
-                <div id="b5454de9-98a6-4d90-a707-f1d099d9d5341" class="widget widget-footer widget-footer-footer-1">
+                <!-- <div id="b5454de9-98a6-4d90-a707-f1d099d9d5341" class="widget widget-footer widget-footer-footer-1">
                     <div data-ux="Widget" class="x-el x-el-div x-el widget-footer-footer-1 px_-bc-rgb255__255__255 px_-ff-_Sacramento___cursive__serif px_-fs-20 _mdpx_-fs-20 _lgpx_-fs-20 x-d-ux px_-ff-_Sacramento___cursive__serif px_-fs-20 _mdpx_-fs-20 _lgpx_-fs-20 x-d-ux">
                         <div>
                         <section data-ux="Section" class="x-el x-el-section px_-bc-rgb255__255__255 px_-pt-0 px_-pb-60px px_-ff-_Sacramento___cursive__serif px_-fs-20 _xs-onlypx_-pt-30px _xs-onlypx_-pb-30px _mdpx_-fs-20 _lgpx_-fs-20 x-d-ux">
@@ -257,14 +257,14 @@
                             <div data-ux="Container" class="x-el x-el-div px_-ml-auto px_-mr-auto px_-pl-20px px_-pr-20px px_-max-width-100P px_-ff-_Sacramento___cursive__serif px_-fs-20 _smpx_-w-728px _mdpx_-w-984px _mdpx_-fs-20 _lgpx_-w-1160px _lgpx_-fs-20 x-d-ux">
                                 <div data-ux="Layout" class="x-el x-el-div px_-text-align-center px_-fs-20 x-d-ux px_-ff-_Raleway___arial__sans-serif _mdpx_-fs-16 _lgpx_-fs-16">
                                     <?php
-                                        $this->load->view('section/clean_sweep_service_list');
+                                        // $this->load->view('section/clean_sweep_service_list');
                                     ?>
                                 </div>
                             </div>
                         </section>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <?php
             }
             ?>

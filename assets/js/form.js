@@ -1,3 +1,55 @@
+function validateEmail(email) {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+const isNumericInput = (event) => {
+  const key = event.keyCode;
+  return ((key >= 48 && key <= 57) || // Allow number line
+      (key >= 96 && key <= 105) // Allow number pad
+  );
+};
+
+const isModifierKey = (event) => {
+  const key = event.keyCode;
+  return (event.shiftKey === true || key === 35 || key === 36) || // Allow Shift, Home, End
+      (key === 8 || key === 9 || key === 13 || key === 46) || // Allow Backspace, Tab, Enter, Delete
+      (key > 36 && key < 41) || // Allow left, up, right, down
+      (
+          // Allow Ctrl/Command + A,C,V,X,Z
+          (event.ctrlKey === true || event.metaKey === true) &&
+          (key === 65 || key === 67 || key === 86 || key === 88 || key === 90)
+      )
+};
+
+const enforceFormat = (event) => {
+  // Input must be of a valid number format or a modifier key, and not longer than ten digits
+  if(!isNumericInput(event) && !isModifierKey(event)){
+      event.preventDefault();
+  }
+};
+
+const formatToPhone = (event) => {
+  if(isModifierKey(event)) {return;}
+
+  // I am lazy and don't like to type things more than once
+  const target = event.target;
+  const input = target.value.replace(/\D/g,'').substring(0,10); // First ten digits of input only
+  const zip = input.substring(0,3);
+  const middle = input.substring(3,6);
+  const last = input.substring(6,10);
+
+  if(input.length > 6){target.value = `(${zip}) ${middle} - ${last}`;}
+  else if(input.length > 3){target.value = `(${zip}) ${middle}`;}
+  else if(input.length > 0){target.value = `(${zip}`;}
+};
+
+// const inputElement = document.getElementById('phoneNumber');
+// inputElement.addEventListener('keydown',enforceFormat);
+// inputElement.addEventListener('keyup',formatToPhone);
+$(document).on('keydown', '.phonenumber', enforceFormat);
+$(document).on('keyup', '.phonenumber', formatToPhone);
+
 function resizeForm(){
   if($(window).width() > 1023){
     $('.cognito').addClass('c-lrg');
@@ -69,78 +121,6 @@ function checkServiceReqForm(){
   }
   else{
     $('#last_name').parents('.c-required').removeClass('c-error');
-  }
-
-  if($('#co_owner_first_name').val() == ''){
-    $('#co_owner_first_name').parents('.c-required').addClass('c-error');
-    $('#co_owner_first_name').focus();
-    return false;
-  }
-  else{
-    $('#co_owner_first_name').parents('.c-required').removeClass('c-error');
-  }
-
-  if($('#co_owner_last_name').val() == ''){
-    $('#co_owner_last_name').parents('.c-required').addClass('c-error');
-    $('#co_owner_last_name').focus();
-    return false;
-  }
-  else{
-    $('#co_owner_last_name').parents('.c-required').removeClass('c-error');
-  }
-
-  if($('#co_owner_address').val() == ''){
-    $('#co_owner_address').parents('.c-required').addClass('c-error');
-    $('#co_owner_address').focus();
-    return false;
-  }
-  else{
-    $('#co_owner_address').parents('.c-required').removeClass('c-error');
-  }
-
-  if($('#co_owner_city').val() == ''){
-    $('#co_owner_city').parents('.c-required').addClass('c-error');
-    $('#co_owner_city').focus();
-    return false;
-  }
-  else{
-    $('#co_owner_city').parents('.c-required').removeClass('c-error');
-  }
-
-  if($('#co_owner_state').val() == ''){
-    $('#co_owner_state').parents('.c-required').addClass('c-error');
-    $('#co_owner_state').focus();
-    return false;
-  }
-  else{
-    $('#co_owner_state').parents('.c-required').removeClass('c-error');
-  }
-
-  if($('#co_owner_zipcode').val() == ''){
-    $('#co_owner_zipcode').parents('.c-required').addClass('c-error');
-    $('#co_owner_zipcode').focus();
-    return false;
-  }
-  else{
-    $('#co_owner_zipcode').parents('.c-required').removeClass('c-error');
-  }
-
-  if($('#co_owner_cell_phone').val() == ''){
-    $('#co_owner_cell_phone').parents('.c-required').addClass('c-error');
-    $('#co_owner_cell_phone').focus();
-    return false;
-  }
-  else{
-    $('#co_owner_cell_phone').parents('.c-required').removeClass('c-error');
-  }
-
-  if($('#co_owner_email').val() == ''){
-    $('#co_owner_email').parents('.c-required').addClass('c-error');
-    $('#co_owner_email').focus();
-    return false;
-  }
-  else{
-    $('#co_owner_email').parents('.c-required').removeClass('c-error');
   }
 
   if($('#req_service').val() == ''){
@@ -228,19 +208,11 @@ function initServiceReqForm(){
 
     $.ajax({
       // url:'owner_register',
-      url:'owner_service_request',
+      url:'/owner_service_request',
       type: 'post',
       data: {
         'first_name': $('#first_name').val(),
         'last_name': $('#last_name').val(),
-        'co_owner_first_name': $('#co_owner_first_name').val(),
-        'co_owner_last_name': $('#co_owner_last_name').val(),
-        'co_owner_address': $('#co_owner_address').val(),
-        'co_owner_city': $('#co_owner_city').val(),
-        'co_owner_state': $('#co_owner_state').val(),
-        'co_owner_zipcode': $('#co_owner_zipcode').val(),
-        'co_owner_cell_phone': $('#co_owner_cell_phone').val(),
-        'co_owner_email': $('#co_owner_email').val(),
         'req_service': $('#req_service').val(),
         'check_in_date': $('#check_in_date').val(),
         'check_out_date': $('#check_out_date').val(),
@@ -253,7 +225,7 @@ function initServiceReqForm(){
       },
       success: function(response){
         if(response == 'ok'){
-          alert('register successfully');
+          alert('thank you');
           location.reload();
         }
       }
@@ -278,6 +250,8 @@ function initServiceReqForm(){
 
   $(document).on('click', '.change-service-btn', function(){
     
+    $('a[href="#req_submit"]').trigger('click');
+
     var id = $(this).attr('data-id');
     $.ajax({
       url: '/get_req_service_data',
@@ -312,6 +286,7 @@ function initServiceReqForm(){
         $('#comments').val(data['comments']);
         $('#owner_id').val(data['owner_id']);
         $('#id').val(data['id']);
+
       }
     })
   });
@@ -332,14 +307,6 @@ function initServiceReqForm(){
       data: {
         'first_name': $('#first_name').val(),
         'last_name': $('#last_name').val(),
-        'co_owner_first_name': $('#co_owner_first_name').val(),
-        'co_owner_last_name': $('#co_owner_last_name').val(),
-        'co_owner_address': $('#co_owner_address').val(),
-        'co_owner_city': $('#co_owner_city').val(),
-        'co_owner_state': $('#co_owner_state').val(),
-        'co_owner_zipcode': $('#co_owner_zipcode').val(),
-        'co_owner_cell_phone': $('#co_owner_cell_phone').val(),
-        'co_owner_email': $('#co_owner_email').val(),
         'req_service': $('#req_service').val(),
         'check_in_date': $('#check_in_date').val(),
         'check_out_date': $('#check_out_date').val(),
@@ -363,13 +330,408 @@ function initServiceReqForm(){
 // initServiceReqForm()
 
 function checkContactForm(){
+  if($('#first_name').val() == ''){
+    $('#first_name').parents('.c-required').addClass('c-error');
+    $('#first_name').focus();
+    return false;
+  }
+  else{
+    $('#first_name').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#last_name').val() == ''){
+    $('#last_name').parents('.c-required').addClass('c-error');
+    $('#last_name').focus();
+    return false;
+  }
+  else{
+    $('#last_name').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#address').val() == ''){
+    $('#address').parents('.c-required').addClass('c-error');
+    $('#address').focus();
+    return false;
+  }
+  else{
+    $('#address').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#city').val() == ''){
+    $('#city').parents('.c-required').addClass('c-error');
+    $('#city').focus();
+    return false;
+  }
+  else{
+    $('#city').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#state').val() == ''){
+    $('#state').parents('.c-required').addClass('c-error');
+    $('#state').focus();
+    return false;
+  }
+  else{
+    $('#state').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#zipcode').val() == ''){
+    $('#zipcode').parents('.c-required').addClass('c-error');
+    $('#zipcode').focus();
+    return false;
+  }
+  else{
+    $('#zipcode').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#day_phone').val() == ''){
+    $('#day_phone').parents('.c-required').addClass('c-error');
+    $('#day_phone').focus();
+    return false;
+  }
+  else{
+    $('#day_phone').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#cell_phone').val() == ''){
+    $('#cell_phone').parents('.c-required').addClass('c-error');
+    $('#cell_phone').focus();
+    return false;
+  }
+  else{
+    $('#cell_phone').parents('.c-required').removeClass('c-error');
+  }
+
+  if($('#email').val() == ''){
+    $('#email').parents('.c-required').addClass('c-error');
+    $('#email').parents('.c-required').find('.require-msg').show();
+    $('#email').parents('.c-required').find('.format-msg').hide();
+    $('#email').focus();
+    return false;
+  }
+  else{
+    $('#email').parents('.c-required').removeClass('c-error');
+  }
+  
+  if(!validateEmail($('#email').val())){
+    $('#email').parents('.c-required').addClass('c-error');
+    $('#email').parents('.c-required').find('.require-msg').hide();
+    $('#email').parents('.c-required').find('.format-msg').show();
+    $('#email').focus();
+    return false;
+  }
+  else{
+    $('#email').parents('.c-required').removeClass('c-error');
+    $('#email').parents('.c-required').find('.require-msg').hide();
+    $('#email').parents('.c-required').find('.format-msg').hide();
+  }
+
+  if($('#add_co_owner_chbox').is(':checked')){
+    var co_owners_ele = $('#co_owners_container .co-owner-template-wrap');
+    for(var cindex = 0; cindex < co_owners_ele.length; cindex ++){
+      if($(co_owners_ele[cindex]).find('[name="co_owner_first_name"]').val() == ''){
+        $(co_owners_ele[cindex]).find('[name="co_owner_first_name"]').parents('.c-required').addClass('c-error');
+        $(co_owners_ele[cindex]).find('[name="co_owner_first_name"]').focus();
+        return false;
+      }
+      else{
+        $(co_owners_ele[cindex]).find('[name="co_owner_first_name"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(co_owners_ele[cindex]).find('[name="co_owner_last_name"]').val() == ''){
+        $(co_owners_ele[cindex]).find('[name="co_owner_last_name"]').parents('.c-required').addClass('c-error');
+        $(co_owners_ele[cindex]).find('[name="co_owner_last_name"]').focus();
+        return false;
+      }
+      else{
+        $(co_owners_ele[cindex]).find('[name="co_owner_last_name"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(co_owners_ele[cindex]).find('[name="co_owner_address"]').val() == ''){
+        $(co_owners_ele[cindex]).find('[name="co_owner_address"]').parents('.c-required').addClass('c-error');
+        $(co_owners_ele[cindex]).find('[name="co_owner_address"]').focus();
+        return false;
+      }
+      else{
+        $(co_owners_ele[cindex]).find('[name="co_owner_address"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(co_owners_ele[cindex]).find('[name="co_owner_city"]').val() == ''){
+        $(co_owners_ele[cindex]).find('[name="co_owner_city"]').parents('.c-required').addClass('c-error');
+        $(co_owners_ele[cindex]).find('[name="co_owner_city"]').focus();
+        return false;
+      }
+      else{
+        $(co_owners_ele[cindex]).find('[name="co_owner_city"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(co_owners_ele[cindex]).find('[name="co_owner_state"]').val() == ''){
+        $(co_owners_ele[cindex]).find('[name="co_owner_state"]').parents('.c-required').addClass('c-error');
+        $(co_owners_ele[cindex]).find('[name="co_owner_state"]').focus();
+        return false;
+      }
+      else{
+        $(co_owners_ele[cindex]).find('[name="co_owner_state"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(co_owners_ele[cindex]).find('[name="co_owner_zipcode"]').val() == ''){
+        $(co_owners_ele[cindex]).find('[name="co_owner_zipcode"]').parents('.c-required').addClass('c-error');
+        $(co_owners_ele[cindex]).find('[name="co_owner_zipcode"]').focus();
+        return false;
+      }
+      else{
+        $(co_owners_ele[cindex]).find('[name="co_owner_zipcode"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(co_owners_ele[cindex]).find('[name="co_owner_cell_phone"]').val() == ''){
+        $(co_owners_ele[cindex]).find('[name="co_owner_cell_phone"]').parents('.c-required').addClass('c-error');
+        $(co_owners_ele[cindex]).find('[name="co_owner_cell_phone"]').focus();
+        return false;
+      }
+      else{
+        $(co_owners_ele[cindex]).find('[name="co_owner_cell_phone"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(co_owners_ele[cindex]).find('[name="co_owner_email"]').val() == ''){
+        $(co_owners_ele[cindex]).find('[name="co_owner_email"]').parents('.c-required').addClass('c-error');
+        $(co_owners_ele[cindex]).find('[name="co_owner_email"]').focus();
+        $(co_owners_ele[cindex]).find('[name="co_owner_email"]').parents('.c-required').find('.require-msg').show();
+        $(co_owners_ele[cindex]).find('[name="co_owner_email"]').parents('.c-required').find('.format-msg').hide();
+        return false;
+      }
+      else{
+        $(co_owners_ele[cindex]).find('[name="co_owner_email"]').parents('.c-required').removeClass('c-error');
+      }
+
+
+      if(!validateEmail($(co_owners_ele[cindex]).find('[name="co_owner_email"]').val())){
+        $(co_owners_ele[cindex]).find('[name="co_owner_email"]').parents('.c-required').addClass('c-error');
+        $(co_owners_ele[cindex]).find('[name="co_owner_email"]').parents('.c-required').find('.require-msg').hide();
+        $(co_owners_ele[cindex]).find('[name="co_owner_email"]').parents('.c-required').find('.format-msg').show();
+        $(co_owners_ele[cindex]).find('[name="co_owner_email"]').focus();
+        return false;
+      }
+      else{
+        $('#email').parents('.c-required').removeClass('c-error');
+        $(co_owners_ele[cindex]).find('[name="co_owner_email"]').parents('.c-required').find('.require-msg').hide();
+        $(co_owners_ele[cindex]).find('[name="co_owner_email"]').parents('.c-required').find('.format-msg').hide();
+      }
+
+    }
+  }
+
+  if($('#add_additional_prop_chbox').is(':checked')){
+    var additional_props_ele = $('#additional_props_container .additional-prop-template-wrap');
+    for(var pindex = 0; pindex < additional_props_ele.length; pindex ++){
+      if($(additional_props_ele[pindex]).find('[name="property_address"]').val() == ''){
+        $(additional_props_ele[pindex]).find('[name="property_address"]').parents('.c-required').addClass('c-error');
+        $(additional_props_ele[pindex]).find('[name="property_address"]').focus();
+        return false;
+      }
+      else{
+        $(additional_props_ele[pindex]).find('[name="property_address"]').parents('.c-required').removeClass('c-error');
+      }
+
+      // if($(additional_props_ele[pindex]).find('[name="bedrooms"]').val() == ''){
+      //   $(additional_props_ele[pindex]).find('[name="bedrooms"]').parents('.c-required').addClass('c-error');
+      //   $(additional_props_ele[pindex]).find('[name="bedrooms"]').focus();
+      //   return false;
+      // }
+      // else{
+      //   $(additional_props_ele[pindex]).find('[name="bedrooms"]').parents('.c-required').removeClass('c-error');
+      // }
+
+      // if($(additional_props_ele[pindex]).find('[name="bathrooms"]').val() == ''){
+      //   $(additional_props_ele[pindex]).find('[name="bathrooms"]').parents('.c-required').addClass('c-error');
+      //   $(additional_props_ele[pindex]).find('[name="bathrooms"]').focus();
+      //   return false;
+      // }
+      // else{
+      //   $(additional_props_ele[pindex]).find('[name="bathrooms"]').parents('.c-required').removeClass('c-error');
+      // }
+
+      // if($(additional_props_ele[pindex]).find('[name="hbathrooms"]').val() == ''){
+      //   $(additional_props_ele[pindex]).find('[name="hbathrooms"]').parents('.c-required').addClass('c-error');
+      //   $(additional_props_ele[pindex]).find('[name="hbathrooms"]').focus();
+      //   return false;
+      // }
+      // else{
+      //   $(additional_props_ele[pindex]).find('[name="hbathrooms"]').parents('.c-required').removeClass('c-error');
+      // }
+
+      if($(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').val() == ''){
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').parents('.c-required').addClass('c-error');
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').focus();
+        return false;
+      }
+      else{
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').val() == ''){
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').parents('.c-required').addClass('c-error');
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').focus();
+        return false;
+      }
+      else{
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').val() == ''){
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').parents('.c-required').addClass('c-error');
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').focus();
+        return false;
+      }
+      else{
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').val() == ''){
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').parents('.c-required').addClass('c-error');
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').focus();
+        return false;
+      }
+      else{
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').val() == ''){
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').parents('.c-required').addClass('c-error');
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').focus();
+        return false;
+      }
+      else{
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').val() == ''){
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').parents('.c-required').addClass('c-error');
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').focus();
+        return false;
+      }
+      else{
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').val() == ''){
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').parents('.c-required').addClass('c-error');
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').focus();
+        return false;
+      }
+      else{
+        $(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').val() == ''){
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').parents('.c-required').addClass('c-error');
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').focus();
+        return false;
+      }
+      else{
+        $(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').val() == ''){
+        $(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').parents('.c-required').addClass('c-error');
+        $(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').focus();
+        return false;
+      }
+      else{
+        $(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').parents('.c-required').removeClass('c-error');
+      }
+
+      if($(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').val() == ''){
+        $(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').parents('.c-required').addClass('c-error');
+        $(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').focus();
+        return false;
+      }
+      else{
+        $(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').parents('.c-required').removeClass('c-error');
+      }
+    }
+  }
   return true;
 }
 
+var additional_props_count = 0;
+var co_owners_count = 0;
+
 function initContactForm(){
+  
   $(document).on('click', '#contact_btn', function(){
     if(!checkContactForm()){
       return false;
+    }
+
+    if(!$('#add_additional_prop_chbox').is(':checked') || ($('#add_additional_prop_chbox').is(':checked') && $('#additional_props_container .additional-prop-template-wrap').length == 0)){
+      alert('Please Add more than 1 property');
+      return;
+    }
+    
+    var add_co_owner_chbox = $('#add_co_owner_chbox').is(':checked');
+    
+    var co_owners_data = [];
+    var co_owners_ele = $('#co_owners_container .co-owner-template-wrap');
+    for(var cindex = 0; cindex < co_owners_ele.length; cindex ++){
+      var co_owner_first_name = $(co_owners_ele[cindex]).find('[name="co_owner_first_name"]').val();
+      var co_owner_last_name = $(co_owners_ele[cindex]).find('[name="co_owner_last_name"]').val();
+      var co_owner_address = $(co_owners_ele[cindex]).find('[name="co_owner_address"]').val();
+      var co_owner_city = $(co_owners_ele[cindex]).find('[name="co_owner_city"]').val();
+      var co_owner_state = $(co_owners_ele[cindex]).find('[name="co_owner_state"]').val();
+      var co_owner_zipcode = $(co_owners_ele[cindex]).find('[name="co_owner_zipcode"]').val();
+      var co_owner_cell_phone = $(co_owners_ele[cindex]).find('[name="co_owner_cell_phone"]').val();
+      var co_owner_email = $(co_owners_ele[cindex]).find('[name="co_owner_email"]').val();
+
+      co_owners_data.push({
+        co_owner_first_name: co_owner_first_name,
+        co_owner_last_name: co_owner_last_name,
+        co_owner_address: co_owner_address,
+        co_owner_city: co_owner_city,
+        co_owner_state: co_owner_state,
+        co_owner_zipcode: co_owner_zipcode,
+        co_owner_cell_phone: co_owner_cell_phone,
+        co_owner_email: co_owner_email
+      })
+    }
+
+    var add_additional_prop_chbox = $('#add_additional_prop_chbox').is(':checked');
+
+    var additional_props_data = [];
+    var additional_props_ele = $('#additional_props_container .additional-prop-template-wrap');
+    for(var pindex = 0; pindex < additional_props_ele.length; pindex ++){
+      var property_address = $(additional_props_ele[pindex]).find('[name="property_address"]').val();
+      var bedrooms = $(additional_props_ele[pindex]).find('[name="bedrooms"]').val();
+      var bathrooms = $(additional_props_ele[pindex]).find('[name="bathrooms"]').val();
+      var hbathrooms = $(additional_props_ele[pindex]).find('[name="hbathrooms"]').val();
+      var bed_conf_count1 = $(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').val();
+      var bed_conf_type1 = $(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').val();
+      var bed_conf_count2 = $(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').val();
+      var bed_conf_type2 = $(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').val();
+      var bed_conf_count3 = $(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').val();
+      var bed_conf_type3 = $(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').val();
+      var bed_conf_count4 = $(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').val();
+      var bed_conf_type4 = $(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').val();
+      var sleeper_sofa_exist = $(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').val();
+      var sleeper_sofa_size = $(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').val();
+      
+
+      additional_props_data.push({
+        property_address: property_address,
+        bedrooms: bedrooms,
+        bathrooms: bathrooms,
+        bathrooms: bathrooms,
+        hbathrooms: hbathrooms,
+        bed_conf_count1: bed_conf_count1,
+        bed_conf_type1: bed_conf_type1,
+        bed_conf_count2: bed_conf_count2,
+        bed_conf_type2: bed_conf_type2,
+        bed_conf_count3: bed_conf_count3,
+        bed_conf_type3: bed_conf_type3,
+        bed_conf_count4: bed_conf_count4,
+        bed_conf_type4: bed_conf_type4,
+        sleeper_sofa_exist: sleeper_sofa_exist,
+        sleeper_sofa_size: sleeper_sofa_size
+      })
     }
 
     $.ajax({
@@ -382,57 +744,89 @@ function initContactForm(){
         'city': $('#city').val(),
         'state': $('#state').val(),
         'zipcode': $('#zipcode').val(),
-        'property_address': $('#property_address').val(),
-        'check_in_date': $('#check_in_date').val(),
-        'check_out_date': $('#check_out_date').val(),
-        'bedrooms': $('#bedrooms').val(),
-        'bathrooms': $('#bathrooms').val(),
-        'hbathrooms': $('#hbathrooms').val(),
-        'bed_conf_count1': $('#bed_conf_count1').val(),
-        'bed_conf_type1': $('#bed_conf_type1').val(),
-        'bed_conf_count2': $('#bed_conf_count2').val(),
-        'bed_conf_type2': $('#bed_conf_type2').val(),
-        'bed_conf_count3': $('#bed_conf_count3').val(),
-        'bed_conf_type3': $('#bed_conf_type3').val(),
-        'bed_conf_count4': $('#bed_conf_count4').val(),
-        'bed_conf_type4': $('#bed_conf_type4').val(),
-        'sleeper_sofa_exist': $('#sleeper_sofa_exist').val(),
-        'sleeper_sofa_size': $('#sleeper_sofa_size').val(),
         'day_phone': $('#day_phone').val(),
         'cell_phone': $('#cell_phone').val(),
         'email': $('#email').val(),
-        'property_phone': $('#property_phone').val(),
-        'billing_purpose': $('#billing_purpose').val(),
-        'exp_date': $('#exp_date').val(),
-        'office_cleaning_rate': $('#office_cleaning_rate').val(),
-        'office_caretaking_rate': $('#office_caretaking_rate').val()
+        'add_co_owner_chbox': add_co_owner_chbox,
+        'co_owners_data': co_owners_data,
+        'add_additional_prop_chbox': add_additional_prop_chbox,
+        'additional_props_data': additional_props_data
       },
       success: function(response){
         if(response == 'ok'){
-          alert('register successfully');
-          // location.reload();
+          alert('Thank you so much for contacting Clean Sweep HHI');
+          location.reload();
         }
         else if(response == 'email exist'){
           alert('email already exist');
-          // $('#email').focus();
+          $('#email').focus();
         }
       }
     })
   });
 
-  $(document).on('change', '#add_another_prop_chbox', function(){
+  //co_owner
+  $(document).on('change', '#add_co_owner_chbox', function(){
     if($(this).is(':checked')){
-      $('#add_another_prop_btn').css('visibility', 'visible');
+      $('#add_co_owner_btn').css('visibility', 'visible');
+      $('#co_owners_container').show();
     }
     else{
-      $('#add_another_prop_btn').css('visibility', 'hidden');
+      $('#add_co_owner_btn').css('visibility', 'hidden');
+      $('#co_owners_container').hide();
     }
   })
 
-  $(document).on('click', '#add_another_prop_btn', function(){
-    var newhtml = $('#additional_prop_template').clone().html();
-    $('#additional_props_container').append(newhtml);
+  $(document).on('click', '#add_co_owner_btn', function(){
+    co_owners_count++;
+
+    var newhtml = $('#co_owner_template').clone();
+    $(newhtml).find('.co-owner-template-wrap').attr('id', 'co_owner_template_wrap_' + co_owners_count);
+    $(newhtml).find('[name="co_owner_del_btn"]').attr('data-id', co_owners_count);
+    newhtml = $(newhtml).html();
+    $('#co_owners_container').append(newhtml);
+
+    $(".onlynumbs").inputFilter(function(value) {
+      return /^\d*$/.test(value);
+    });
   })
+
+  $(document).on('click', '[name="co_owner_del_btn"]', function(){
+    var data_id = $(this).attr('data-id');
+    $('#co_owner_template_wrap_' + data_id).remove();
+  })
+
+
+  //additional property
+  $(document).on('change', '#add_additional_prop_chbox', function(){
+    if($(this).is(':checked')){
+      $('#add_additional_prop_btn').css('visibility', 'visible');
+      $('#additional_props_container').show();
+    }
+    else{
+      $('#add_additional_prop_btn').css('visibility', 'hidden');
+      $('#additional_props_container').hide();
+    }
+  })
+
+  $(document).on('click', '#add_additional_prop_btn', function(){
+    additional_props_count++;
+    var newhtml = $('#additional_prop_template').clone();
+    $(newhtml).find('.additional-prop-template-wrap').attr('id', 'additional_prop_template_wrap_' + additional_props_count);
+    $(newhtml).find('[name="additional_prop_del_btn"]').attr('data-id', additional_props_count);
+    newhtml = $(newhtml).html();
+    $('#additional_props_container').append(newhtml);
+
+    $(".onlynumbs").inputFilter(function(value) {
+      return /^\d*$/.test(value);
+    });
+  })
+
+  $(document).on('click', '[name="additional_prop_del_btn"]', function(){
+    var data_id = $(this).attr('data-id');
+    $('#additional_prop_template_wrap_' + data_id).remove();
+  })
+
 }
 // initContactForm()
 
@@ -477,8 +871,6 @@ function initLoginForm(){
 // initLoginForm()
 
 function initOwnerInfo(){
-  $('#owner_info input').attr('disabled', 'disabled');
-  $('#owner_info select').attr('disabled', 'disabled');
 
   $(document).on('click', '#edit_owner_btn', function(){
     $('#owner_info input').removeAttr('disabled');
@@ -487,30 +879,140 @@ function initOwnerInfo(){
     $('#edit_owner_btn').hide();
     $('#save_owner_btn').show();
     $('#cancel_owner_btn').show();
+
+    if($('#add_co_owner_chbox').is(':checked')){
+      $('#add_co_owner_btn').css('visibility', 'visible');
+    }
+    else{
+      $('#add_co_owner_btn').css('visibility', 'hidden');
+    }
+
+    if($('#add_additional_prop_chbox').is(':checked')){
+      $('#add_additional_prop_btn').css('visibility', 'visible');
+    }
+    else{
+      $('#add_additional_prop_btn').css('visibility', 'hidden');
+    }
+
+    $('#co_owners_container [name="co_owner_del_btn"]').show();
+    $('#additional_props_container [name="additional_prop_del_btn"]').show();
   })
+
+  // var additional_props_count = 0;
+  // var co_owners_count = 0;
 
   $(document).on('click', '#save_owner_btn', function(){
 
-    var formdata = new FormData($('#owner_info_form')[0]);
+    if(!checkContactForm()){
+      return false;
+    }
+
+    var add_co_owner_chbox = $('#add_co_owner_chbox').is(':checked');
+    
+    var co_owners_data = [];
+    var co_owners_ele = $('#co_owners_container .co-owner-template-wrap');
+    for(var cindex = 0; cindex < co_owners_ele.length; cindex ++){
+      var co_owner_first_name = $(co_owners_ele[cindex]).find('[name="co_owner_first_name"]').val();
+      var co_owner_last_name = $(co_owners_ele[cindex]).find('[name="co_owner_last_name"]').val();
+      var co_owner_address = $(co_owners_ele[cindex]).find('[name="co_owner_address"]').val();
+      var co_owner_city = $(co_owners_ele[cindex]).find('[name="co_owner_city"]').val();
+      var co_owner_state = $(co_owners_ele[cindex]).find('[name="co_owner_state"]').val();
+      var co_owner_zipcode = $(co_owners_ele[cindex]).find('[name="co_owner_zipcode"]').val();
+      var co_owner_cell_phone = $(co_owners_ele[cindex]).find('[name="co_owner_cell_phone"]').val();
+      var co_owner_email = $(co_owners_ele[cindex]).find('[name="co_owner_email"]').val();
+
+      co_owners_data.push({
+        co_owner_first_name: co_owner_first_name,
+        co_owner_last_name: co_owner_last_name,
+        co_owner_address: co_owner_address,
+        co_owner_city: co_owner_city,
+        co_owner_state: co_owner_state,
+        co_owner_zipcode: co_owner_zipcode,
+        co_owner_cell_phone: co_owner_cell_phone,
+        co_owner_email: co_owner_email
+      })
+    }
+
+    var add_additional_prop_chbox = $('#add_additional_prop_chbox').is(':checked');
+
+    var additional_props_data = [];
+    var additional_props_ele = $('#additional_props_container .additional-prop-template-wrap');
+    for(var pindex = 0; pindex < additional_props_ele.length; pindex ++){
+      var property_address = $(additional_props_ele[pindex]).find('[name="property_address"]').val();
+      var bedrooms = $(additional_props_ele[pindex]).find('[name="bedrooms"]').val();
+      var bathrooms = $(additional_props_ele[pindex]).find('[name="bathrooms"]').val();
+      var hbathrooms = $(additional_props_ele[pindex]).find('[name="hbathrooms"]').val();
+      var bed_conf_count1 = $(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').val();
+      var bed_conf_type1 = $(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').val();
+      var bed_conf_count2 = $(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').val();
+      var bed_conf_type2 = $(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').val();
+      var bed_conf_count3 = $(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').val();
+      var bed_conf_type3 = $(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').val();
+      var bed_conf_count4 = $(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').val();
+      var bed_conf_type4 = $(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').val();
+      var sleeper_sofa_exist = $(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').val();
+      var sleeper_sofa_size = $(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').val();
+      
+
+      additional_props_data.push({
+        property_address: property_address,
+        bedrooms: bedrooms,
+        bathrooms: bathrooms,
+        bathrooms: bathrooms,
+        hbathrooms: hbathrooms,
+        bed_conf_count1: bed_conf_count1,
+        bed_conf_type1: bed_conf_type1,
+        bed_conf_count2: bed_conf_count2,
+        bed_conf_type2: bed_conf_type2,
+        bed_conf_count3: bed_conf_count3,
+        bed_conf_type3: bed_conf_type3,
+        bed_conf_count4: bed_conf_count4,
+        bed_conf_type4: bed_conf_type4,
+        sleeper_sofa_exist: sleeper_sofa_exist,
+        sleeper_sofa_size: sleeper_sofa_size
+      })
+    }
+
     $.ajax({
-        url: '/do_owner_update',
-        type: 'post',
-        enctype: 'multipart/form-data',
-        data: formdata,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function(data){
-            alert('saved successfully');
+      url:'/do_owner_update',
+      type: 'post',
+      data: {
+        'username': $('#username').val(),
+        'password': $('#password').val(),
+        'first_name': $('#first_name').val(),
+        'last_name': $('#last_name').val(),
+        'address': $('#address').val(),
+        'city': $('#city').val(),
+        'state': $('#state').val(),
+        'zipcode': $('#zipcode').val(),
+        'day_phone': $('#day_phone').val(),
+        'cell_phone': $('#cell_phone').val(),
+        'email': $('#email').val(),
+        'add_co_owner_chbox': add_co_owner_chbox,
+        'co_owners_data': co_owners_data,
+        'add_additional_prop_chbox': add_additional_prop_chbox,
+        'additional_props_data': additional_props_data,
+        'status': $('#status').val(),
+        'id': $('#id').val(),
+      },
+      success: function(response){
+        alert('saved successfully');
 
-            $('#owner_info input').attr('disabled', 'disabled');
-            $('#owner_info select').attr('disabled', 'disabled');
+        $('#owner_info input').attr('disabled', 'disabled');
+        $('#owner_info select').attr('disabled', 'disabled');
 
-            $('#edit_owner_btn').show();
-            $('#save_owner_btn').hide();
-            $('#cancel_owner_btn').hide();
-        }
-    })    
+        $('#edit_owner_btn').show();
+        $('#save_owner_btn').hide();
+        $('#cancel_owner_btn').hide();
+
+        $('#co_owners_container [name="co_owner_del_btn"]').hide();
+        $('#additional_props_container [name="additional_prop_del_btn"]').hide();
+
+        $('#add_co_owner_btn').css('visibility', 'hidden');
+        $('#add_additional_prop_btn').css('visibility', 'hidden');
+      }
+    })
+
   })
 
   $(document).on('click', '#cancel_owner_btn', function(){
@@ -520,7 +1022,156 @@ function initOwnerInfo(){
     $('#edit_owner_btn').show();
     $('#save_owner_btn').hide();
     $('#cancel_owner_btn').hide();
+
+    $('#co_owners_container [name="co_owner_del_btn"]').hide();
+    $('#additional_props_container [name="additional_prop_del_btn"]').hide();
+
+    $('#add_co_owner_btn').css('visibility', 'hidden');
+    $('#add_additional_prop_btn').css('visibility', 'hidden');
   })
+
+  $(document).on('click', '#logout_owner_btn', function(){
+    $.ajax({
+      url: '/owner_logout',
+      type: 'post',
+      success: function(response){
+        location.reload();
+      }
+    })
+  })
+
+  if(add_co_owner_chbox){
+    $('#add_co_owner_chbox').prop('checked', true);
+
+    var html = '';
+    for(var cindex = 0; cindex < co_owners_data.length; cindex++){
+      var clone_ele = $('#co_owner_template').clone();
+      var temp_id = cindex + 1;
+      
+      $(clone_ele).find('.co-owner-template-wrap').attr('id', 'co_owner_template_wrap_' + temp_id);
+      $(clone_ele).find('[name="co_owner_first_name"]').attr('value', co_owners_data[cindex]['co_owner_first_name']);
+      $(clone_ele).find('[name="co_owner_last_name"]').attr('value', co_owners_data[cindex]['co_owner_last_name']);
+      $(clone_ele).find('[name="co_owner_address"]').attr('value', co_owners_data[cindex]['co_owner_address']);
+      $(clone_ele).find('[name="co_owner_city"]').attr('value', co_owners_data[cindex]['co_owner_city']);
+      $(clone_ele).find('[name="co_owner_state"] option[value="' + co_owners_data[cindex]['co_owner_state'] + '"]').attr('selected', 'selected');
+      $(clone_ele).find('[name="co_owner_zipcode"]').attr('value', co_owners_data[cindex]['co_owner_zipcode']);
+      $(clone_ele).find('[name="co_owner_cell_phone"]').attr('value', co_owners_data[cindex]['co_owner_cell_phone']);
+      $(clone_ele).find('[name="co_owner_email"]').attr('value', co_owners_data[cindex]['co_owner_email']);
+      $(clone_ele).find('[name="co_owner_del_btn"]').attr('data-id', temp_id);
+
+      html = html + $(clone_ele).html();
+    }
+
+    co_owners_count = co_owners_data.length;
+    $('#co_owners_container').html(html);
+  }
+
+  if(add_additional_prop_chbox){
+    $('#add_additional_prop_chbox').prop('checked', true);
+
+    var html = '';
+    for(var pindex = 0; pindex < additional_props_data.length; pindex++){
+      var clone_ele = $('#additional_prop_template').clone();
+      var temp_id = pindex + 1;
+      
+      $(clone_ele).find('.additional-prop-template-wrap').attr('id', 'additional_prop_template_wrap_' + temp_id);
+      $(clone_ele).find('[name="property_address"]').attr('value', additional_props_data[pindex]['property_address']);
+      $(clone_ele).find('[name="bedrooms"]').attr('value', additional_props_data[pindex]['bedrooms']);
+      $(clone_ele).find('[name="bathrooms"]').attr('value', additional_props_data[pindex]['bathrooms']);
+      $(clone_ele).find('[name="hbathrooms"]').attr('value', additional_props_data[pindex]['hbathrooms']);
+      $(clone_ele).find('[name="bed_conf_count1"]').attr('value', additional_props_data[pindex]['bed_conf_count1']);
+      $(clone_ele).find('[name="bed_conf_type1"] option[value="' + additional_props_data[pindex]['bed_conf_type1'] + '"]').attr('selected', 'selected');
+      $(clone_ele).find('[name="bed_conf_count2"]', ).attr('value', additional_props_data[pindex]['bed_conf_count2']);
+      $(clone_ele).find('[name="bed_conf_type2"] option[value="' + additional_props_data[pindex]['bed_conf_type2'] + '"]').attr('selected', 'selected');
+      $(clone_ele).find('[name="bed_conf_count3"]').attr('value', additional_props_data[pindex]['bed_conf_count3']);
+      $(clone_ele).find('[name="bed_conf_type3"] option[value="' + additional_props_data[pindex]['bed_conf_type3'] + '"]').attr('selected', 'selected');
+      $(clone_ele).find('[name="bed_conf_count4"]').attr('value', additional_props_data[pindex]['bed_conf_count4']);
+      $(clone_ele).find('[name="bed_conf_type4"] option[value="' + additional_props_data[pindex]['bed_conf_type4'] + '"]').attr('selected', 'selected');
+      $(clone_ele).find('[name="sleeper_sofa_exist"] option[value="' + additional_props_data[pindex]['sleeper_sofa_exist'] + '"]').attr('selected', 'selected');
+      $(clone_ele).find('[name="sleeper_sofa_size"] option[value="' + additional_props_data[pindex]['sleeper_sofa_size'] + '"]').attr('selected', 'selected');
+
+      $(clone_ele).find('[name="additional_prop_del_btn"]').attr('data-id', temp_id);
+
+      html = html + $(clone_ele).html();
+    }
+
+    additional_props_count = additional_props_data.length;
+    $('#additional_props_container').html(html);
+  }
+
+
+  //co_owner
+  $(document).on('change', '#add_co_owner_chbox', function(){
+    if($(this).is(':checked')){
+      $('#add_co_owner_btn').css('visibility', 'visible');
+      $('#co_owners_container').show();
+    }
+    else{
+      $('#add_co_owner_btn').css('visibility', 'hidden');
+      $('#co_owners_container').hide();
+    }
+  })
+
+  $(document).on('click', '#add_co_owner_btn', function(){
+    co_owners_count++;
+
+    var newhtml = $('#co_owner_template').clone();
+    $(newhtml).find('.co-owner-template-wrap').attr('id', 'co_owner_template_wrap_' + co_owners_count);
+    $(newhtml).find('[name="co_owner_del_btn"]').attr('data-id', co_owners_count);
+    newhtml = $(newhtml).html();
+    $('#co_owners_container').append(newhtml);
+
+    $(".onlynumbs").inputFilter(function(value) {
+      return /^\d*$/.test(value);
+    });
+  })
+
+  $(document).on('click', '[name="co_owner_del_btn"]', function(){
+    var data_id = $(this).attr('data-id');
+    $('#co_owner_template_wrap_' + data_id).remove();
+  })
+
+
+  //additional property
+  $(document).on('change', '#add_additional_prop_chbox', function(){
+    if($(this).is(':checked')){
+      $('#add_additional_prop_btn').css('visibility', 'visible');
+      $('#additional_props_container').show();
+    }
+    else{
+      $('#add_additional_prop_btn').css('visibility', 'hidden');
+      $('#additional_props_container').hide();
+    }
+  })
+
+  $(document).on('click', '#add_additional_prop_btn', function(){
+    additional_props_count++;
+    var newhtml = $('#additional_prop_template').clone();
+    $(newhtml).find('.additional-prop-template-wrap').attr('id', 'additional_prop_template_wrap_' + additional_props_count);
+    $(newhtml).find('[name="additional_prop_del_btn"]').attr('data-id', additional_props_count);
+    newhtml = $(newhtml).html();
+    $('#additional_props_container').append(newhtml);
+
+    $(".onlynumbs").inputFilter(function(value) {
+      return /^\d*$/.test(value);
+    });
+  })
+
+  $(document).on('click', '[name="additional_prop_del_btn"]', function(){
+    var data_id = $(this).attr('data-id');
+    $('#additional_prop_template_wrap_' + data_id).remove();
+  })
+
+  $('#owner_info input').attr('disabled', 'disabled');
+  $('#owner_info select').attr('disabled', 'disabled');
+
+  $('#co_owners_container [name="co_owner_del_btn"]').hide();
+  $('#additional_props_container [name="additional_prop_del_btn"]').hide();
+
+  $(".onlynumbs").inputFilter(function(value) {
+    return /^\d*$/.test(value);
+  });
+
 }
 // initOwnerInfo()
 

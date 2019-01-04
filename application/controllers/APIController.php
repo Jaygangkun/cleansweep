@@ -7,11 +7,11 @@ class ApiController extends CI_Controller {
 	{
 		$this->load->Model('OwnerModel');
 		
-		// if($this->OwnerModel->checkEmail($_POST['email'])){
-		// 	echo "email exist";
-		// 	return;
-		// }
-		// $this->OwnerModel->register($_POST);
+		if($this->OwnerModel->checkEmail($_POST['email'])){
+			echo "email exist";
+			return;
+		}
+		$this->OwnerModel->register($_POST);
 		
 		$config = Array(    
 			'protocol' => 'smtp',
@@ -55,9 +55,13 @@ class ApiController extends CI_Controller {
 		}
 	}
 
+	public function owner_logout(){
+		$_SESSION['owner_id'] = 0;
+	}
+
 	public function owner_service_request(){
 		$this->load->Model('ServiceReqModel');
-		// $owner_id = $this->ServiceReqModel->register($_POST);
+		$owner_id = $this->ServiceReqModel->register($_POST);
 
 		$config = Array(    
 			'protocol' => 'smtp',

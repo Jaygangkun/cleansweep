@@ -52,20 +52,30 @@
                 </div>
 
                 <div class="row">
-                    <div class="form-group col-xs-6">
+                    <div class="form-group col-xs-4">
                         <label for="Owner's Email Address">Owner's Email Address</label>
                         <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" value="<?php echo $owner['email']?>">
+                    </div>
+
+                    <div class="form-group col-xs-4">
+                        <label for="Owner's Day Phone">Owner's Day Phone</label>
+                        <input type="text" class="form-control phonenumber" id="day_phone" name="day_phone" placeholder="" value="<?php echo $owner['day_phone']?>">
+                    </div>
+
+                    <div class="form-group col-xs-4">
+                        <label for="Owner's Cell Phone">Owner's Cell Phone</label>
+                        <input type="text" class="form-control phonenumber" id="cell_phone" name="cell_phone" placeholder="" value="<?php echo $owner['cell_phone']?>">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-xs-12">
                         <label for="Actual Owner's Address">Actual Owner's Address</label>
-                        <input type="text" class="form-control" id="address" name="address" placeholder="Enter email" value="<?php echo $owner['address']?>">
+                        <input type="text" class="form-control" id="address" name="address" placeholder="address" value="<?php echo $owner['address']?>">
                     </div>
 
                     <div class="form-group col-xs-4">
-                        <input type="text" class="form-control" id="city" name="city" placeholder="Enter email" value="<?php echo $owner['city']?>">
+                        <input type="text" class="form-control" id="city" name="city" placeholder="city" value="<?php echo $owner['city']?>">
                     </div>
 
                     <div class="form-group col-xs-4">
@@ -133,171 +143,38 @@
                     </div>
 
                     <div class="form-group col-xs-4">
-                        <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Enter email" value="<?php echo $owner['zipcode']?>">
-                    </div>
-                </div>
-
-                <!-- <div class="row">
-                    <div class="form-group col-xs-6">
-                        <label for="Check In Date">Hilton Head Property Address</label>
-                        <input type="text" class="form-control" id="property_address" name="property_address" placeholder="Check In Date" value="<?php echo $owner['property_address']?>">
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="form-group col-xs-4">
-                        <label for="Check In Date">Check In Date</label>
-                        <input type="text" class="form-control datepicker" id="check_in_date" name="check_in_date" placeholder="Check In Date" value="<?php echo $owner['check_in_date']?>">
-                    </div>
-
-                    <div class="form-group col-xs-4">
-                        <label for="Check Out Date">Check Out Date</label>
-                        <input type="text" class="form-control datepicker" id="check_out_date" name="check_out_date" placeholder="Check Out Date" value="<?php echo $owner['check_out_date']?>">
-                    </div>
-                </div> -->
-
-                <div class="row">
-                    <div class="form-group col-xs-4">
-                        <label for="# of Bedrooms"># of Bedrooms</label>
-                        <input type="text" class="form-control" id="bedrooms" name="bedrooms" placeholder="" value="<?php echo $owner['bedrooms']?>">
-                    </div>
-
-                    <div class="form-group col-xs-4">
-                        <label for="# of Bathrooms"># of Bathrooms</label>
-                        <input type="text" class="form-control" id="bathrooms" name="bathrooms" placeholder="" value="<?php echo $owner['bathrooms']?>">
-                    </div>
-
-                    <div class="form-group col-xs-4">
-                        <label for="# of ½ Bathrooms"># of ½ Bathrooms</label>
-                        <input type="text" class="form-control" id="hbathrooms" name="hbathrooms" placeholder="" value="<?php echo $owner['hbathrooms']?>">
+                        <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="zipcode" value="<?php echo $owner['zipcode']?>">
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="form-group col-xs-12" style="margin-bottom: 0px;">
-                        <label for="Bed Configuration(s) & # of each">Bed Configuration(s) & # of each</label>
-                    </div>
-                    <div class="form-group col-xs-1">
-                        <input type="text" class="form-control" id="bed_conf_count1" name="bed_conf_count1" placeholder="" value="<?php echo $owner['bed_conf_count1']?>">
-                    </div>
-
-                    <div class="form-group col-xs-2">
-                        <select id="bed_conf_type1" name="bed_conf_type1" class="form-control">
-                            <option value="Twin" <?php if($owner['bed_conf_type1'] == 'Twin') echo "selected"; ?>>Twin</option>
-                            <option value="Full" <?php if($owner['bed_conf_type1'] == 'Full') echo "selected"; ?>>Full</option>
-                            <option value="Queen" <?php if($owner['bed_conf_type1'] == 'Queen') echo "selected"; ?>>Queen</option>
-                            <option value="King" <?php if($owner['bed_conf_type1'] == 'King') echo "selected"; ?>>King</option>
-                            <option value="California King" <?php if($owner['bed_conf_type1'] == 'California King') echo "selected"; ?>>California King</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-xs-1">
-                        <input type="text" class="form-control" id="bed_conf_count2" name="bed_conf_count2" placeholder="" value="<?php echo $owner['bed_conf_count2']?>">
-                    </div>
-
-                    <div class="form-group col-xs-2">
-                        <select id="bed_conf_type2" name="bed_conf_type2" class="form-control">
-                            <option value="Twin" <?php if($owner['bed_conf_type2'] == 'Twin') echo "selected"; ?>>Twin</option>
-                            <option value="Full" <?php if($owner['bed_conf_type2'] == 'Full') echo "selected"; ?>>Full</option>
-                            <option value="Queen" <?php if($owner['bed_conf_type2'] == 'Queen') echo "selected"; ?>>Queen</option>
-                            <option value="King" <?php if($owner['bed_conf_type2'] == 'King') echo "selected"; ?>>King</option>
-                            <option value="California King" <?php if($owner['bed_conf_type2'] == 'California King') echo "selected"; ?>>California King</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-xs-1">
-                        <input type="text" class="form-control" id="bed_conf_count3" name="bed_conf_count3" placeholder="" value="<?php echo $owner['bed_conf_count3']?>">
-                    </div>
-
-                    <div class="form-group col-xs-2">
-                        <select id="bed_conf_type3" name="bed_conf_type3" class="form-control">
-                            <option value="Twin" <?php if($owner['bed_conf_type3'] == 'Twin') echo "selected"; ?>>Twin</option>
-                            <option value="Full" <?php if($owner['bed_conf_type3'] == 'Full') echo "selected"; ?>>Full</option>
-                            <option value="Queen" <?php if($owner['bed_conf_type3'] == 'Queen') echo "selected"; ?>>Queen</option>
-                            <option value="King" <?php if($owner['bed_conf_type3'] == 'King') echo "selected"; ?>>King</option>
-                            <option value="California King" <?php if($owner['bed_conf_type3'] == 'California King') echo "selected"; ?>>California King</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-xs-1">
-                        <input type="text" class="form-control" id="bed_conf_count4" name="bed_conf_count4" placeholder="" value="<?php echo $owner['bed_conf_count4']?>">
-                    </div>
-
-                    <div class="form-group col-xs-2">
-                        <select id="bed_conf_type4" name="bed_conf_type4" class="form-control">
-                            <option value="Twin" <?php if($owner['bed_conf_type4'] == 'Twin') echo "selected"; ?>>Twin</option>
-                            <option value="Full" <?php if($owner['bed_conf_type4'] == 'Full') echo "selected"; ?>>Full</option>
-                            <option value="Queen" <?php if($owner['bed_conf_type4'] == 'Queen') echo "selected"; ?>>Queen</option>
-                            <option value="King" <?php if($owner['bed_conf_type4'] == 'King') echo "selected"; ?>>King</option>
-                            <option value="California King" <?php if($owner['bed_conf_type4'] == 'California King') echo "selected"; ?>>California King</option>
-                        </select>
+                    <div class="form-group col-xs-12">
+                        <div class="checkbox" style="display:inline-block;">
+                            <label>
+                            <input type="checkbox" id="add_co_owner_chbox">
+                            Co Owner
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-primary" style="margin-left: 10px;;visibility:hidden" id="add_co_owner_btn">Add</button>
                     </div>
                 </div>
+
+                <div id="co_owners_container"></div>
 
                 <div class="row">
-                    <div class="form-group col-xs-4">
-                        <label for="Sleeper Sofa">Sleeper Sofa?</label>
-                        <select id="sleeper_sofa_exist" name="sleeper_sofa_exist" class="form-control">
-                            <option value="Yes" <?php if($owner['sleeper_sofa_exist'] == 'Yes') echo "selected"; ?>>Yes</option>
-                            <option value="No" <?php if($owner['sleeper_sofa_exist'] == 'No') echo "selected"; ?>>No</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-xs-4">
-                        <label for="Size">Size</label>
-                        <select id="sleeper_sofa_size" name="sleeper_sofa_size" class="form-control">
-                            <option value="Twin" <?php if($owner['sleeper_sofa_size'] == 'Twin') echo "selected"; ?>>Twin</option>
-                            <option value="Full" <?php if($owner['sleeper_sofa_size'] == 'Full') echo "selected"; ?>>Full</option>
-                            <option value="Queen" <?php if($owner['sleeper_sofa_size'] == 'Queen') echo "selected"; ?>>Queen</option>
-                            <option value="King" <?php if($owner['sleeper_sofa_size'] == 'King') echo "selected"; ?>>King</option>
-                            <option value="California King" <?php if($owner['sleeper_sofa_size'] == 'California King') echo "selected"; ?>>California King</option>
-                        </select>
+                    <div class="form-group col-xs-12">
+                        <div class="checkbox" style="display:inline-block;">
+                            <label>
+                            <input type="checkbox" id="add_additional_prop_chbox">
+                            Add Another Property
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-primary" style="margin-left: 10px;visibility:hidden" id="add_additional_prop_btn">Add</button>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="form-group col-xs-4">
-                        <label for="Owner's Day Phone">Owner's Day Phone</label>
-                        <input type="text" class="form-control" id="day_phone" name="day_phone" placeholder="" value="<?php echo $owner['day_phone']?>">
-                    </div>
+                <div id="additional_props_container"></div>
 
-                    <div class="form-group col-xs-4">
-                        <label for="Owner's Cell Phone">Owner's Cell Phone</label>
-                        <input type="text" class="form-control" id="cell_phone" name="cell_phone" placeholder="" value="<?php echo $owner['cell_phone']?>">
-                    </div>
-
-                    <!-- <div class="form-group col-xs-4">
-                        <label for="Check Out Date">Hilton Head Property Phone</label>
-                        <input type="text" class="form-control" id="property_phone" name="property_phone" placeholder="" value="<?php echo $owner['property_phone']?>">
-                    </div> -->
-                </div>
-
-                <!-- <div class="row">
-                    <div class="form-group col-xs-4">
-                        <label for="Check In Date">CC To Be Used for Billing Purpose</label>
-                        <input type="text" class="form-control" id="billing_purpose" name="billing_purpose" placeholder="" value="<?php echo $owner['billing_purpose']?>">
-                    </div>
-
-                    <div class="form-group col-xs-4">
-                        <label for="Check Out Date">Expiration Date</label>
-                        <input type="text" class="form-control datepicker" id="exp_date" name="exp_date" placeholder="" value="<?php echo $owner['exp_date']?>">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-xs-12" style="margin-bottom: 0px;">
-                        <label for="Check In Date">For Office use only</label>
-                    </div>
-                    <div class="form-group col-xs-4">
-                        <label for="Check In Date">Cleanning Rate</label>
-                        <input type="text" class="form-control" id="office_cleaning_rate" name="office_cleaning_rate" placeholder="" value="<?php echo $owner['office_cleaning_rate']?>">
-                    </div>
-
-                    <div class="form-group col-xs-4">
-                        <label for="Check Out Date">Caretaking Rate</label>
-                        <input type="text" class="form-control" id="office_caretaking_rate" name="office_caretaking_rate" placeholder="" value="<?php echo $owner['office_caretaking_rate']?>">
-                    </div>
-                </div> -->
             </div>
             <!-- /.box-body -->
 
@@ -314,3 +191,257 @@
     </div>
 </section>
 <!-- /.content -->
+
+<div id="co_owner_template" style="display:none">
+    <div class="co-owner-template-wrap">
+        <div class="row">
+            <div class="form-group col-xs-6">
+                <label for="# of Bedrooms">Co-Owner's First Name</label>
+                <input type="text" class="form-control" name="co_owner_first_name" placeholder="" value="">
+            </div>
+            <div class="form-group col-xs-6">
+                <label for="# of Bedrooms">Co-Owner's Last Name</label>
+                <input type="text" class="form-control" name="co_owner_last_name" placeholder="" value="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-12">
+                <label for="Actual Owner's Address">Co-Owner's Address</label>
+                <input type="text" class="form-control" name="co_owner_address" placeholder="address" value="<?php echo $owner['address']?>">
+            </div>
+
+            <div class="form-group col-xs-4">
+                <input type="text" class="form-control" name="co_owner_city" placeholder="city" value="<?php echo $owner['city']?>">
+            </div>
+            <div class="form-group col-xs-4">
+                <select name="co_owner_state" class="form-control">
+                    <option value="">State</option>
+                    <option value="Armed Forces America">Armed Forces America</option>
+                    <option value="Armed Forces">Armed Forces</option>
+                    <option value="Armed Forces Pacific">Armed Forces Pacific</option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Arkansas">Arkansas</option>
+                    <option value="California">California</option>
+                    <option value="Colorado">Colorado</option>
+                    <option value="Connecticut">Connecticut</option>
+                    <option value="District of Columbia">District of Columbia</option>
+                    <option value="Delaware">Delaware</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Guam">Guam</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Idaho">Idaho</option>
+                    <option value="Illinois">Illinois</option>
+                    <option value="Indiana">Indiana</option>
+                    <option value="Iowa">Iowa</option>
+                    <option value="Kansas">Kansas</option>
+                    <option value="Kentucky">Kentucky</option>
+                    <option value="Louisiana">Louisiana</option>
+                    <option value="Maine">Maine</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Massachusetts">Massachusetts</option>
+                    <option value="Michigan">Michigan</option>
+                    <option value="Minnesota">Minnesota</option>
+                    <option value="Mississippi">Mississippi</option>
+                    <option value="Missouri">Missouri</option>
+                    <option value="Montana">Montana</option>
+                    <option value="Nebraska">Nebraska</option>
+                    <option value="New Hampshire">New Hampshire</option>
+                    <option value="New Jersey">New Jersey</option>
+                    <option value="New Mexico">New Mexico</option>
+                    <option value="New York">New York</option>
+                    <option value="Nevada">Nevada</option>
+                    <option value="North Carolina">North Carolina</option>
+                    <option value="North Dakota">North Dakota</option>
+                    <option value="Ohio">Ohio</option>
+                    <option value="Oklahoma">Oklahoma</option>
+                    <option value="Oregon">Oregon</option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                    <option value="Puerto Rico">Puerto Rico</option>
+                    <option value="Rhode Island">Rhode Island</option>
+                    <option value="South Carolina">South Carolina</option>
+                    <option value="South Dakota">South Dakota</option>
+                    <option value="Tennessee">Tennessee</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Utah">Utah</option>
+                    <option value="Vermont">Vermont</option>
+                    <option value="Virgin Islands">Virgin Islands</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Washington">Washington</option>
+                    <option value="West Virginia">West Virginia</option>
+                    <option value="Wisconsin">Wisconsin</option>
+                    <option value="Wyoming">Wyoming</option>
+                </select>
+            </div>
+            <div class="form-group col-xs-4">
+                <input type="text" class="form-control onlynumbs" name="co_owner_zipcode" placeholder="zipcode" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-6">
+                <label for="# of Bedrooms">Co-Owner's Cell</label>
+                <input type="text" class="form-control phonenumber" name="co_owner_cell_phone" placeholder="" value="">
+            </div>
+            <div class="form-group col-xs-6">
+                <label for="# of Bedrooms">Co-Owner's Email</label>
+                <input type="text" class="form-control" name="co_owner_email" placeholder="" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-12" style="text-align:right">
+                <button type="button" class="btn btn-danger" name="co_owner_del_btn">Delete</button>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="additional_prop_template" style="display:none">
+    <div class="additional-prop-template-wrap">
+        <div class="row">
+            <div class="form-group col-xs-4">
+                <label for="# of Bedrooms">Hilton Head Property Address</label>
+                <input type="text" class="form-control" name="property_address" placeholder="" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-4">
+                <label for="# of Bedrooms"># of Bedrooms</label>
+                <input type="text" class="form-control onlynumbs" maxlength="2" name="bedrooms" placeholder="" value="">
+            </div>
+
+            <div class="form-group col-xs-4">
+                <label for="# of Bathrooms"># of Bathrooms</label>
+                <input type="text" class="form-control onlynumbs" maxlength="2" name="bathrooms" placeholder="" value="">
+            </div>
+
+            <div class="form-group col-xs-4">
+                <label for="# of ½ Bathrooms"># of ½ Bathrooms</label>
+                <input type="text" class="form-control onlynumbs" maxlength="2" name="hbathrooms" placeholder="" value="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-12" style="margin-bottom: 0px;">
+                <label for="Bed Configuration(s) & # of each">Bed Configuration(s) & # of each</label>
+            </div>
+            <div class="form-group col-xs-1">
+                <input type="text" class="form-control onlynumbs" maxlength="2" name="bed_conf_count1" placeholder="" value="">
+            </div>
+
+            <div class="form-group col-xs-2">
+                <select name="bed_conf_type1" class="form-control">
+                    <option value="Twin">Twin</option>
+                    <option value="Full">Full</option>
+                    <option value="Queen">Queen</option>
+                    <option value="King">King</option>
+                    <option value="California King">California King</option>
+                </select>
+            </div>
+
+            <div class="form-group col-xs-1">
+                <input type="text" class="form-control onlynumbs" maxlength="2" name="bed_conf_count2" placeholder="" value="">
+            </div>
+
+            <div class="form-group col-xs-2">
+                <select name="bed_conf_type2" class="form-control">
+                    <option value="Twin">Twin</option>
+                    <option value="Full">Full</option>
+                    <option value="Queen">Queen</option>
+                    <option value="King">King</option>
+                    <option value="California King">California King</option>
+                </select>
+            </div>
+
+            <div class="form-group col-xs-1">
+                <input type="text" class="form-control onlynumbs" maxlength="2" name="bed_conf_count3" placeholder="" value="">
+            </div>
+
+            <div class="form-group col-xs-2">
+                <select name="bed_conf_type3" class="form-control">
+                    <option value="Twin">Twin</option>
+                    <option value="Full">Full</option>
+                    <option value="Queen">Queen</option>
+                    <option value="King">King</option>
+                    <option value="California King">California King</option>
+                </select>
+            </div>
+
+            <div class="form-group col-xs-1">
+                <input type="text" class="form-control onlynumbs" maxlength="2" name="bed_conf_count4" placeholder="" value="">
+            </div>
+
+            <div class="form-group col-xs-2">
+                <select name="bed_conf_type4" class="form-control">
+                    <option value="Twin">Twin</option>
+                    <option value="Full">Full</option>
+                    <option value="Queen">Queen</option>
+                    <option value="King">King</option>
+                    <option value="California King">California King</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-4">
+                <label for="Sleeper Sofa">Sleeper Sofa?</label>
+                <select name="sleeper_sofa_exist" class="form-control">
+                    <option value="Yes">Yes</option>
+                    <option value="No" selected>No</option>
+                </select>
+            </div>
+
+            <div class="form-group col-xs-4">
+                <label for="Size">Size</label>
+                <select name="sleeper_sofa_size" class="form-control">
+                    <option value="Twin">Twin</option>
+                    <option value="Full">Full</option>
+                    <option value="Queen">Queen</option>
+                    <option value="King">King</option>
+                    <option value="California King">California King</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-12" style="text-align:right">
+                <button type="button" class="btn btn-danger" name="additional_prop_del_btn">Delete</button>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+<?php
+if($owner['add_co_owner_chbox'] == 'true'){
+    ?>
+    var add_co_owner_chbox = <?php echo $owner['add_co_owner_chbox']?>;
+    var co_owners_data = <?php echo $owner['co_owners_data']?>;
+    <?php
+}
+else{
+    ?>
+    var add_co_owner_chbox = false;
+    var co_owners_data = [];
+    <?php
+}
+
+if($owner['add_additional_prop_chbox'] == 'true'){
+    ?>
+    var add_additional_prop_chbox = <?php echo $owner['add_additional_prop_chbox']?>;
+    var additional_props_data = <?php echo $owner['additional_props_data']?>;
+    <?php
+}
+else{
+    ?>
+    var add_additional_prop_chbox = false;
+    var additional_props_data = [];
+    <?php
+}
+?>
+
+</script>

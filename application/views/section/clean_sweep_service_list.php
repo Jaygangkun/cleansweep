@@ -118,6 +118,26 @@
                         <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Enter email" value="<?php echo $owner['zipcode']?>">
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="form-group col-4">
+                        <label for="Owner's Day Phone">Owner's Day Phone</label>
+                        <input type="text" class="form-control" id="day_phone" name="day_phone" placeholder="" value="<?php echo $owner['day_phone']?>">
+                    </div>
+
+                    <div class="form-group col-4">
+                        <label for="Owner's Cell Phone">Owner's Cell Phone</label>
+                        <input type="text" class="form-control" id="cell_phone" name="cell_phone" placeholder="" value="<?php echo $owner['cell_phone']?>">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="Owner's Email Address">Owner's Email Address</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" value="<?php echo $owner['email']?>">
+                    </div>
+                </div>
+                
                 <div class="row">
                     <div class="form-group col-4">
                         <label for="# of Bedrooms"># of Bedrooms</label>
@@ -217,24 +237,7 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="form-group col-4">
-                        <label for="Owner's Day Phone">Owner's Day Phone</label>
-                        <input type="text" class="form-control" id="day_phone" name="day_phone" placeholder="" value="<?php echo $owner['day_phone']?>">
-                    </div>
-
-                    <div class="form-group col-4">
-                        <label for="Owner's Cell Phone">Owner's Cell Phone</label>
-                        <input type="text" class="form-control" id="cell_phone" name="cell_phone" placeholder="" value="<?php echo $owner['cell_phone']?>">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-6">
-                        <label for="Owner's Email Address">Owner's Email Address</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" value="<?php echo $owner['email']?>">
-                    </div>
-                </div>
+                
 
                 <input type="hidden" id="id" name="id" value="<?php echo $owner['id']?>">
                 <input type="hidden" id="username_old" name="username_old" value="<?php echo $owner['username']?>">

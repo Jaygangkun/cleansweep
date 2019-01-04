@@ -17,6 +17,11 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <a type="button" class="btn btn-primary" id="service_req_create_btn" href="/owner_service_create/<?php echo $owner_id?>">Create New Request</a>
+                </div>
+            </div>
             <table class="data-table table table-bordered table-hover">
                 <thead>
                     <tr>

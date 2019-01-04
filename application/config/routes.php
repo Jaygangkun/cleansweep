@@ -61,6 +61,7 @@ $route['owner_edit/(:num)'] = "AdminController/owner_edit/$1";
 $route['owner_service_management'] = "AdminController/owner_service_management";
 $route['owner_service_list/(:num)'] = "AdminController/owner_service_list/$1";
 $route['owner_service_edit/(:num)'] = "AdminController/owner_service_edit/$1";
+$route['owner_service_create/(:num)'] = "AdminController/owner_service_create/$1";
 
 $route['admin_do_login'] = "AdminController/do_login";
 
@@ -87,12 +88,13 @@ $route['clean-sweep-hhi-faq'] = "PageController/clean_sweep_hhi_faq";
 $route['clean-sweep-login-page'] = "PageController/clean_sweep_login_page";
 
 $route['owner_register'] = 'APIController/owner_register';
-$route['owner_login'] = 'APIController/owner_login';
 $route['owner_service_request'] = 'APIController/owner_service_request';
 $route['owner_service_request_update'] = 'APIController/owner_service_request_update';
 $route['owner_service_cancel'] = "APIController/owner_service_cancel";
 $route['get_req_service_data'] = "APIController/get_req_service_data";
 
-
+//login page
+$route['owner_login'] = 'APIController/owner_login';
+$route['owner_logout'] = "APIController/owner_logout";
 
 // $route['sale_siteinspection/(:num)'] = "SaleController/siteinspection/$1";
