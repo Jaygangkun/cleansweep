@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Requested Service Edit
+        New Service Request
     </h1>
     <ol class="breadcrumb" style="display: none">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -19,12 +19,12 @@
                 <div class="row">
                     <div class="form-group col-xs-6">
                         <label for="First Name">First Name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="">
+                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="<?php echo $owner['first_name']?>" readonly>
                     </div>
 
                     <div class="form-group col-xs-6">
                         <label for="Last Name">Last Name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" value="">
+                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" value="<?php echo $owner['last_name']?>" readonly>
                     </div>
                 </div>
                 
@@ -57,27 +57,39 @@
                 </div>
 
                 <div class="row">
-                    <div class="form-group col-xs-12">
+                    <div class="form-group col-xs-4">
                         <label for="Cleaning Property Address">Cleaning Property Address</label>
-                        <input type="text" class="form-control" id="cleaning_address" name="cleaning_address" placeholder="" value="">
+                        <?php
+                        if($owner['add_additional_prop_chbox'] != 'true'){
+                            ?>
+                                <input type="text" class="form-control" id="cleaning_address" name="cleaning_address" placeholder="" value="<?php echo $owner['address']?>">
+                            <?php
+                        }
+                        else{
+                            ?>
+                                <select id="cleaning_address" name="cleaning_address" class="form-control">
+                                </select>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-xs-6">
                         <label for="Daytime Phone">Daytime Phone</label>
-                        <input type="text" class="form-control phonenumber" id="day_phone" name="day_phone" placeholder="" value="">
+                        <input type="text" class="form-control phonenumber" id="day_phone" name="day_phone" placeholder="" value="<?php echo $owner['day_phone']?>">
                     </div>
                     <div class="form-group col-xs-6">
                         <label for="Cell Phone">Cell Phone</label>
-                        <input type="text" class="form-control phonenumber" id="cell_phone" name="cell_phone" placeholder="" value="">
+                        <input type="text" class="form-control phonenumber" id="cell_phone" name="cell_phone" placeholder="" value="<?php echo $owner['cell_phone']?>">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-xs-4">
                         <label for="Email">Email</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="" value="">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="" value="<?php echo $owner['email']?>" readonly>
                     </div>
                 </div>
 
@@ -99,4 +111,7 @@
         </form>
     </div>
 </section>
+<script>
+var additional_props_data = '<?php echo $owner['additional_props_data'];?>';
+</script>
 <!-- /.content -->

@@ -57,7 +57,7 @@
 		<div class="wrapper">
 			<header class="main-header">
 				<!-- Logo -->
-				<a href="../../index2.html" class="logo">
+				<a href="/owner_management" class="logo">
 					
 					<!-- logo for regular state and mobile devices -->
 					<span class="logo-lg"><b>Admin</b></span>
@@ -386,7 +386,7 @@
 
 						<li class="<?php if($sub_page == 'owner_service_management' || $sub_page == 'owner_service_edit') echo 'active';?>">
 							<a href="/owner_service_management">
-								<i class="fa fa-th"></i> <span>Owner Service Mangement</span>
+								<i class="fa fa-th"></i> <span>Owner Service Request</span>
 								<span class="pull-right-container">
 									<!-- <small class="label pull-right bg-green">new</small> -->
 								</span>

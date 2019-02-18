@@ -1,4 +1,4 @@
-<h2 class="px_-text-align-center mt-5">Request Submit</h2>
+<h2 class="px_-text-align-center mt-5">Service Request</h2>
 <div class="container">
 
 <form class="form-container" id="service_req_form">
@@ -55,18 +55,33 @@
     $cleaning_address = '';
     if($owner['add_additional_prop_chbox'] != 'true'){
         $cleaning_address = $owner['address'];
+        ?>
+        <div class="c-address c-address-us c-field c-col-1 c-sml-col-1 c-span-24 c-sml-span-12  c-required " data-field="CleaningPropertyAddress">
+            <div class="c-label "><label for="Cleaning Property Address">Cleaning Property Address</label></div>
+            <div>
+                <div class="c-offscreen"><label for="Address Line 1">Address Line 1</label></div>
+                <div class="c-editor" style="float: left;"><input type="text" id="cleaning_address" placeholder="Address Line 1" value="<?php echo $cleaning_address;?>"></div>
+            </div>
+            <div class="c-validation">Address Line 1 and City and State and Zip Code are required.</div>
+        </div>
+        <?php
+    }
+    else{
+        ?>
+        <div class="c-address c-address-us c-field c-col-1 c-sml-col-1 c-span-24 c-sml-span-12  c-required " data-field="CleaningPropertyAddress">
+            <div class="c-label "><label for="Cleaning Property Address">Cleaning Property Address</label></div>
+            <div class="c-editor c-partial-line">
+                <div class="c-dropdown">
+                    <select id="cleaning_address" class="c-placeholder-text-styled ">
+                    </select>
+                </div>
+            </div>
+            <div class="c-validation">Address Line 1 and City and State and Zip Code are required.</div>
+        </div>
+        <?php
     }
 
-    ?>
-    <div class="c-address c-address-us c-field c-col-1 c-sml-col-1 c-span-24 c-sml-span-12  c-required " data-field="CleaningPropertyAddress">
-        <div class="c-label "><label for="Cleaning Property Address">Cleaning Property Address</label></div>
-        <div>
-            <div class="c-offscreen"><label for="Address Line 1">Address Line 1</label></div>
-            <div class="c-editor" style="float: left;"><input type="text" id="cleaning_address" placeholder="Address Line 1" value="<?php echo $cleaning_address;?>"></div>
-        </div>
-        <div class="c-validation">Address Line 1 and City and State and Zip Code are required.</div>
-    </div>
-        
+    ?>        
 
     <div class="c-phone c-phone-us c-field c-col-1 c-sml-col-1 c-span-12 c-sml-span-12  c-required " data-field="Phone">
         <div class="c-label  "><label for="Daytime Phone">Daytime Phone</label></div>
@@ -107,3 +122,20 @@
 </form>
 
 </div>
+
+<?php
+if(count($service_reqs) > 0){
+    ?>
+    <script>
+        var last_req_time = '<?php echo $service_reqs[0]['added_at']?>';
+    </script>
+    <?php
+}
+else{
+    ?>
+    <script>
+        var last_req_time = 0;
+    </script>
+    <?php
+}
+?>

@@ -221,8 +221,7 @@
                     <section data-ux="Section" data-aid="HTML_SECTION_RENDERED" class="x-el x-el-section px_-bc-rgb255__255__255 px_-pt-40px px_-pb-40px px_-ff-_Sacramento___cursive__serif px_-fs-20 _xs-onlypx_-pt-30px _xs-onlypx_-pb-30px _mdpx_-fs-20 _lgpx_-fs-20 x-d-ux x-d-aid">
                         <div data-ux="Container" class="x-el x-el-div px_-ml-auto px_-mr-auto px_-pl-20px px_-pr-20px px_-max-width-100P px_-ff-_Sacramento___cursive__serif px_-fs-20 _smpx_-w-728px _mdpx_-w-984px _mdpx_-fs-20 _lgpx_-w-1160px _lgpx_-fs-20 x-d-ux">
                             <div data-ux="Grid" data-route="htmlSrc" class="x-el x-el-div px_-d-flex px_-box-sizing-border-box px_-flex-direction-row px_-flex-wrap-wrap px_-m-0_-10px_0 px_-ff-_Sacramento___cursive__serif px_-fs-20 _smpx_-m-0_-20px_0 _mdpx_-fs-20 _lgpx_-fs-20 x-d-ux x-d-route">
-                                <div data-ux="GridCell" class="x-el x-el-div px_-box-sizing-border-box px_-flex-grow-1 px_-flex-shrink-1 px_-flex-basis-0P px_-p-0_10px_0 px_-ff-_Sacramento___cursive__serif px_-fs-20 _smpx_-p-0_20px_0 _mdpx_-fs-20 _lgpx_-fs-20 x-d-ux">
-                                <div data-ux="GridCell" class="x-el x-el-div px_-box-sizing-border-box px_-flex-grow-1 px_-flex-shrink-1 px_-flex-basis-0P px_-p-0 px_-ff-_Sacramento___cursive__serif px_-fs-20 _mdpx_-flex-basis-125P _mdpx_-max-width-125P _mdpx_-fs-20 _lgpx_-fs-20 x-d-ux">
+                                <div data-ux="GridCell" class="x-el x-el-div px_-box-sizing-border-box px_-flex-grow-1 px_-flex-shrink-1 px_-flex-basis-0P px_-p-0 px_-ff-_Sacramento___cursive__serif px_-fs-20 _mdpx_-flex-basis-125P _mdpx_-max-width-125P _mdpx_-fs-20 _lgpx_-fs-20 x-d-ux" style="width:100%">
                                     <div>
                                         <div id="bootstrap-8300-t">
                                             <!-- <span data-ux="Element" class="x-el x-el-span px_-ff-_Sacramento___cursive__serif px_-fs-20 _mdpx_-fs-20 _lgpx_-fs-20 x-d-ux">
@@ -233,7 +232,6 @@
                                             ?>
                                         </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </div>

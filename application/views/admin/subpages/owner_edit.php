@@ -310,17 +310,50 @@
         <div class="row">
             <div class="form-group col-xs-4">
                 <label for="# of Bedrooms"># of Bedrooms</label>
-                <input type="text" class="form-control onlynumbs" maxlength="2" name="bedrooms" placeholder="" value="">
+                <select name="bedrooms" class="form-control">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
             </div>
 
             <div class="form-group col-xs-4">
                 <label for="# of Bathrooms"># of Bathrooms</label>
-                <input type="text" class="form-control onlynumbs" maxlength="2" name="bathrooms" placeholder="" value="">
+                <select name="bathrooms" class="form-control">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
             </div>
 
             <div class="form-group col-xs-4">
                 <label for="# of ½ Bathrooms"># of ½ Bathrooms</label>
-                <input type="text" class="form-control onlynumbs" maxlength="2" name="hbathrooms" placeholder="" value="">
+                <select name="hbathrooms" class="form-control">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
             </div>
         </div>
 
@@ -329,58 +362,53 @@
                 <label for="Bed Configuration(s) & # of each">Bed Configuration(s) & # of each</label>
             </div>
             <div class="form-group col-xs-1">
-                <input type="text" class="form-control onlynumbs" maxlength="2" name="bed_conf_count1" placeholder="" value="">
-            </div>
-
-            <div class="form-group col-xs-2">
-                <select name="bed_conf_type1" class="form-control">
-                    <option value="Twin">Twin</option>
-                    <option value="Full">Full</option>
-                    <option value="Queen">Queen</option>
-                    <option value="King">King</option>
-                    <option value="California King">California King</option>
+                <label for="Twin">Twin</label>
+                <!-- <input type="text" class="form-control onlynumbs" maxlength="2" name="twin_nums" placeholder="" value=""> -->
+                <select name="twin_nums" class="form-control">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
                 </select>
             </div>
 
             <div class="form-group col-xs-1">
-                <input type="text" class="form-control onlynumbs" maxlength="2" name="bed_conf_count2" placeholder="" value="">
-            </div>
-
-            <div class="form-group col-xs-2">
-                <select name="bed_conf_type2" class="form-control">
-                    <option value="Twin">Twin</option>
-                    <option value="Full">Full</option>
-                    <option value="Queen">Queen</option>
-                    <option value="King">King</option>
-                    <option value="California King">California King</option>
+                <label for="King">King</label>
+                <!-- <input type="text" class="form-control onlynumbs" maxlength="2" name="king_nums" placeholder="" value=""> -->
+                <select name="king_nums" class="form-control">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
                 </select>
             </div>
 
             <div class="form-group col-xs-1">
-                <input type="text" class="form-control onlynumbs" maxlength="2" name="bed_conf_count3" placeholder="" value="">
-            </div>
-
-            <div class="form-group col-xs-2">
-                <select name="bed_conf_type3" class="form-control">
-                    <option value="Twin">Twin</option>
-                    <option value="Full">Full</option>
-                    <option value="Queen">Queen</option>
-                    <option value="King">King</option>
-                    <option value="California King">California King</option>
-                </select>
-            </div>
-
-            <div class="form-group col-xs-1">
-                <input type="text" class="form-control onlynumbs" maxlength="2" name="bed_conf_count4" placeholder="" value="">
-            </div>
-
-            <div class="form-group col-xs-2">
-                <select name="bed_conf_type4" class="form-control">
-                    <option value="Twin">Twin</option>
-                    <option value="Full">Full</option>
-                    <option value="Queen">Queen</option>
-                    <option value="King">King</option>
-                    <option value="California King">California King</option>
+                <label for="Queen / Full">Queen / Full</label>
+                <!-- <input type="text" class="form-control onlynumbs" maxlength="2" name="queen_nums" placeholder="" value=""> -->
+                <select name="queen_nums" class="form-control">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
                 </select>
             </div>
         </div>
@@ -389,19 +417,26 @@
             <div class="form-group col-xs-4">
                 <label for="Sleeper Sofa">Sleeper Sofa?</label>
                 <select name="sleeper_sofa_exist" class="form-control">
-                    <option value="Yes">Yes</option>
-                    <option value="No" selected>No</option>
+                    <option value="N/A" selected>N/A</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
                 </select>
             </div>
 
             <div class="form-group col-xs-4">
                 <label for="Size">Size</label>
                 <select name="sleeper_sofa_size" class="form-control">
+                    <option value=""></option>
+                    <option value="N/A">N/A</option>
                     <option value="Twin">Twin</option>
-                    <option value="Full">Full</option>
                     <option value="Queen">Queen</option>
-                    <option value="King">King</option>
-                    <option value="California King">California King</option>
                 </select>
             </div>
         </div>

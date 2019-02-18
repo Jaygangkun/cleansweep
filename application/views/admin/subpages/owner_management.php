@@ -17,13 +17,13 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            <table class="data-table table table-bordered table-hover">
+            <table class="data-table table table-bordered table-hover" id="owner_tbl">
                 <thead>
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
+                        <th>HHI Property</th>
                         <th>Email</th>
-                        <th>Owner's Phone number</th>
                         <th>Request List</th>
                         <th>Account Status</th>
                         <th>Actions</th>
@@ -33,12 +33,28 @@
                     
                     <?php
                     foreach($owners as $owner){
+
+                        if($owner['status'] == 'delete'){
+                            continue;
+                        }
                         ?>
                         <tr>
                             <td><?php echo $owner['first_name'];?></td>
                             <td><?php echo $owner['last_name'];?></td>
+                            
+                            <?php 
+                            if($owner['add_additional_prop_chbox']){
+                                ?>
+                                <td class="hhi-property" data-hhi-property='<?php echo $owner['additional_props_data'];?>'></td>
+                                <?php    
+                            }
+                            else{
+                                ?>
+                                <td></td>
+                                <?php
+                            }
+                            ?>
                             <td><?php echo $owner['email'];?></td>                      
-                            <td><?php echo "Day Phone: ".$owner['day_phone']."<br>Cell Phone: ".$owner['cell_phone'];?></td>
                             <td><a href="/owner_service_list/<?php echo $owner['id']?>">view</td>
                             <td>
                             <?php 
@@ -68,8 +84,8 @@
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
+                        <th>HHI Property</th>
                         <th>Email</th>
-                        <th>Owner's Phone number</th>
                         <th>Request List</th>
                         <th>Account Status</th>
                         <th>Actions</th>

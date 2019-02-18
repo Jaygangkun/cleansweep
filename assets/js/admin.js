@@ -173,14 +173,9 @@ function init_owner_edit(){
             var bedrooms = $(additional_props_ele[pindex]).find('[name="bedrooms"]').val();
             var bathrooms = $(additional_props_ele[pindex]).find('[name="bathrooms"]').val();
             var hbathrooms = $(additional_props_ele[pindex]).find('[name="hbathrooms"]').val();
-            var bed_conf_count1 = $(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').val();
-            var bed_conf_type1 = $(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').val();
-            var bed_conf_count2 = $(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').val();
-            var bed_conf_type2 = $(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').val();
-            var bed_conf_count3 = $(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').val();
-            var bed_conf_type3 = $(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').val();
-            var bed_conf_count4 = $(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').val();
-            var bed_conf_type4 = $(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').val();
+            var twin_nums = $(additional_props_ele[pindex]).find('[name="twin_nums"]').val();
+            var king_nums = $(additional_props_ele[pindex]).find('[name="king_nums"]').val();
+            var queen_nums = $(additional_props_ele[pindex]).find('[name="queen_nums"]').val();
             var sleeper_sofa_exist = $(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').val();
             var sleeper_sofa_size = $(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').val();
             
@@ -191,14 +186,9 @@ function init_owner_edit(){
                 bathrooms: bathrooms,
                 bathrooms: bathrooms,
                 hbathrooms: hbathrooms,
-                bed_conf_count1: bed_conf_count1,
-                bed_conf_type1: bed_conf_type1,
-                bed_conf_count2: bed_conf_count2,
-                bed_conf_type2: bed_conf_type2,
-                bed_conf_count3: bed_conf_count3,
-                bed_conf_type3: bed_conf_type3,
-                bed_conf_count4: bed_conf_count4,
-                bed_conf_type4: bed_conf_type4,
+                twin_nums: twin_nums,
+                king_nums: king_nums,
+                queen_nums: queen_nums,
                 sleeper_sofa_exist: sleeper_sofa_exist,
                 sleeper_sofa_size: sleeper_sofa_size
             })
@@ -272,18 +262,18 @@ function init_owner_edit(){
 
             $(clone_ele).find('.additional-prop-template-wrap').attr('id', 'additional_prop_template_wrap_' + temp_id);
             $(clone_ele).find('[name="property_address"]').attr('value', additional_props_data[pindex]['property_address']);
-            $(clone_ele).find('[name="bedrooms"]').attr('value', additional_props_data[pindex]['bedrooms']);
-            $(clone_ele).find('[name="bathrooms"]').attr('value', additional_props_data[pindex]['bathrooms']);
-            $(clone_ele).find('[name="hbathrooms"]').attr('value', additional_props_data[pindex]['hbathrooms']);
-            $(clone_ele).find('[name="bed_conf_count1"]').attr('value', additional_props_data[pindex]['bed_conf_count1']);
-            $(clone_ele).find('[name="bed_conf_type1"] option[value="' + additional_props_data[pindex]['bed_conf_type1'] + '"]').attr('selected', 'selected');
-            $(clone_ele).find('[name="bed_conf_count2"]', ).attr('value', additional_props_data[pindex]['bed_conf_count2']);
-            $(clone_ele).find('[name="bed_conf_type2"] option[value="' + additional_props_data[pindex]['bed_conf_type2'] + '"]').attr('selected', 'selected');
-            $(clone_ele).find('[name="bed_conf_count3"]').attr('value', additional_props_data[pindex]['bed_conf_count3']);
-            $(clone_ele).find('[name="bed_conf_type3"] option[value="' + additional_props_data[pindex]['bed_conf_type3'] + '"]').attr('selected', 'selected');
-            $(clone_ele).find('[name="bed_conf_count4"]').attr('value', additional_props_data[pindex]['bed_conf_count4']);
-            $(clone_ele).find('[name="bed_conf_type4"] option[value="' + additional_props_data[pindex]['bed_conf_type4'] + '"]').attr('selected', 'selected');
+            $(clone_ele).find('[name="bedrooms"] option[value="' + additional_props_data[pindex]['bedrooms'] + '"]').attr('selected', 'selected');
+            $(clone_ele).find('[name="bathrooms"] option[value="' + additional_props_data[pindex]['bathrooms'] + '"]').attr('selected', 'selected');
+            $(clone_ele).find('[name="hbathrooms"] option[value="' + additional_props_data[pindex]['hbathrooms'] + '"]').attr('selected', 'selected');
+            $(clone_ele).find('[name="twin_nums"] option[value="' + additional_props_data[pindex]['twin_nums'] + '"]').attr('selected', 'selected');
+            $(clone_ele).find('[name="king_nums"] option[value="' + additional_props_data[pindex]['king_nums'] + '"]').attr('selected', 'selected');
+            $(clone_ele).find('[name="queen_nums"] option[value="' + additional_props_data[pindex]['queen_nums'] + '"]').attr('selected', 'selected');
+            // $(clone_ele).find('[name="twin_nums"]').attr('value', additional_props_data[pindex]['twin_nums']);
+            // $(clone_ele).find('[name="king_nums"]').attr('value', additional_props_data[pindex]['king_nums']);
+            // $(clone_ele).find('[name="queen_nums"]').attr('value', additional_props_data[pindex]['queen_nums']);
+
             $(clone_ele).find('[name="sleeper_sofa_exist"] option[value="' + additional_props_data[pindex]['sleeper_sofa_exist'] + '"]').attr('selected', 'selected');
+
             $(clone_ele).find('[name="sleeper_sofa_size"] option[value="' + additional_props_data[pindex]['sleeper_sofa_size'] + '"]').attr('selected', 'selected');
 
             $(clone_ele).find('[name="additional_prop_del_btn"]').attr('data-id', temp_id);
@@ -343,6 +333,8 @@ function init_owner_edit(){
         var newhtml = $('#additional_prop_template').clone();
         $(newhtml).find('.additional-prop-template-wrap').attr('id', 'additional_prop_template_wrap_' + additional_props_count);
         $(newhtml).find('[name="additional_prop_del_btn"]').attr('data-id', additional_props_count);
+        $(newhtml).find('[name="sleeper_sofa_size"]').val('');
+        $(newhtml).find('[name="sleeper_sofa_size"]').prop('disabled', true);
         newhtml = $(newhtml).html();
         $('#additional_props_container').append(newhtml);
 
@@ -354,6 +346,16 @@ function init_owner_edit(){
     $(document).on('click', '[name="additional_prop_del_btn"]', function(){
         var data_id = $(this).attr('data-id');
         $('#additional_prop_template_wrap_' + data_id).remove();
+    })
+
+    $(document).on('change', '[name="sleeper_sofa_exist"]', function(){
+        if($(this).val() == 'N/A'){
+            $(this).parents('.additional-prop-template-wrap').find('[name="sleeper_sofa_size"]').prop('disabled', true);
+            $(this).parents('.additional-prop-template-wrap').find('[name="sleeper_sofa_size"]').val('');
+        }
+        else{
+            $(this).parents('.additional-prop-template-wrap').find('[name="sleeper_sofa_size"]').prop('disabled', false);
+        }
     })
 }
 //init_owner_edit
@@ -390,11 +392,65 @@ function init_owner_management(){
             }
         })
     })
+
+    //showing hhi properties
+    $('.hhi-property').each(function(index, ele){
+        // console.log(index, $(ele).attr('data-hhi-property'));
+        var hhi_props = JSON.parse($(ele).attr('data-hhi-property'));
+        var html = '';
+
+        if(hhi_props != null){
+            for(var pindex = 0; pindex < hhi_props.length; pindex++){
+                var property_address = hhi_props[pindex]['property_address'];
+                var bedrooms = hhi_props[pindex]['bedrooms'];
+                var bathrooms = hhi_props[pindex]['bathrooms'];
+                var hbathrooms = hhi_props[pindex]['hbathrooms'];
+                var twin_nums = hhi_props[pindex]['twin_nums'];
+                var king_nums = hhi_props[pindex]['king_nums'];
+                var queen_nums = hhi_props[pindex]['queen_nums'];
+                var sleeper_sofa_exist = hhi_props[pindex]['sleeper_sofa_exist'];
+                var sleeper_sofa_size = hhi_props[pindex]['sleeper_sofa_size'];
+                
+                html = html + 'Hilton Head Property Address: ' + property_address + '<br>';
+                html = html + '# of Bedrooms: ' + bedrooms + '<br>';
+                html = html + '# of Bathrooms: ' + bathrooms + '<br>';
+                html = html + '# of ½ Bathrooms: ' + hbathrooms + '<br>';
+                html = html + 'Twin: ' + twin_nums + '<br>';
+                html = html + 'Queen/Full: ' + queen_nums + '<br>';
+                html = html + 'King: ' + king_nums + '<br>';
+                html = html + 'Sleeper Sofa?: ' + sleeper_sofa_exist + '<br>';
+                html = html + 'Size: ' + sleeper_sofa_size + '<br>';
+                html = html + '<br><br>';            
+                
+            }
+        }
+        $(this).html(html);
+    })
 }
 //init_owner_management 
 
 function init_owner_service_create(){
+
     $(document).on('click', '#req_service_create_btn', function(){
+        
+        if($('#req_service').val() == ''){
+            alert('Please Input Required Service');
+            $('#req_service').focus();
+            return;
+        }
+    
+        if($('#check_in_date').val() == ''){
+            alert('Please Input Check In Date');
+            $('#check_in_date').focus();
+            return;
+        }
+    
+        if($('#check_out_date').val() == ''){
+            alert('Please Input Check Out Date');
+            $('#check_out_date').focus();
+            return;
+        }
+
         $.ajax({
             // url:'owner_register',
             url:'/owner_service_request',
@@ -420,6 +476,19 @@ function init_owner_service_create(){
             }
         })
     })
+
+    if(additional_props_data != ''){
+        additional_props_data = JSON.parse(additional_props_data);
+        var html = '';
+
+        if(additional_props_data != null){
+            for(var pindex = 0; pindex < additional_props_data.length; pindex++){
+                html = html + '<option value="' + additional_props_data[pindex]['property_address'] + '">' + additional_props_data[pindex]['property_address'] + '</option>';
+            }
+        }
+
+        $('#cleaning_address').html(html);
+    }
 }
 
 $(document).ready(function(){

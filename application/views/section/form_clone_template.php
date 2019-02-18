@@ -127,11 +127,11 @@
             <div class="c-validation">Address and City and State and Zip Code are required.</div>
         </div>     
         
-        <div class="c-address c-address-us c-field c-col-1 c-sml-col-1 c-span-8 c-sml-span-12  c-required " data-field="CleaningPropertyAddress">
+        <div class="c-address c-address-us c-field c-col-1 c-sml-col-1 c-span-8 c-sml-span-12  c-required room-nums-wrap" data-field="Bedrooms">
             <div class="c-label "><label># of Bedrooms</label></div>
             <div>
                 <div class="c-offscreen"><label for=""></label></div>
-                <div class="c-editor" style="float: left;">
+                <div class="c-editor">
                     <div class="c-partial-line" style="float: left;">
                         <div class="c-dropdown">
                             <select name="bedrooms" id="bedrooms" class="c-placeholder-text-styled ">
@@ -153,11 +153,11 @@
             <div class="c-validation"># of Bedrooms is required.</div>
         </div>
 
-        <div class="c-address c-phone-us c-field c-sml-col-1 c-span-8 c-sml-span-12  c-required " data-field="Phone">
-            <div class="c-label  "><label for=""># of Bathrooms</label></div>
+        <div class="c-address c-phone-us c-field c-sml-col-1 c-span-8 c-sml-span-12  c-required room-nums-wrap" data-field="Bathrooms">
+            <div class="c-label  " style="width: auto; display: inline-block; flex-shrink:0"><label for=""># of Bathrooms</label></div>
             <div>
                 <div class="c-offscreen"><label for=""></label></div>
-                <div class="c-editor" style="float: left;">
+                <div class="c-editor">
                     <div class="c-partial-line" style="float: left;">
                         <div class="c-dropdown">
                             <select name="bathrooms" id="bathrooms" class="c-placeholder-text-styled ">
@@ -178,7 +178,7 @@
             </div>
             <div class="c-validation"># of Bathrooms is required.</div>
         </div>
-        <div class="c-address c-phone-us c-field c-col-13 c-sml-col-1 c-span-8 c-sml-span-12  c-required " data-field="CellPhone">
+        <div class="c-address c-phone-us c-field c-col-13 c-sml-col-1 c-span-8 c-sml-span-12  c-required room-nums-wrap" data-field="Bathrooms">
             <div class="c-label  "><label for=""># of ½ Bathrooms</label></div>
             <div class="c-editor">
                 <div class="c-partial-line" style="float: left;">
@@ -201,102 +201,121 @@
             <div class="c-validation"># of ½ Bathrooms is required.</div>
         </div>
 
-        <div class="c-address c-address-us c-field c-col-1 c-sml-col-1 c-span-24 c-sml-span-12  c-required " data-field="CleaningPropertyAddress">
+        <div class="c-address c-address-us c-field c-col-1 c-sml-col-1 c-span-24 c-sml-span-12  c-required" data-field="Bed Configuration">
             <div class="c-label "><label>Bed Configuration(s) & # of each</label></div>
-            <div class="custom-form-row">
+            <div class="custom-form-row room-nums-wrap">
                 <div class="custom-form-wrap custom-form-col-25">
-                    <div class="c-offscreen"><label for=""></label></div>
-                    <div class="c-editor c-partial-line" style="float: left;"><input type="text" name="bed_conf_count1" placeholder="" maxlength="2" class="onlynumbs" value="0"></div>
-                    <div class="c-offscreen"><label for=""></label></div>
-                    <div class="c-editor c-partial-line" style="float: left;">
-                        <div class="c-dropdown">
-                            <select name="bed_conf_type1" class="c-placeholder-text-styled ">
-                                <option value="Twin">Twin</option>
-                                <option value="Full">Full</option>
-                                <option value="Queen">Queen</option>
-                                <option value="King">King</option>
-                                <option value="California King">California King</option>
-                            </select>
+                    <div class="c-address c-phone-us c-field c-col-13 c-sml-col-1 c-span-8 c-sml-span-12  c-required " data-field="Bathrooms" style="display:flex; align-items: center;">
+                        <div class="c-label  " style="width: auto !important; display: inline-block;"><label for="">Twin</label></div>
+                        <div class="c-editor" style="display:inline-block; width: auto !important;padding-bottom: 0px !important">
+                            <!-- <div class="c-partial-line" style="float: left;">
+                                <input type="text" name="twin_nums" id="twin_nums" class="onlynumbs" maxlength="2" placeholder="" value="0">
+                            </div> -->
+                            <div class="c-dropdown">
+                                <select name="twin_nums" id="twin_nums" class="c-placeholder-text-styled ">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </div>
                         </div>
+                        <div class="c-validation"></div>
                     </div>
                 </div>
 
                 <div class="custom-form-wrap custom-form-col-25">
-                    <div class="c-offscreen"><label for=""></label></div>
-                    <div class="c-editor c-partial-line" style="float: left;"><input type="text" name="bed_conf_count2" placeholder="" maxlength="2" class="onlynumbs" value="0"></div>
-                    <div class="c-offscreen"><label for=""></label></div>
-                    <div class="c-editor c-partial-line" style="float: left;">
-                        <div class="c-dropdown">
-                            <select name="bed_conf_type2" class="c-placeholder-text-styled ">
-                                <option value="Twin">Twin</option>
-                                <option value="Full">Full</option>
-                                <option value="Queen">Queen</option>
-                                <option value="King">King</option>
-                                <option value="California King">California King</option>
-                            </select>
+                    <div class="c-address c-phone-us c-field c-col-13 c-sml-col-1 c-span-8 c-sml-span-12  c-required " data-field="Bathrooms" style="display:flex; align-items: center;">
+                        <div class="c-label  " style="width: auto !important; display: inline-block;"><label for="">Queen/Full</label></div>
+                        <div class="c-editor" style="display:inline-block; width: auto !important;padding-bottom: 0px !important">
+                            <!-- <div class="c-partial-line" style="float: left;">
+                                <input type="text" name="queen_nums" id="queen_nums" class="onlynumbs" maxlength="2" placeholder="" value="0">
+                            </div> -->
+                            <div class="c-dropdown">
+                                <select name="queen_nums" id="queen_nums" class="c-placeholder-text-styled ">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </div>
                         </div>
+                        <div class="c-validation"></div>
                     </div>
                 </div>
 
                 <div class="custom-form-wrap custom-form-col-25">
-                    <div class="c-offscreen"><label for=""></label></div>
-                    <div class="c-editor c-partial-line" style="float: left;"><input type="text" name="bed_conf_count3" placeholder="" maxlength="2" class="onlynumbs" value="0"></div>
-                    <div class="c-offscreen"><label for=""></label></div>
-                    <div class="c-editor c-partial-line" style="float: left;">
-                        <div class="c-dropdown">
-                            <select name="bed_conf_type3" class="c-placeholder-text-styled ">
-                                <option value="Twin">Twin</option>
-                                <option value="Full">Full</option>
-                                <option value="Queen">Queen</option>
-                                <option value="King">King</option>
-                                <option value="California King">California King</option>
-                            </select>
+                    <div class="c-address c-phone-us c-field c-col-13 c-sml-col-1 c-span-8 c-sml-span-12  c-required " data-field="Bathrooms" style="display:flex; align-items: center;">
+                        <div class="c-label  " style="width: auto !important; display: inline-block;"><label for="">King</label></div>
+                        <div class="c-editor" style="display:inline-block; width: auto !important;padding-bottom: 0px !important">
+                            <!-- <div class="c-partial-line" style="float: left;">
+                                <input type="text" name="king_nums" id="king_nums" class="onlynumbs" maxlength="2" placeholder="" value="0">
+                            </div> -->
+                            <div class="c-dropdown">
+                                <select name="king_nums" id="king_nums" class="c-placeholder-text-styled ">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </div>
                         </div>
+                        <div class="c-validation"></div>
                     </div>
                 </div>
 
-                <div class="custom-form-wrap custom-form-col-25">
-                    <div class="c-offscreen"><label for=""></label></div>
-                    <div class="c-editor c-partial-line" style="float: left;"><input type="text" name="bed_conf_count4" placeholder="" maxlength="2" class="onlynumbs" value="0"></div>
-                    <div class="c-offscreen"><label for=""></label></div>
-                    <div class="c-editor c-partial-line" style="float: left;">
-                        <div class="c-dropdown">
-                            <select name="bed_conf_type4" class="c-placeholder-text-styled ">
-                                <option value="Twin">Twin</option>
-                                <option value="Full">Full</option>
-                                <option value="Queen">Queen</option>
-                                <option value="King">King</option>
-                                <option value="California King">California King</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="c-validation">All Bed Configuration # are required.</div>
         </div>
 
-        <div class="c-phone c-phone-us c-field c-col-1 c-sml-col-1 c-span-12 c-sml-span-12  c-required " data-field="Phone">
+        <div class="c-phone c-phone-us c-field c-col-1 c-sml-col-1 c-span-12 c-sml-span-12  c-required room-nums-wrap" data-field="Phone">
             <div class="c-label  "><label for="Sleeper Sofa">Sleeper Sofa?</label></div>
             <div class="c-editor">
                 <div class="c-dropdown">
-                    <select name="sleeper_sofa_exist" class="c-placeholder-text-styled ">
-                        <option value="Yes">Yes</option>
-                        <option value="No" selected>No</option>
+                    <select name="sleeper_sofa_exist" id="sleeper_sofa_exist" class="c-placeholder-text-styled ">
+                        <option value="N/A" selected>N/A</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
                     </select>
                 </div>
             </div>
             <div class="c-validation">Sleeper Sofa is required.</div>
         </div>
-        <div class="c-phone c-phone-us c-field c-col-13 c-sml-col-1 c-span-12 c-sml-span-12  c-required " data-field="CellPhone">
+        
+        <div class="c-phone c-phone-us c-field c-col-13 c-sml-col-1 c-span-12 c-sml-span-12  c-required room-nums-wrap" data-field="CellPhone">
             <div class="c-label  "><label for="Size">Size</label></div>
             <div class="c-editor">
                 <div class="c-dropdown">
-                    <select name="sleeper_sofa_size" class="c-placeholder-text-styled ">
+                    <select name="sleeper_sofa_size" id="sleeper_sofa_size" class="c-placeholder-text-styled ">
+                        <option value=""></option>
+                        <option value="N/A">N/A</option>
                         <option value="Twin">Twin</option>
-                        <option value="Full">Full</option>
                         <option value="Queen">Queen</option>
-                        <option value="King">King</option>
-                        <option value="California King">California King</option>
                     </select>
                 </div>
             </div>

@@ -3,6 +3,68 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ApiController extends CI_Controller {
 
+	public function testemail(){
+		// $config = Array(    
+        //     'protocol' => 'smtp',
+        //     'smtp_host' => 'ssl://smtp.googlemail.com',
+        //     'smtp_port' => 465,
+        //     'smtp_user' => 'infocshhi@gmail.com',
+        //     'smtp_pass' => 'Clean2018#',
+        //     // 'smtp_timeout' => '4',
+        //     'mailtype' => 'html',
+        //     //'charset' => 'iso-8859-1'
+        //     'charset' => 'utf-8'
+        // );
+
+		// $this->load->library('email', $config);
+
+		// $this->email->set_newline("\r\n");      
+			
+		// $this->email->to('jaygangkun@hotmail.com'); // replace it with receiver mail id
+		// // $this->email->to('info@cleansweephhi.com'); // replace it with receiver mail id
+		// $this->email->from('infocshhi@gmail.com', 'Owner Information Submitted');
+		// $this->email->subject("Owner Information Submitted"); // replace it with relevant subj
+		
+		// $body = $this->load->view('email/create_owner.php',array(),TRUE);
+	  
+		// $this->email->message($body); 
+		// echo $this->email->send();
+		// echo $this->email->print_debugger();
+
+		$this->sendemail('create_owner', array(), 'Owner Information Submitted', 'Owner Information Submitted');
+
+	}
+
+	public function sendemail($template, $data, $from_title = '', $subject = ''){
+		return;
+		$config = Array(    
+            'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_port' => 465,
+            'smtp_user' => 'infocshhi@gmail.com',
+            'smtp_pass' => 'Clean2018#',
+            // 'smtp_timeout' => '4',
+            'mailtype' => 'html',
+            //'charset' => 'iso-8859-1'
+            'charset' => 'utf-8'
+        );
+
+		$this->load->library('email', $config);
+
+		$this->email->set_newline("\r\n");      
+			
+		$this->email->to('jaygangkun@hotmail.com'); // replace it with receiver mail id
+		// $this->email->to('info@cleansweephhi.com'); // replace it with receiver mail id
+		$this->email->from('infocshhi@gmail.com', $from_title);
+		$this->email->subject($subject); // replace it with relevant subj
+		
+		$body = $this->load->view('email/'.$template.'.php',$data,TRUE);
+	  
+		$this->email->message($body); 
+		echo $this->email->send();
+		echo $this->email->print_debugger();
+	}
+
 	public function owner_register()
 	{
 		$this->load->Model('OwnerModel');
@@ -13,31 +75,7 @@ class ApiController extends CI_Controller {
 		}
 		$this->OwnerModel->register($_POST);
 		
-		$config = Array(    
-			'protocol' => 'smtp',
-			'smtp_host' => 'ssl://Secureserver.net',
-			'smtp_port' => 80,
-			'smtp_user' => 'Info@cleansweephhi.com',
-			'smtp_pass' => 'Cleansweep999!',
-			// 'smtp_timeout' => '4',
-			'mailtype' => 'html',
-			//'charset' => 'iso-8859-1'
-			'charset' => 'utf-8'
-		);
-
-		$this->load->library('email', $config);
-
-		$this->email->set_newline("\r\n");      
-			
-		$this->email->to('jaygangkun@hotmail.com'); // replace it with receiver mail id
-		// $this->email->to('info@cleansweephhi.com'); // replace it with receiver mail id
-		$this->email->from('info@cleansweephhi.com', 'Owner Information Submitted');
-		$this->email->subject("Owner Information Submitted"); // replace it with relevant subj
-		
-		$body = $this->load->view('email/create_owner.php',array(),TRUE);
-	  
-		$this->email->message($body); 
-		// $this->email->send();
+		$this->sendemail('create_owner', array(), 'Owner Information Submitted', 'Owner Information Submitted');
 
 		echo 'ok';
 	}
@@ -63,33 +101,7 @@ class ApiController extends CI_Controller {
 		$this->load->Model('ServiceReqModel');
 		$owner_id = $this->ServiceReqModel->register($_POST);
 
-		$config = Array(    
-			'protocol' => 'smtp',
-			'smtp_host' => 'ssl://smtp.googlemail.com',
-			'smtp_port' => 465,
-			'smtp_user' => 'Ecouenergy@gmail.com',
-			'smtp_pass' => 'EnergyAsrin!@',
-			// 'smtp_timeout' => '4',
-			'mailtype' => 'html',
-			//'charset' => 'iso-8859-1'
-			'charset' => 'utf-8'
-		);
-
-		$this->load->library('email', $config);
-
-		$this->email->set_newline("\r\n");      
-			
-		$this->email->to('jaygangkun@hotmail.com'); // replace it with receiver mail id
-		//$this->email->to('info@cleansweephhi.com'); // replace it with receiver mail id
-		$this->email->from('info@cleansweephhi.com', 'Owner Service Request Submitted');
-		$this->email->subject("Owner Service Request Submitted"); // replace it with relevant subj
-		
-		$data = array();
-		$body = $this->load->view('email/owner_service_request_create.php',$data,TRUE);
-	  
-		$this->email->message($body); 
-		// $this->email->send();
-
+		$this->sendemail('owner_service_request_create', array(), 'Owner Information Submitted', 'Owner Information Submitted');
 		echo 'ok';
 	}
 
@@ -97,34 +109,8 @@ class ApiController extends CI_Controller {
 		$this->load->Model('ServiceReqModel');
 		$owner_id = $this->ServiceReqModel->update($_POST);
 
-		$config = Array(    
-			'protocol' => 'smtp',
-			'smtp_host' => 'ssl://smtp.googlemail.com',
-			'smtp_port' => 465,
-			'smtp_user' => 'Ecouenergy@gmail.com',
-			'smtp_pass' => 'EnergyAsrin!@',
-			// 'smtp_timeout' => '4',
-			'mailtype' => 'html',
-			//'charset' => 'iso-8859-1'
-			'charset' => 'utf-8'
-		);
-
-		$this->load->library('email', $config);
-
-		$this->email->set_newline("\r\n");      
-			
-		// $this->email->to('jaygangkun@hotmail.com'); // replace it with receiver mail id
-		$this->email->to('info@cleansweephhi.com'); // replace it with receiver mail id
+		$this->sendemail('owner_service_request_update', array(), 'Owner Service Request Submitted', 'Owner Service Request Submitted');
 		
-		$this->email->from('info@cleansweephhi.com', 'Owner Service Request Submitted');
-		$this->email->subject("Owner Service Request Submitted"); // replace it with relevant subj
-		
-		$data = array();
-		$body = $this->load->view('email/owner_service_request_update.php',$data,TRUE);
-	  
-		$this->email->message($body); 
-		// $this->email->send();
-
 		echo 'ok';
 	}
 
@@ -132,33 +118,7 @@ class ApiController extends CI_Controller {
 		$this->load->Model('ServiceReqModel');		
 		$this->ServiceReqModel->cancelService($_POST['service_id']);
 
-		$config = Array(    
-			'protocol' => 'smtp',
-			'smtp_host' => 'ssl://smtp.googlemail.com',
-			'smtp_port' => 465,
-			'smtp_user' => 'Ecouenergy@gmail.com',
-			'smtp_pass' => 'EnergyAsrin!@',
-			// 'smtp_timeout' => '4',
-			'mailtype' => 'html',
-			//'charset' => 'iso-8859-1'
-			'charset' => 'utf-8'
-		);
-
-		$this->load->library('email', $config);
-
-		$this->email->set_newline("\r\n");      
-	  	  
-		// $this->email->to('jaygangkun@hotmail.com'); // replace it with receiver mail id
-		$this->email->to('info@cleansweephhi.com'); // replace it with receiver mail id
-
-		$this->email->from('info@cleansweephhi.com', 'Service Request Cancelled');
-		$this->email->subject("Service Request Cancelled"); // replace it with relevant subj
-		
-		$data = array();
-		$body = $this->load->view('email/owner_service_request_cancel.php',$data,TRUE);
-	  
-		$this->email->message($body); 
-		// $this->email->send();
+		$this->sendemail('owner_service_request_cancel', array(), 'Service Request Cancelled', 'Service Request Cancelled');
 
 	}
 

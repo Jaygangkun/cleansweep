@@ -73,9 +73,11 @@
                     </div>
                     <div class="c-forms-heading">
                         <div class="c-forms-form-title">
-                            <h2>Ower Service Request</h2>
-                            <div class="c-forms-description">Please complete the fields below and we will respond to your inquiry within 48 hours.  Should cleaning request be needed within the next 
+                            <h2>Owner Service Request</h2>
+                            <!-- <div class="c-forms-description">Please complete the fields below and we will respond to your inquiry within 48 hours.  Should cleaning request be needed within the next 
                                 24 hrs please call (843)689-9178.  (*required areas)
+                            </div> -->
+                            <div class="c-forms-description">No changes are allowed 72 hours prior to the service, the office must be called.<br>Please call Cleansweep @ 843-689-9178
                             </div>
                         </div>
                     </div>
@@ -84,7 +86,7 @@
 
                             <ul class="nav nav-tabs">
                                 <li class="nav-item active"><a class="nav-link active show" style="font-weight: bold" data-toggle="tab" href="#owner_info">Owner Information</a></li>
-                                <li class="nav-item"><a class="nav-link" style="font-weight: bold" data-toggle="tab" href="#req_submit">Request Submit</a></li>
+                                <li class="nav-item"><a class="nav-link" style="font-weight: bold" data-toggle="tab" href="#req_submit">Service Request</a></li>
                                 <li class="nav-item"><a class="nav-link" style="font-weight: bold" data-toggle="tab" href="#req_list">Request List</a></li>
                             </ul>
                             <div class="tab-content px_-text-align-left">

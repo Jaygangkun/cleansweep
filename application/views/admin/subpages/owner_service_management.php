@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Owner Service Request Management
+        Owner Service Request
     </h1>
     <ol class="breadcrumb" style="display: none">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>

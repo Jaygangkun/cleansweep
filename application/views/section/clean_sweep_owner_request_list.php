@@ -21,7 +21,7 @@
 
 
 </style>
-<div class="container c-label">
+<div class="container c-label owner-request-list-container">
     <table class="data-table table table-bordered table-hover ">
         <thead>
             <tr>
@@ -56,10 +56,40 @@
                             echo "";
                         }
                         else{
-                            ?>
-                            <a style="margin-right: 10px;" class="cancel-service-btn" data-id="<?php echo $service_req['id']?>">Cancel</a>
-                            <a class="change-service-btn" data-id="<?php echo $service_req['id']?>">Change</a>
-                            <?php
+
+                            $then = $service_req['check_out_date'];
+                            $then = new DateTime($then);
+                            
+                            $now = new DateTime();
+                            // echo "now:".$now->format('Y-m-d H:i:s')."<br>";
+                            // echo "then:".$then->format('Y-m-d H:i:s')."<br>";
+                            
+                            $sinceThen = $then->diff($now);
+                                                        
+                            //Combined
+                            // echo $sinceThen->y.' years have passed.<br>';
+                            // echo $sinceThen->m.' months have passed.<br>';
+                            // echo $sinceThen->d.' days have passed.<br>';
+                            // echo $sinceThen->h.' hours have passed.<br>';
+                            // echo $sinceThen->i.' minutes have passed.<br>';
+                            // // echo $sinceThen->h;
+
+                            $total_hours = $sinceThen->d * 24 + $sinceThen->h;
+                            // echo $total_hours."<br>";
+
+                            //if($total_hours < 72 && $now > $then){
+                            if($total_hours < 72){
+                                ?>
+                                    <a style="margin-right: 10px;" class="cancel-service-btn nochange" data-id="<?php echo $service_req['id']?>">Cancel</a>
+                                    <a class="change-service-btn nochange" data-id="<?php echo $service_req['id']?>">Change</a>
+                                <?php    
+                            }
+                            else{
+                                ?>
+                                    <a style="margin-right: 10px;" class="cancel-service-btn" data-id="<?php echo $service_req['id']?>">Cancel</a>
+                                    <a class="change-service-btn" data-id="<?php echo $service_req['id']?>">Change</a>
+                                <?php
+                            }
                         }
                         ?>
                     </td>

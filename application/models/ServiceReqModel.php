@@ -12,7 +12,7 @@ class ServiceReqModel extends CI_Model{
     }
 
     public function getServices($owner_id){
-        $sql = "SELECT * FROM service_reqs WHERE `owner_id` = '".$owner_id."'";
+        $sql = "SELECT * FROM service_reqs WHERE `owner_id` = '".$owner_id."' ORDER BY added_at DESC";
         $result = $this->db->query($sql);
         $result = $result->result_array();
 

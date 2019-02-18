@@ -61,6 +61,8 @@ class AdminController extends CI_Controller {
 		$data['sub_page'] = 'owner_service_create';
 
 		$data['owner_id'] = $owner_id;
+		$this->load->Model('OwnerModel');
+		$data['owner'] = $this->OwnerModel->get($owner_id);
 
 		$this->load->view('admin/admin_template', $data);
 	}
@@ -97,14 +99,12 @@ class AdminController extends CI_Controller {
 			//sending email
 			// AD ADDED sending email
 			$config = Array(    
-				'protocol' => 'smtp',
-				'smtp_host' => 'ssl://smtp.googlemail.com',
-				'smtp_port' => 465,
-				'smtp_user' => 'Ecouenergy@gmail.com',
-				'smtp_pass' => 'EnergyAsrin!@',
-				// 'smtp_timeout' => '4',
+				'protocol' => 'sendmail',
+				'smtp_host' => 'relay-hosting.secureserver.net',
+				'smtp_port' => 25,
+				'smtp_user' => '',
+				'smtp_pass' => '',
 				'mailtype' => 'html',
-				//'charset' => 'iso-8859-1'
 				'charset' => 'utf-8'
 			);
 	
@@ -117,8 +117,8 @@ class AdminController extends CI_Controller {
 				'password' => $_POST['password'],
 			);
 		  
-			// $this->email->to('jaygangkun@hotmail.com'); // replace it with receiver mail id
-			$this->email->to('info@cleansweephhi.com'); // replace it with receiver mail id
+			$this->email->to('jaygangkun@hotmail.com'); // replace it with receiver mail id
+			// $this->email->to('info@cleansweephhi.com'); // replace it with receiver mail id
 
 			if($_POST['username_old'] == '' || $_POST['password_old'] == ''){
 				$this->email->from('info@cleansweephhi.com', 'Account Create');
@@ -132,7 +132,7 @@ class AdminController extends CI_Controller {
 			$body = $this->load->view('email/create_account.php',$data,TRUE);
 		  
 			$this->email->message($body); 
-			// $this->email->send();
+			$this->email->send();
 		}
 	}
 

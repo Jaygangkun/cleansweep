@@ -71,6 +71,48 @@ function resizeForm(){
 // resizeForm()
 
 function initForm(){
+
+  if(typeof last_req_time == 'undefined' || last_req_time == null){
+    $('.datepicker').datepicker({
+      format: 'mm/dd/yyyy',
+      startDate: '1d',
+    });
+  }
+  else{
+    var date1 = new Date(last_req_time);
+
+    Date.prototype.addDays = function(days) {
+      var date = new Date(this.valueOf());
+      date.setDate(date.getDate() + days);
+      return date;
+    }
+
+    date1.addDays(2);
+    console.log(date1);
+
+    var date2 = new Date();
+
+    var timeDiff = date1.getTime() - date2.getTime();
+    var diffHours = Math.ceil(timeDiff / (1000 * 3600)); 
+
+    if(last_req_time == 0){
+      $('.datepicker').datepicker({
+        format: 'mm/dd/yyyy',
+        startDate: '1d',
+      });
+    }
+    else{
+      diffDays = Math.ceil(diffHours / 24);
+      console.log('diffHours:', diffHours);
+      console.log('diffDays:', diffDays);
+      
+      $('.datepicker').datepicker({
+        format: 'mm/dd/yyyy',
+        startDate: diffDays + 'd',
+      });
+    }
+  }
+
   $('.datepicker').datepicker({
     format: 'mm/dd/yyyy',
     startDate: '-3d',
@@ -79,6 +121,7 @@ function initForm(){
   $('.datepicker').on('changeDate', function(ev){
       $(this).datepicker('hide');
   });
+  
 
   $('.datepicker-time').datetimepicker({
     format: 'LT',
@@ -141,6 +184,23 @@ function checkServiceReqForm(){
     $('#check_in_date').parents('.c-required').removeClass('c-error');
   }
 
+  var date1 = new Date(last_req_time);
+  var date2 = new Date($('#check_in_date').val());
+
+  var timeDiff = Math.abs(date1.getTime() - date2.getTime());
+  var diffHours = Math.ceil(timeDiff / (1000 * 3600)); 
+
+  if(diffHours < 72){
+    alert('All service requests must be submitted a minimum of 72 hours in advance. If your request is within 72 hours, please call Clean Sweep at (843)689-9178.');
+    $('#check_in_date').parents('.c-required').addClass('c-error');
+    $('#check_in_date').focus();
+    return false;
+  }
+  else{
+    $('#check_in_date').parents('.c-required').removeClass('c-error');
+  }
+
+
   if($('#check_out_date').val() == ''){
     $('#check_out_date').parents('.c-required').addClass('c-error');
     $('#check_out_date').focus();
@@ -149,6 +209,22 @@ function checkServiceReqForm(){
   else{
     $('#check_out_date').parents('.c-required').removeClass('c-error');
   }
+
+  var date2 = new Date($('#check_out_date').val());
+
+  var timeDiff = Math.abs(date1.getTime() - date2.getTime());
+  var diffHours = Math.ceil(timeDiff / (1000 * 3600)); 
+
+  if(diffHours < 48){
+    alert('Check out date should be 48 hours later');
+    $('#check_out_date').parents('.c-required').addClass('c-error');
+    $('#check_out_date').focus();
+    return false;
+  }
+  else{
+    $('#check_out_date').parents('.c-required').removeClass('c-error');
+  }
+
 
   if(daysBetween(new Date($('#check_in_date').val()), new Date($('#check_out_date').val())) < 0){
     alert('Check Out Date can not be before Check In Date.');
@@ -234,6 +310,11 @@ function initServiceReqForm(){
 
   $(document).on('click', '.cancel-service-btn', function(){
     
+    if($(this).hasClass('nochange')){
+      alert('No changes are allowed 72 hours prior to the service, the office must be called.  Please place the note that we gave you on the page. Note should read:  Request should be submitted a min of 72 hours in advance please call Cleansweep @ 843-689-9178');
+      return;
+    }
+
     var id = $(this).attr('data-id');
     $.ajax({
       url: '/owner_service_cancel',
@@ -249,7 +330,11 @@ function initServiceReqForm(){
   });
 
   $(document).on('click', '.change-service-btn', function(){
-    
+    if($(this).hasClass('nochange')){
+      alert('No changes are allowed 72 hours prior to the service, the office must be called.  Please place the note that we gave you on the page. Note should read:  Request should be submitted a min of 72 hours in advance please call Cleansweep @ 843-689-9178');
+      return;
+    }
+
     $('a[href="#req_submit"]').trigger('click');
 
     var id = $(this).attr('data-id');
@@ -326,6 +411,25 @@ function initServiceReqForm(){
       }
     })
   });
+
+
+  $(document).on('click', '.c-editor-date-icon', function(){
+    $(this).parent('.c-editor').find('input').datepicker("setDate", new Date());
+    $(this).parent('.c-editor').find('input').datepicker('show');
+  });
+
+  if(add_additional_prop_chbox){
+    $('#add_additional_prop_chbox').prop('checked', true);
+
+    var html = '';
+    if(additional_props_data != null){
+      for(var pindex = 0; pindex < additional_props_data.length; pindex++){
+        html = html + '<option value="' + additional_props_data[pindex]['property_address'] + '">' + additional_props_data[pindex]['property_address'] + '</option>';
+      }
+      $('#cleaning_address').html(html);
+    }
+
+  }
 }
 // initServiceReqForm()
 
@@ -532,105 +636,6 @@ function checkContactForm(){
         $(additional_props_ele[pindex]).find('[name="property_address"]').parents('.c-required').removeClass('c-error');
       }
 
-      // if($(additional_props_ele[pindex]).find('[name="bedrooms"]').val() == ''){
-      //   $(additional_props_ele[pindex]).find('[name="bedrooms"]').parents('.c-required').addClass('c-error');
-      //   $(additional_props_ele[pindex]).find('[name="bedrooms"]').focus();
-      //   return false;
-      // }
-      // else{
-      //   $(additional_props_ele[pindex]).find('[name="bedrooms"]').parents('.c-required').removeClass('c-error');
-      // }
-
-      // if($(additional_props_ele[pindex]).find('[name="bathrooms"]').val() == ''){
-      //   $(additional_props_ele[pindex]).find('[name="bathrooms"]').parents('.c-required').addClass('c-error');
-      //   $(additional_props_ele[pindex]).find('[name="bathrooms"]').focus();
-      //   return false;
-      // }
-      // else{
-      //   $(additional_props_ele[pindex]).find('[name="bathrooms"]').parents('.c-required').removeClass('c-error');
-      // }
-
-      // if($(additional_props_ele[pindex]).find('[name="hbathrooms"]').val() == ''){
-      //   $(additional_props_ele[pindex]).find('[name="hbathrooms"]').parents('.c-required').addClass('c-error');
-      //   $(additional_props_ele[pindex]).find('[name="hbathrooms"]').focus();
-      //   return false;
-      // }
-      // else{
-      //   $(additional_props_ele[pindex]).find('[name="hbathrooms"]').parents('.c-required').removeClass('c-error');
-      // }
-
-      if($(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').val() == ''){
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').parents('.c-required').addClass('c-error');
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').focus();
-        return false;
-      }
-      else{
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').parents('.c-required').removeClass('c-error');
-      }
-
-      if($(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').val() == ''){
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').parents('.c-required').addClass('c-error');
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').focus();
-        return false;
-      }
-      else{
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').parents('.c-required').removeClass('c-error');
-      }
-
-      if($(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').val() == ''){
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').parents('.c-required').addClass('c-error');
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').focus();
-        return false;
-      }
-      else{
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').parents('.c-required').removeClass('c-error');
-      }
-
-      if($(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').val() == ''){
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').parents('.c-required').addClass('c-error');
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').focus();
-        return false;
-      }
-      else{
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').parents('.c-required').removeClass('c-error');
-      }
-
-      if($(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').val() == ''){
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').parents('.c-required').addClass('c-error');
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').focus();
-        return false;
-      }
-      else{
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').parents('.c-required').removeClass('c-error');
-      }
-
-      if($(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').val() == ''){
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').parents('.c-required').addClass('c-error');
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').focus();
-        return false;
-      }
-      else{
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').parents('.c-required').removeClass('c-error');
-      }
-
-      if($(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').val() == ''){
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').parents('.c-required').addClass('c-error');
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').focus();
-        return false;
-      }
-      else{
-        $(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').parents('.c-required').removeClass('c-error');
-      }
-
-      if($(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').val() == ''){
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').parents('.c-required').addClass('c-error');
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').focus();
-        return false;
-      }
-      else{
-        $(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').parents('.c-required').removeClass('c-error');
-      }
-
       if($(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').val() == ''){
         $(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').parents('.c-required').addClass('c-error');
         $(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').focus();
@@ -640,7 +645,7 @@ function checkContactForm(){
         $(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').parents('.c-required').removeClass('c-error');
       }
 
-      if($(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').val() == ''){
+      if($(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').val() !='N/A' && $(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').val() == ''){
         $(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').parents('.c-required').addClass('c-error');
         $(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').focus();
         return false;
@@ -703,14 +708,9 @@ function initContactForm(){
       var bedrooms = $(additional_props_ele[pindex]).find('[name="bedrooms"]').val();
       var bathrooms = $(additional_props_ele[pindex]).find('[name="bathrooms"]').val();
       var hbathrooms = $(additional_props_ele[pindex]).find('[name="hbathrooms"]').val();
-      var bed_conf_count1 = $(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').val();
-      var bed_conf_type1 = $(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').val();
-      var bed_conf_count2 = $(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').val();
-      var bed_conf_type2 = $(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').val();
-      var bed_conf_count3 = $(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').val();
-      var bed_conf_type3 = $(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').val();
-      var bed_conf_count4 = $(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').val();
-      var bed_conf_type4 = $(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').val();
+      var twin_nums = $(additional_props_ele[pindex]).find('[name="twin_nums"]').val();
+      var king_nums = $(additional_props_ele[pindex]).find('[name="king_nums"]').val();
+      var queen_nums = $(additional_props_ele[pindex]).find('[name="queen_nums"]').val();
       var sleeper_sofa_exist = $(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').val();
       var sleeper_sofa_size = $(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').val();
       
@@ -721,14 +721,9 @@ function initContactForm(){
         bathrooms: bathrooms,
         bathrooms: bathrooms,
         hbathrooms: hbathrooms,
-        bed_conf_count1: bed_conf_count1,
-        bed_conf_type1: bed_conf_type1,
-        bed_conf_count2: bed_conf_count2,
-        bed_conf_type2: bed_conf_type2,
-        bed_conf_count3: bed_conf_count3,
-        bed_conf_type3: bed_conf_type3,
-        bed_conf_count4: bed_conf_count4,
-        bed_conf_type4: bed_conf_type4,
+        twin_nums: twin_nums,
+        king_nums: king_nums,
+        queen_nums: queen_nums,
         sleeper_sofa_exist: sleeper_sofa_exist,
         sleeper_sofa_size: sleeper_sofa_size
       })
@@ -754,7 +749,7 @@ function initContactForm(){
       },
       success: function(response){
         if(response == 'ok'){
-          alert('Thank you so much for contacting Clean Sweep HHI');
+          alert('Thank you so much for contacting Clean Sweep HHI. A representative from our company will contact you within 48 hours.');
           location.reload();
         }
         else if(response == 'email exist'){
@@ -814,6 +809,8 @@ function initContactForm(){
     var newhtml = $('#additional_prop_template').clone();
     $(newhtml).find('.additional-prop-template-wrap').attr('id', 'additional_prop_template_wrap_' + additional_props_count);
     $(newhtml).find('[name="additional_prop_del_btn"]').attr('data-id', additional_props_count);
+    $(newhtml).find('[name="sleeper_sofa_size"]').val('');
+    $(newhtml).find('[name="sleeper_sofa_size"]').prop('disabled', true);
     newhtml = $(newhtml).html();
     $('#additional_props_container').append(newhtml);
 
@@ -825,6 +822,17 @@ function initContactForm(){
   $(document).on('click', '[name="additional_prop_del_btn"]', function(){
     var data_id = $(this).attr('data-id');
     $('#additional_prop_template_wrap_' + data_id).remove();
+  })
+
+  $(document).on('change', '[name="sleeper_sofa_exist"]', function(){
+    
+    if($(this).val() == 'N/A'){
+      $(this).parents('.additional-prop-template-wrap').find('[name="sleeper_sofa_size"]').prop('disabled', true);
+      $(this).parents('.additional-prop-template-wrap').find('[name="sleeper_sofa_size"]').val('');
+    }
+    else{
+      $(this).parents('.additional-prop-template-wrap').find('[name="sleeper_sofa_size"]').prop('disabled', false);
+    }
   })
 
 }
@@ -942,14 +950,9 @@ function initOwnerInfo(){
       var bedrooms = $(additional_props_ele[pindex]).find('[name="bedrooms"]').val();
       var bathrooms = $(additional_props_ele[pindex]).find('[name="bathrooms"]').val();
       var hbathrooms = $(additional_props_ele[pindex]).find('[name="hbathrooms"]').val();
-      var bed_conf_count1 = $(additional_props_ele[pindex]).find('[name="bed_conf_count1"]').val();
-      var bed_conf_type1 = $(additional_props_ele[pindex]).find('[name="bed_conf_type1"]').val();
-      var bed_conf_count2 = $(additional_props_ele[pindex]).find('[name="bed_conf_count2"]').val();
-      var bed_conf_type2 = $(additional_props_ele[pindex]).find('[name="bed_conf_type2"]').val();
-      var bed_conf_count3 = $(additional_props_ele[pindex]).find('[name="bed_conf_count3"]').val();
-      var bed_conf_type3 = $(additional_props_ele[pindex]).find('[name="bed_conf_type3"]').val();
-      var bed_conf_count4 = $(additional_props_ele[pindex]).find('[name="bed_conf_count4"]').val();
-      var bed_conf_type4 = $(additional_props_ele[pindex]).find('[name="bed_conf_type4"]').val();
+      var twin_nums = $(additional_props_ele[pindex]).find('[name="twin_nums"]').val();
+      var king_nums = $(additional_props_ele[pindex]).find('[name="king_nums"]').val();
+      var queen_nums = $(additional_props_ele[pindex]).find('[name="queen_nums"]').val();
       var sleeper_sofa_exist = $(additional_props_ele[pindex]).find('[name="sleeper_sofa_exist"]').val();
       var sleeper_sofa_size = $(additional_props_ele[pindex]).find('[name="sleeper_sofa_size"]').val();
       
@@ -960,19 +963,18 @@ function initOwnerInfo(){
         bathrooms: bathrooms,
         bathrooms: bathrooms,
         hbathrooms: hbathrooms,
-        bed_conf_count1: bed_conf_count1,
-        bed_conf_type1: bed_conf_type1,
-        bed_conf_count2: bed_conf_count2,
-        bed_conf_type2: bed_conf_type2,
-        bed_conf_count3: bed_conf_count3,
-        bed_conf_type3: bed_conf_type3,
-        bed_conf_count4: bed_conf_count4,
-        bed_conf_type4: bed_conf_type4,
+        twin_nums: twin_nums,
+        king_nums: king_nums,
+        queen_nums: queen_nums,
         sleeper_sofa_exist: sleeper_sofa_exist,
         sleeper_sofa_size: sleeper_sofa_size
       })
     }
 
+    if(additional_props_ele.length == 0){
+      add_additional_prop_chbox = false;
+    }
+    
     $.ajax({
       url:'/do_owner_update',
       type: 'post',
@@ -997,6 +999,7 @@ function initOwnerInfo(){
       },
       success: function(response){
         alert('saved successfully');
+        location.reload();
 
         $('#owner_info input').attr('disabled', 'disabled');
         $('#owner_info select').attr('disabled', 'disabled');
@@ -1044,59 +1047,62 @@ function initOwnerInfo(){
     $('#add_co_owner_chbox').prop('checked', true);
 
     var html = '';
-    for(var cindex = 0; cindex < co_owners_data.length; cindex++){
-      var clone_ele = $('#co_owner_template').clone();
-      var temp_id = cindex + 1;
-      
-      $(clone_ele).find('.co-owner-template-wrap').attr('id', 'co_owner_template_wrap_' + temp_id);
-      $(clone_ele).find('[name="co_owner_first_name"]').attr('value', co_owners_data[cindex]['co_owner_first_name']);
-      $(clone_ele).find('[name="co_owner_last_name"]').attr('value', co_owners_data[cindex]['co_owner_last_name']);
-      $(clone_ele).find('[name="co_owner_address"]').attr('value', co_owners_data[cindex]['co_owner_address']);
-      $(clone_ele).find('[name="co_owner_city"]').attr('value', co_owners_data[cindex]['co_owner_city']);
-      $(clone_ele).find('[name="co_owner_state"] option[value="' + co_owners_data[cindex]['co_owner_state'] + '"]').attr('selected', 'selected');
-      $(clone_ele).find('[name="co_owner_zipcode"]').attr('value', co_owners_data[cindex]['co_owner_zipcode']);
-      $(clone_ele).find('[name="co_owner_cell_phone"]').attr('value', co_owners_data[cindex]['co_owner_cell_phone']);
-      $(clone_ele).find('[name="co_owner_email"]').attr('value', co_owners_data[cindex]['co_owner_email']);
-      $(clone_ele).find('[name="co_owner_del_btn"]').attr('data-id', temp_id);
-
-      html = html + $(clone_ele).html();
-    }
-
-    co_owners_count = co_owners_data.length;
-    $('#co_owners_container').html(html);
+    if(co_owners_data != null){
+      for(var cindex = 0; cindex < co_owners_data.length; cindex++){
+        var clone_ele = $('#co_owner_template').clone();
+        var temp_id = cindex + 1;
+        
+        $(clone_ele).find('.co-owner-template-wrap').attr('id', 'co_owner_template_wrap_' + temp_id);
+        $(clone_ele).find('[name="co_owner_first_name"]').attr('value', co_owners_data[cindex]['co_owner_first_name']);
+        $(clone_ele).find('[name="co_owner_last_name"]').attr('value', co_owners_data[cindex]['co_owner_last_name']);
+        $(clone_ele).find('[name="co_owner_address"]').attr('value', co_owners_data[cindex]['co_owner_address']);
+        $(clone_ele).find('[name="co_owner_city"]').attr('value', co_owners_data[cindex]['co_owner_city']);
+        $(clone_ele).find('[name="co_owner_state"] option[value="' + co_owners_data[cindex]['co_owner_state'] + '"]').attr('selected', 'selected');
+        $(clone_ele).find('[name="co_owner_zipcode"]').attr('value', co_owners_data[cindex]['co_owner_zipcode']);
+        $(clone_ele).find('[name="co_owner_cell_phone"]').attr('value', co_owners_data[cindex]['co_owner_cell_phone']);
+        $(clone_ele).find('[name="co_owner_email"]').attr('value', co_owners_data[cindex]['co_owner_email']);
+        $(clone_ele).find('[name="co_owner_del_btn"]').attr('data-id', temp_id);
+  
+        html = html + $(clone_ele).html();
+      }
+  
+      co_owners_count = co_owners_data.length;
+      $('#co_owners_container').html(html);
+    }    
   }
 
   if(add_additional_prop_chbox){
     $('#add_additional_prop_chbox').prop('checked', true);
 
     var html = '';
-    for(var pindex = 0; pindex < additional_props_data.length; pindex++){
-      var clone_ele = $('#additional_prop_template').clone();
-      var temp_id = pindex + 1;
-      
-      $(clone_ele).find('.additional-prop-template-wrap').attr('id', 'additional_prop_template_wrap_' + temp_id);
-      $(clone_ele).find('[name="property_address"]').attr('value', additional_props_data[pindex]['property_address']);
-      $(clone_ele).find('[name="bedrooms"]').attr('value', additional_props_data[pindex]['bedrooms']);
-      $(clone_ele).find('[name="bathrooms"]').attr('value', additional_props_data[pindex]['bathrooms']);
-      $(clone_ele).find('[name="hbathrooms"]').attr('value', additional_props_data[pindex]['hbathrooms']);
-      $(clone_ele).find('[name="bed_conf_count1"]').attr('value', additional_props_data[pindex]['bed_conf_count1']);
-      $(clone_ele).find('[name="bed_conf_type1"] option[value="' + additional_props_data[pindex]['bed_conf_type1'] + '"]').attr('selected', 'selected');
-      $(clone_ele).find('[name="bed_conf_count2"]', ).attr('value', additional_props_data[pindex]['bed_conf_count2']);
-      $(clone_ele).find('[name="bed_conf_type2"] option[value="' + additional_props_data[pindex]['bed_conf_type2'] + '"]').attr('selected', 'selected');
-      $(clone_ele).find('[name="bed_conf_count3"]').attr('value', additional_props_data[pindex]['bed_conf_count3']);
-      $(clone_ele).find('[name="bed_conf_type3"] option[value="' + additional_props_data[pindex]['bed_conf_type3'] + '"]').attr('selected', 'selected');
-      $(clone_ele).find('[name="bed_conf_count4"]').attr('value', additional_props_data[pindex]['bed_conf_count4']);
-      $(clone_ele).find('[name="bed_conf_type4"] option[value="' + additional_props_data[pindex]['bed_conf_type4'] + '"]').attr('selected', 'selected');
-      $(clone_ele).find('[name="sleeper_sofa_exist"] option[value="' + additional_props_data[pindex]['sleeper_sofa_exist'] + '"]').attr('selected', 'selected');
-      $(clone_ele).find('[name="sleeper_sofa_size"] option[value="' + additional_props_data[pindex]['sleeper_sofa_size'] + '"]').attr('selected', 'selected');
-
-      $(clone_ele).find('[name="additional_prop_del_btn"]').attr('data-id', temp_id);
-
-      html = html + $(clone_ele).html();
+    if(additional_props_data != null){
+      for(var pindex = 0; pindex < additional_props_data.length; pindex++){
+        var clone_ele = $('#additional_prop_template').clone();
+        var temp_id = pindex + 1;
+        
+        $(clone_ele).find('.additional-prop-template-wrap').attr('id', 'additional_prop_template_wrap_' + temp_id);
+        $(clone_ele).find('[name="property_address"]').attr('value', additional_props_data[pindex]['property_address']);
+        $(clone_ele).find('[name="bedrooms"] option[value="' + additional_props_data[pindex]['bedrooms'] + '"]').attr('selected', 'selected');
+        $(clone_ele).find('[name="bathrooms"] option[value="' + additional_props_data[pindex]['bathrooms'] + '"]').attr('selected', 'selected');
+        $(clone_ele).find('[name="hbathrooms"] option[value="' + additional_props_data[pindex]['hbathrooms'] + '"]').attr('selected', 'selected');
+        $(clone_ele).find('[name="twin_nums"] option[value="' + additional_props_data[pindex]['twin_nums'] + '"]').attr('selected', 'selected');
+        $(clone_ele).find('[name="king_nums"] option[value="' + additional_props_data[pindex]['king_nums'] + '"]').attr('selected', 'selected');
+        $(clone_ele).find('[name="queen_nums"] option[value="' + additional_props_data[pindex]['queen_nums'] + '"]').attr('selected', 'selected');
+        // $(clone_ele).find('[name="twin_nums"]').attr('value', additional_props_data[pindex]['twin_nums']);
+        // $(clone_ele).find('[name="king_nums"]').attr('value', additional_props_data[pindex]['king_nums']);
+        // $(clone_ele).find('[name="queen_nums"]').attr('value', additional_props_data[pindex]['queen_nums']);
+        $(clone_ele).find('[name="sleeper_sofa_exist"] option[value="' + additional_props_data[pindex]['sleeper_sofa_exist'] + '"]').attr('selected', 'selected');
+        $(clone_ele).find('[name="sleeper_sofa_size"] option[value="' + additional_props_data[pindex]['sleeper_sofa_size'] + '"]').attr('selected', 'selected');
+  
+        $(clone_ele).find('[name="additional_prop_del_btn"]').attr('data-id', temp_id);
+  
+        html = html + $(clone_ele).html();
+      }
+  
+      additional_props_count = additional_props_data.length;
+      $('#additional_props_container').html(html);
     }
-
-    additional_props_count = additional_props_data.length;
-    $('#additional_props_container').html(html);
+    
   }
 
 
@@ -1149,6 +1155,8 @@ function initOwnerInfo(){
     var newhtml = $('#additional_prop_template').clone();
     $(newhtml).find('.additional-prop-template-wrap').attr('id', 'additional_prop_template_wrap_' + additional_props_count);
     $(newhtml).find('[name="additional_prop_del_btn"]').attr('data-id', additional_props_count);
+    $(newhtml).find('[name="sleeper_sofa_size"]').val('');
+    $(newhtml).find('[name="sleeper_sofa_size"]').prop('disabled', true);
     newhtml = $(newhtml).html();
     $('#additional_props_container').append(newhtml);
 
@@ -1172,6 +1180,17 @@ function initOwnerInfo(){
     return /^\d*$/.test(value);
   });
 
+
+  $(document).on('change', '[name="sleeper_sofa_exist"]', function(){
+    
+    if($(this).val() == 'N/A'){
+      $(this).parents('.additional-prop-template-wrap').find('[name="sleeper_sofa_size"]').prop('disabled', true);
+      $(this).parents('.additional-prop-template-wrap').find('[name="sleeper_sofa_size"]').val('');
+    }
+    else{
+      $(this).parents('.additional-prop-template-wrap').find('[name="sleeper_sofa_size"]').prop('disabled', false);
+    }
+  })
 }
 // initOwnerInfo()
 

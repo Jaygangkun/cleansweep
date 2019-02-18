@@ -98,3 +98,8 @@ $route['owner_login'] = 'APIController/owner_login';
 $route['owner_logout'] = "APIController/owner_logout";
 
 // $route['sale_siteinspection/(:num)'] = "SaleController/siteinspection/$1";
+
+
+
+//test
+$route['testemail'] = "APIController/testemail";

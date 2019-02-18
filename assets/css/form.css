@@ -3194,7 +3194,7 @@ background-color: transparent;
 .form-container .custom-form-row{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
 }
 
@@ -3213,8 +3213,137 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
     text-decoration: underline;
 }
 
+.room-nums-wrap{
+    display:flex; 
+    align-items: center; 
+    /* justify-content: space-between; */
+    width:auto !important;
+}
+
+.room-nums-wrap .c-label{
+    width: auto !important; 
+    display: inline-block; 
+    flex-shrink:0;
+}
+
+.room-nums-wrap .c-editor{
+    float: left;
+    display:inline-block; 
+    width: auto !important;
+}
+
+.room-nums-wrap .c-dropdown{
+    width: auto !important;
+    display: inline-block;
+}
+
+.room-nums-wrap .c-partial-line{
+    width: auto !important;
+}
+
+.room-nums-wrap .c-partial-line input{
+    width: 40px !important;
+}
+
+.room-nums-wrap .custom-form-col-25{
+    width: auto !important;
+}
+
+.form-container .custom-form-row .custom-form-col-25{
+    width: auto !important;
+}
+
+.owner-request-list-container{
+    width: calc(100% - 10px);
+    max-width: initial;
+    margin: 0px 5px !important;
+    overflow: auto;
+    padding: 0px !important;
+}
+
+.cognito .c-forms-form{
+    background-color: white;
+}
+
+.cognito .c-forms-form .c-label{
+    color: black;
+}
+
+.cognito .c-forms-form input[type=text], 
+.cognito .c-forms-form input[type=password], 
+.cognito .c-forms-form textarea, 
+.cognito .c-forms-form select{
+    border: 1px solid #cccccc;
+}
+
+.cognito .c-forms-form .c-placeholder-text-styled{
+    color: black;
+}
+
+.cognito .c-forms-form button, 
+.cognito .c-forms-form .c-add-item, 
+.cognito .c-forms-form input[type=button], 
+.cognito .c-forms-form .c-fileupload-dropzone .c-upload-button button{
+    background-color: #334ab3;
+    color: white;
+    border-color: transparent;
+}
+
+.cognito .c-forms-form button:hover, 
+.cognito .c-forms-form input[type=button]:hover, 
+.cognito .c-forms-form .c-add-item:hover, 
+.cognito .c-forms-form .c-fileupload-dropzone .c-upload-button button:hover {
+    background-color: #455cc3;
+}
+
+.cognito .c-forms-form input[type=text], 
+.cognito .c-forms-form input[type=password], 
+.cognito .c-forms-form input[type=password], 
+.cognito .c-forms-form select, 
+.cognito .c-forms-form textarea, 
+.cognito.c-payment .c-payment-field{
+    color: black;
+}
+
+.cognito .c-forms-form h1, 
+.cognito .c-forms-form h2, 
+.cognito .c-forms-form h3, 
+.cognito .c-forms-form h4, 
+.cognito .c-forms-form h5, 
+.cognito .c-forms-form h6{
+    color: black;
+}
+
+.cognito .c-forms-form a{
+    color: black;
+}
+
+.cognito .c-forms-form .c-editor-date-icon, .cognito .c-forms-form .c-editor-time-icon, .cognito .c-forms-form .c-remove-item, .cognito .c-forms-form .c-save-resume-close{
+    color: black;
+}
+
+.dataTables_wrapper{
+    overflow: scroll;
+}
+
 @media (max-width: 767px){
-    .form-container .custom-form-row .custom-form-col-25{
+    /* .form-container .custom-form-row .custom-form-col-25{
         width: 50% !important;
-    }   
+    }    */
+}
+
+@media (max-width: 600px){
+    .room-nums-wrap{
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 436px){
+    .room-nums-wrap .custom-form-col-25{
+        width: 100% !important;
+    }
+
+    .form-container .custom-form-row .custom-form-col-25{
+        width: 100% !important;
+    }
 }
