@@ -394,38 +394,119 @@ function init_owner_management(){
     })
 
     //showing hhi properties
-    $('.hhi-property').each(function(index, ele){
-        // console.log(index, $(ele).attr('data-hhi-property'));
-        var hhi_props = JSON.parse($(ele).attr('data-hhi-property'));
-        var html = '';
-
-        if(hhi_props != null){
-            for(var pindex = 0; pindex < hhi_props.length; pindex++){
-                var property_address = hhi_props[pindex]['property_address'];
-                var bedrooms = hhi_props[pindex]['bedrooms'];
-                var bathrooms = hhi_props[pindex]['bathrooms'];
-                var hbathrooms = hhi_props[pindex]['hbathrooms'];
-                var twin_nums = hhi_props[pindex]['twin_nums'];
-                var king_nums = hhi_props[pindex]['king_nums'];
-                var queen_nums = hhi_props[pindex]['queen_nums'];
-                var sleeper_sofa_exist = hhi_props[pindex]['sleeper_sofa_exist'];
-                var sleeper_sofa_size = hhi_props[pindex]['sleeper_sofa_size'];
-                
-                html = html + 'Hilton Head Property Address: ' + property_address + '<br>';
-                html = html + '# of Bedrooms: ' + bedrooms + '<br>';
-                html = html + '# of Bathrooms: ' + bathrooms + '<br>';
-                html = html + '# of ½ Bathrooms: ' + hbathrooms + '<br>';
-                html = html + 'Twin: ' + twin_nums + '<br>';
-                html = html + 'Queen/Full: ' + queen_nums + '<br>';
-                html = html + 'King: ' + king_nums + '<br>';
-                html = html + 'Sleeper Sofa?: ' + sleeper_sofa_exist + '<br>';
-                html = html + 'Size: ' + sleeper_sofa_size + '<br>';
-                html = html + '<br><br>';            
-                
+    function showHHIProperties(){
+        $('.hhi-property').each(function(index, ele){
+            // console.log(index, $(ele).attr('data-hhi-property'));
+            var hhi_props = JSON.parse($(ele).attr('data-hhi-property'));
+            var html = '';
+    
+            if(hhi_props != null){
+                for(var pindex = 0; pindex < hhi_props.length; pindex++){
+                    var property_address = hhi_props[pindex]['property_address'];
+                    var bedrooms = hhi_props[pindex]['bedrooms'];
+                    var bathrooms = hhi_props[pindex]['bathrooms'];
+                    var hbathrooms = hhi_props[pindex]['hbathrooms'];
+                    var twin_nums = hhi_props[pindex]['twin_nums'];
+                    var king_nums = hhi_props[pindex]['king_nums'];
+                    var queen_nums = hhi_props[pindex]['queen_nums'];
+                    var sleeper_sofa_exist = hhi_props[pindex]['sleeper_sofa_exist'];
+                    var sleeper_sofa_size = hhi_props[pindex]['sleeper_sofa_size'];
+                    
+                    html = html + 'Hilton Head Property Address: ' + property_address + '<br>';
+                    html = html + '# of Bedrooms: ' + bedrooms + '<br>';
+                    html = html + '# of Bathrooms: ' + bathrooms + '<br>';
+                    html = html + '# of ½ Bathrooms: ' + hbathrooms + '<br>';
+                    html = html + 'Twin: ' + twin_nums + '<br>';
+                    html = html + 'Queen/Full: ' + queen_nums + '<br>';
+                    html = html + 'King: ' + king_nums + '<br>';
+                    html = html + 'Sleeper Sofa?: ' + sleeper_sofa_exist + '<br>';
+                    html = html + 'Size: ' + sleeper_sofa_size + '<br>';
+                    html = html + '<br><br>';            
+                    
+                }
             }
-        }
-        $(this).html(html);
+            $(this).html(html);
+        })
+    }
+    
+    function searchOwner(){
+        var loading_html = '<div class="" style="font-size: 30px;text-align: center;">';
+        loading_html = loading_html + '<i class="fa fa-refresh fa-spin"></i>';
+        loading_html = loading_html + '</div>';
+
+        $('#owner_list').html(loading_html);
+        $.ajax({
+            url: '/do_owner_search',
+            type: 'post',
+            data: {
+                name: $('#name').val(),
+                address: $('#address').val(),
+                phone: $('#phone').val(),
+                property: $('#property').val()
+            },
+            success: function(response){
+                var data = JSON.parse(response);
+                var html = '<table class="data-table1 table table-bordered table-hover"><thead>';
+                html = html + '<tr>';
+                html = html + '<th>First Name</th>';
+                html = html + '<th>Last Name</th>';
+                html = html + '<th>HHI Property</th>';
+                html = html + '<th>Email</th>';
+                html = html + '<th>Actions</th>';
+                html = html + '</tr>';
+                html = html + '</thead>';
+             
+                html = html + '<tbody>';
+
+                for(var index = 0; index < data.length; index++){
+                    html = html + '<tr>';
+                    html = html + '<td>' + data[index]['first_name'] + '</td>';
+                    html = html + '<td>' + data[index]['last_name'] + '</td>';
+                    if(data[index]['add_additional_prop_chbox'] == 'true'){
+                        html = html + "<td class='hhi-property' data-hhi-property='" + data[index]['additional_props_data'] + "'></td>";
+                    }
+                    else{
+                        html = html + '<td></td>';
+                    }
+
+                    html = html + '<td>' + data[index]['email'] + '</td>';
+                    html = html + '<td>';
+                    html = html + '<a href="/owner_edit/' + data[index]['id'] + '"><i class="fa fa-fw fa-edit"></i></a>';
+                    html = html + '</td>';
+                    html = html + '</tr>';
+                    
+                }
+                html = html + '</tbody>';
+                html = html + '<tfoot>';
+                html = html + '<tr>';
+                html = html + '<th>First Name</th>';
+                html = html + '<th>Last Name</th>';
+                html = html + '<th>HHI Property</th>';
+                html = html + '<th>Email</th>';
+                html = html + '<th>Actions</th>';
+                html = html + '</tr>';
+                html = html + '</tfoot></table>';
+
+                $('#owner_list').html(html);
+
+                showHHIProperties();
+                $('#owner_list table').DataTable({
+					"paging": true,
+					// "lengthChange": false,
+					"searching": false,
+					"ordering": true,
+					"info": true,
+					"autoWidth": false
+				})
+            }
+        });
+    }
+
+    $(document).on('click', '#owner_search_btn', function(){
+        searchOwner();
     })
+
+    searchOwner();
 }
 //init_owner_management 
 
@@ -491,6 +572,176 @@ function init_owner_service_create(){
     }
 }
 
+function init_account_management(){
+    function account_search(){
+        var loading_html = '<div class="" style="font-size: 30px;text-align: center;">';
+        loading_html = loading_html + '<i class="fa fa-refresh fa-spin"></i>';
+        loading_html = loading_html + '</div>';
+
+        $('#account_list').html(loading_html);
+        $.ajax({
+            url: '/do_account_search',
+            type: 'post',
+            data: {
+                username: $('#username').val(),
+                property_address: $('#property_address').val()
+            },
+            success: function(response){
+                var data = JSON.parse(response);
+                var html = '<table class="data-table1 table table-bordered table-hover"><thead>';
+                html = html + '<tr>';
+                html = html + '<th>First Name</th>';
+                html = html + '<th>Last Name</th>';
+                html = html + '<th>Account Name</th>';
+                html = html + '<th>Email</th>';
+                html = html + '<th>Actions</th>';
+                html = html + '</tr>';
+                html = html + '</thead>';
+             
+                html = html + '<tbody>';
+
+                for(var index = 0; index < data.length; index++){
+                    html = html + '<tr>';
+                    html = html + '<td>' + data[index]['first_name'] + '</td>';
+                    html = html + '<td>' + data[index]['last_name'] + '</td>';
+                    html = html + '<td>' + data[index]['username'] + '</td>';
+                    html = html + '<td>' + data[index]['email'] + '</td>';
+                    html = html + '<td>';
+                    html = html + '<a href="/account_edit/' + data[index]['id'] + '"><i class="fa fa-fw fa-edit"></i></a>';
+                    html = html + '</td>';
+                    html = html + '</tr>';
+                    
+                }
+                html = html + '</tbody>';
+                html = html + '<tfoot>';
+                html = html + '<tr>';
+                html = html + '<th>First Name</th>';
+                html = html + '<th>Last Name</th>';
+                html = html + '<th>Account Name</th>';
+                html = html + '<th>Email</th>';
+                html = html + '<th>Actions</th>';
+                html = html + '</tr>';
+                html = html + '</tfoot></table>';
+
+                $('#account_list').html(html);
+                $('#account_list table').DataTable({
+					"paging": true,
+					// "lengthChange": false,
+					"searching": false,
+					"ordering": true,
+					"info": true,
+					"autoWidth": false
+				})
+            }
+        })
+    }
+
+    $(document).on('click', '#account_search_btn', function(){
+        account_search();
+    })
+
+    account_search();
+}
+
+function init_account_edit(){
+    $(document).on('click', '#owner_account_save_btn', function(){
+        $.ajax({
+            url:'/do_account_update',
+            type: 'post',
+            data: {
+                'username': $('#username').val(),
+                'password': $('#password').val(),
+                'status': $('#status').val(),
+                'username_old': $('#username_old').val(),
+                'password_old': $('#password_old').val(),
+                'status_old': $('#status_old').val(),
+                'id': $('#id').val(),
+            },
+            success: function(response){
+                alert('saved successfully');
+            }
+        })
+    });
+}
+
+function init_add_request(){
+    $(document).on('click', '#req_service_add_btn', function(){
+        if($('#owner_id').val() == ''){
+            alert('Please Choose Owner');
+            $('#owner_id').focus();
+            return;
+        }
+
+        if($('#req_service').val() == ''){
+            alert('Please Choose Required Service');
+            $('#req_service').focus();
+            return;
+        }
+
+        if($('#check_in_date').val() == ''){
+            $('#check_in_date').parents('.c-required').addClass('c-error');
+            $('#check_in_date').focus();
+            return false;
+        }
+        else{
+            $('#check_in_date').parents('.c-required').removeClass('c-error');
+        }
+
+        if($('#check_out_date').val() == ''){
+            $('#check_out_date').parents('.c-required').addClass('c-error');
+            $('#check_out_date').focus();
+            return false;
+          }
+        else{
+            $('#check_out_date').parents('.c-required').removeClass('c-error');
+        }
+        
+        $.ajax({
+            url: '/owner_service_request',
+            type: 'post',
+            data: {
+                'first_name': $('#first_name').val(),
+                'last_name': $('#last_name').val(),
+                'req_service': $('#req_service').val(),
+                'check_in_date': $('#check_in_date').val(),
+                'check_out_date': $('#check_out_date').val(),
+                'cleaning_address': $('#cleaning_address').val(),
+                'day_phone': $('#day_phone').val(),
+                'cell_phone': $('#cell_phone').val(),
+                'email': $('#email').val(),
+                'comments': $('#comments').val(),
+                'owner_id': $('#owner_id').val(),
+            },
+            success: function(data){
+                alert('saved successfully');
+            }
+        })   
+    })
+
+    $(document).on('change', '#owner_id', function(){
+        
+        $('#first_name').val($(this).find('option:selected').attr('data-first-name'));
+        $('#last_name').val($(this).find('option:selected').attr('data-last-name'));
+        $('#email').val($(this).find('option:selected').attr('data-email'));
+        $('#day_phone').val($(this).find('option:selected').attr('data-dayphone'));
+        $('#cell_phone').val($(this).find('option:selected').attr('data-cellphone'));
+
+        if($(this).find('option:selected').attr('data-additional') == 'true'){
+            $('#cleaning_address_parent').html('<select id="cleaning_address" class="form-control"></select>');
+            var additional_props_data = $(this).find('option:selected').attr('data-additional-props-data');
+            additional_props_data = JSON.parse(additional_props_data);
+            var html = '';
+            for(var pindex = 0; pindex < additional_props_data.length; pindex++){
+                html = html + '<option value="' + additional_props_data[pindex]['property_address'] + '">' + additional_props_data[pindex]['property_address'] + '</option>';
+            }
+            $('#cleaning_address').html(html);
+        }
+        else{
+            $('#cleaning_address_parent').html('<input type="text" class="form-control" id="cleaning_address" name="cleaning_address" placeholder="" value="' + $(this).find('option:selected').attr('data-address') + '" readonly>');
+        }
+    })
+}
+
 $(document).ready(function(){
     
     if($('#page_content_owner_edit').length != 0){
@@ -512,5 +763,16 @@ $(document).ready(function(){
     if($('#page_content_owner_service_create').length != 0){
         init_owner_service_create();
     }
+
+    if($('#page_content_account_management').length != 0){
+        init_account_management();
+    }
     
+    if($('#page_content_account_edit').length != 0){
+        init_account_edit();
+    }
+
+    if($('#page_content_add_request').length != 0){
+        init_add_request();
+    }    
 })

@@ -95,45 +95,45 @@ class AdminController extends CI_Controller {
 		$this->load->Model('OwnerModel');		
 		$this->OwnerModel->update($_POST);
 
-		if($_POST['username'] != $_POST['username_old'] && $_POST['password'] != $_POST['password_old'] && $_POST['status'] == 'active'){
-			//sending email
-			// AD ADDED sending email
-			$config = Array(    
-				'protocol' => 'sendmail',
-				'smtp_host' => 'relay-hosting.secureserver.net',
-				'smtp_port' => 25,
-				'smtp_user' => '',
-				'smtp_pass' => '',
-				'mailtype' => 'html',
-				'charset' => 'utf-8'
-			);
+		// if($_POST['username'] != $_POST['username_old'] && $_POST['password'] != $_POST['password_old'] && $_POST['status'] == 'active'){
+		// 	//sending email
+		// 	// AD ADDED sending email
+		// 	$config = Array(    
+		// 		'protocol' => 'sendmail',
+		// 		'smtp_host' => 'relay-hosting.secureserver.net',
+		// 		'smtp_port' => 25,
+		// 		'smtp_user' => '',
+		// 		'smtp_pass' => '',
+		// 		'mailtype' => 'html',
+		// 		'charset' => 'utf-8'
+		// 	);
 	
-			$this->load->library('email', $config);
+		// 	$this->load->library('email', $config);
 	
-			$this->email->set_newline("\r\n");      
+		// 	$this->email->set_newline("\r\n");      
 		  
-			$data = array(
-				'username' => $_POST['username'],
-				'password' => $_POST['password'],
-			);
+		// 	$data = array(
+		// 		'username' => $_POST['username'],
+		// 		'password' => $_POST['password'],
+		// 	);
 		  
-			$this->email->to('jaygangkun@hotmail.com'); // replace it with receiver mail id
-			// $this->email->to('info@cleansweephhi.com'); // replace it with receiver mail id
+		// 	$this->email->to('jaygangkun@hotmail.com'); // replace it with receiver mail id
+		// 	// $this->email->to('info@cleansweephhi.com'); // replace it with receiver mail id
 
-			if($_POST['username_old'] == '' || $_POST['password_old'] == ''){
-				$this->email->from('info@cleansweephhi.com', 'Account Create');
-				$this->email->subject("Account Create"); // replace it with relevant subj
-			}
-			else{
-				$this->email->from('info@cleansweephhi.com', 'Account Update');
-				$this->email->subject("Account Update"); // replace it with relevant subj
-			}
+		// 	if($_POST['username_old'] == '' || $_POST['password_old'] == ''){
+		// 		$this->email->from('info@cleansweephhi.com', 'Account Create');
+		// 		$this->email->subject("Account Create"); // replace it with relevant subj
+		// 	}
+		// 	else{
+		// 		$this->email->from('info@cleansweephhi.com', 'Account Update');
+		// 		$this->email->subject("Account Update"); // replace it with relevant subj
+		// 	}
 			
-			$body = $this->load->view('email/create_account.php',$data,TRUE);
+		// 	$body = $this->load->view('email/create_account.php',$data,TRUE);
 		  
-			$this->email->message($body); 
-			$this->email->send();
-		}
+		// 	$this->email->message($body); 
+		// 	$this->email->send();
+		// }
 	}
 
 	public function do_req_service_update(){
@@ -197,7 +197,7 @@ class AdminController extends CI_Controller {
 		$this->load->Model('ServiceReqModel');		
 		$service_reqs = $this->ServiceReqModel->search($_POST['username'], $_POST['property_address'], $_POST['start_date'], $_POST['end_date']);
 
-		$filename = "request_report_".$_POST['username']."_".$_POST['property_address']."_".$_POST['start_date']."_".$_POST['end_date'].".csv";
+		$filename = "request_report_".$_POST['username']."_".$_POST['property_address']."_".str_replace('/', '_', $_POST['start_date'])."___".str_replace('/', '_', $_POST['end_date']).".csv";
 		$filepath = 'reports/'.$filename;
 
 		$output = fopen($filepath, 'w');
@@ -213,10 +213,10 @@ class AdminController extends CI_Controller {
 			$requested_date = $row['added_at'];
 
 			if($row['status'] == '0'){
-				$status = '';
+				$status = 'Request Cancelled';
 			}
 			else{
-				$status = 'Request Cancelled';
+				$status = '';
 			}
 
 			fputcsv($output, array($email, $username, $property_address, $req_service, $check_in_date, $check_out_date, $requested_date, $status));
@@ -233,5 +233,120 @@ class AdminController extends CI_Controller {
 		header("Content-disposition: attachment; filename=\"" . $filename . "\"");
 		$filepath = 'reports/'.$filename;
         readfile($filepath);
+	}
+
+	function owner_info_management_page(){
+		$data = array();
+		$data['title'] = 'Owner Info Management';
+		$data['sub_page'] = 'owner_info_management_page';
+
+		$this->load->Model('OwnerModel');		
+		$data['owners'] = $this->OwnerModel->all();
+
+		$this->load->view('admin/admin_template', $data);
+	}
+
+	function user_account_management_page(){
+		$data = array();
+		$data['title'] = 'User Management';
+		$data['sub_page'] = 'user_account_management_page';
+
+		$this->load->Model('OwnerModel');		
+		$data['owners'] = $this->OwnerModel->all();
+
+		$this->load->view('admin/admin_template', $data);
+	}
+
+	function add_request_page(){
+		$data = array();
+		$data['title'] = 'Request Management';
+		$data['sub_page'] = 'add_request_page';
+
+		$this->load->Model('OwnerModel');		
+		$data['owners'] = $this->OwnerModel->all();
+
+		$this->load->view('admin/admin_template', $data);
+	}
+
+	function request_report_page(){
+		$data = array();
+		$data['title'] = 'Request Report';
+		$data['sub_page'] = 'request_report_page';
+
+		$this->load->view('admin/admin_template', $data);
+	}
+
+	public function account_edit($id){
+		$data = array();
+		$data['title'] = 'Owner Account Edit';
+		$data['sub_page'] = 'account_edit';
+
+		$this->load->Model('OwnerModel');		
+		$data['owner'] = $this->OwnerModel->get($id);
+
+		$this->load->view('admin/admin_template', $data);
+	}
+
+	public function do_account_update(){
+		$this->load->Model('OwnerModel');		
+		$this->OwnerModel->update_account($_POST);
+
+		if($_POST['username'] != $_POST['username_old'] || $_POST['password'] != $_POST['password_old'] || $_POST['status'] == $_POST['status_old']){
+			//sending email
+			// AD ADDED sending email
+			$config = Array(    
+				'protocol' => 'sendmail',
+				'smtp_host' => 'relay-hosting.secureserver.net',
+				'smtp_port' => 25,
+				'smtp_user' => '',
+				'smtp_pass' => '',
+				'mailtype' => 'html',
+				'charset' => 'utf-8'
+			);
+	
+			$this->load->library('email', $config);
+	
+			$this->email->set_newline("\r\n");      
+		  
+			$data = array(
+				'username' => $_POST['username'],
+				'password' => $_POST['password'],
+			);
+		  
+			$this->email->to('jaygangkun@hotmail.com'); // replace it with receiver mail id
+			// $this->email->to('info@cleansweephhi.com'); // replace it with receiver mail id
+
+			if($_POST['status'] == 'delete' || $_POST['status'] == 'suspend'){
+				$this->email->from('info@cleansweephhi.com', 'Account Delete');
+				$this->email->subject("Account Delete"); // replace it with relevant subj
+			}
+			else if($_POST['username_old'] == '' || $_POST['password_old'] == ''){
+				$this->email->from('info@cleansweephhi.com', 'Account Create');
+				$this->email->subject("Account Create"); // replace it with relevant subj
+			}
+			else{
+				$this->email->from('info@cleansweephhi.com', 'Account Update');
+				$this->email->subject("Account Update"); // replace it with relevant subj
+			}
+			
+			$body = $this->load->view('email/create_account.php',$data,TRUE);
+		  
+			$this->email->message($body); 
+			$this->email->send();
+		}
+	}
+
+	function do_account_search(){
+		$this->load->Model('OwnerModel');		
+		$accounts = $this->OwnerModel->search_account($_POST['username'], $_POST['property_address']);
+
+		echo json_encode($accounts);
+	}
+
+	function do_owner_search(){
+		$this->load->Model('OwnerModel');		
+		$owners = $this->OwnerModel->search_owner($_POST['name'], $_POST['address'], $_POST['phone'], $_POST['property']);
+
+		echo json_encode($owners);
 	}
 }

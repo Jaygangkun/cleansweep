@@ -56,7 +56,21 @@ $route['translate_uri_dashes'] = FALSE;
 //Admin Panel
 $route['admin_login'] = "AdminController/login";
 $route['owner_management'] = "AdminController/owner_management";
+
+
+$route['add_request_page'] = 'AdminController/add_request_page';
+$route['request_report_page'] = 'AdminController/request_report_page';
+
+//owner info management page
+$route['owner_info_management_page'] = 'AdminController/owner_info_management_page';
+$route['do_owner_search'] = "AdminController/do_owner_search";
 $route['owner_edit/(:num)'] = "AdminController/owner_edit/$1";
+
+//account management page
+$route['user_account_management_page'] = 'AdminController/user_account_management_page';
+$route['do_account_search'] = "AdminController/do_account_search";
+$route['account_edit/(:num)'] = "AdminController/account_edit/$1";
+
 
 $route['owner_service_management'] = "AdminController/owner_service_management";
 $route['owner_service_list/(:num)'] = "AdminController/owner_service_list/$1";
@@ -67,6 +81,8 @@ $route['admin_do_login'] = "AdminController/do_login";
 
 //owner_edit
 $route['do_owner_update'] = "AdminController/do_owner_update";
+
+$route['do_account_update'] = "AdminController/do_account_update";
 
 //owner_service_edit 
 $route['do_req_service_update'] = "AdminController/do_req_service_update";

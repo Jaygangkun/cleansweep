@@ -375,7 +375,7 @@
 								<li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
 							</ul>
 						</li>
-						<li class="<?php if($sub_page == 'owner_management' || $sub_page == 'owner_edit' || $sub_page == 'owner_service_list') echo 'active';?>">
+						<li style="display:none" class="<?php if($sub_page == 'owner_management' || $sub_page == 'owner_edit' || $sub_page == 'owner_service_list') echo 'active';?>">
 							<a href="/owner_management">
 								<i class="fa fa-th"></i> <span>Owner Management</span>
 								<span class="pull-right-container">
@@ -384,7 +384,7 @@
 							</a>
 						</li>
 
-						<li class="<?php if($sub_page == 'owner_service_management' || $sub_page == 'owner_service_edit') echo 'active';?>">
+						<li style="display:none" class="<?php if($sub_page == 'owner_service_management' || $sub_page == 'owner_service_edit') echo 'active';?>">
 							<a href="/owner_service_management">
 								<i class="fa fa-th"></i> <span>Owner Service Request</span>
 								<span class="pull-right-container">
@@ -393,22 +393,35 @@
 							</a>
 						</li>
 
-						<li class="treeview" style="display:none">
+						<li class="treeview <?php if($sub_page == 'owner_info_management_page' || $sub_page == 'user_account_management_page') echo 'active';?>">
 							<a href="#">
-							<i class="fa fa-pie-chart"></i>
-							<span>Charts</span>
+							<i class="fa fa-th"></i>
+							<span>Owners</span>
 							<span class="pull-right-container">
 							<i class="fa fa-angle-left pull-right"></i>
 							</span>
 							</a>
 							<ul class="treeview-menu">
-								<li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-								<li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-								<li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-								<li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+								<li class="<?php if($sub_page == 'owner_info_management_page') echo 'active'?>"><a href="/owner_info_management_page"><i class="fa fa-circle-o"></i> Owner Info </a></li>
+								<li class="<?php if($sub_page == 'user_account_management_page') echo 'active'?>"><a href="/user_account_management_page"><i class="fa fa-circle-o"></i> Account</a></li>
 							</ul>
 						</li>
-						<li class="treeview active" style="display:none">
+
+						<li class="treeview <?php if($sub_page == 'add_request_page' || $sub_page == 'owner_service_management') echo 'active';?>">
+							<a href="#">
+							<i class="fa fa-th"></i>
+							<span>Request</span>
+							<span class="pull-right-container">
+							<i class="fa fa-angle-left pull-right"></i>
+							</span>
+							</a>
+							<ul class="treeview-menu">
+								<li class="<?php if($sub_page == 'add_request_page') echo 'active'?>"><a href="/add_request_page"><i class="fa fa-circle-o"></i> Add Request </a></li>
+								<li class="<?php if($sub_page == 'owner_service_management') echo 'active'?>"><a href="/owner_service_management"><i class="fa fa-circle-o"></i> Request Reports</a></li>
+							</ul>
+						</li>
+
+						<li class="treeview active" style="display: none">
 							<a href="#">
 							<i class="fa fa-laptop"></i>
 							<span>UI Elements</span>
